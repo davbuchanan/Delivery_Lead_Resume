@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { useTranslation } from '@/lib/i18n'
+import { useTranslation, LocalizedString, LocalizedStringArray } from '@/lib/i18n'
 import { resumeConfig } from '@/data/resume-config'
 import { assetUrl } from '@/lib/utils'
 import { detectedAssets } from 'virtual:detected-assets'
@@ -168,28 +168,28 @@ export function MainContent() {
         </h2>
         <div className="space-y-2">
           {updatedExperiences.map((exp, idx) => {
-            const expType = 'type' in exp && exp.type ? resolve(exp.type as any) : undefined
-            const expSubItem = 'subItem' in exp && exp.subItem ? (exp.subItem as any) : undefined
+            const expType = 'type' in exp && exp.type ? resolve(exp.type as LocalizedString) : undefined
+            const expSubItem = 'subItem' in exp && exp.subItem ? (exp.subItem as { title: LocalizedString; description: LocalizedString }) : undefined
             const expIsHighlighted = 'isHighlighted' in exp ? exp.isHighlighted : undefined
 
             return (
               <ExperienceItem
                 key={exp.id || idx}
-                year={resolve(exp.period as any)}
-                company={resolve(exp.company as any)}
+                year={resolve(exp.period as LocalizedString)}
+                company={resolve(exp.company as LocalizedString)}
                 type={expType}
-                role={resolve(exp.role as any)}
-                description={resolve(exp.description as any)}
+                role={resolve(exp.role as LocalizedString)}
+                description={resolve(exp.description as LocalizedString)}
                 techs={exp.techs}
                 expanded={expandedExp === (exp.id || String(idx))}
                 onToggle={() => toggleExp(exp.id || String(idx))}
                 details={
                   exp.details
                     ? {
-                        context: resolve(exp.details.context as any),
-                        tasks: exp.details.tasks ? resolveArray(exp.details.tasks as any) : undefined,
-                        training: 'training' in exp.details && exp.details.training ? resolveArray((exp.details as any).training) : undefined,
-                        env: resolve(exp.details.env as any),
+                        context: resolve(exp.details.context as LocalizedString),
+                        tasks: exp.details.tasks ? resolveArray(exp.details.tasks as LocalizedStringArray) : undefined,
+                        training: 'training' in exp.details && exp.details.training ? resolveArray((exp.details as { training: LocalizedStringArray }).training) : undefined,
+                        env: resolve(exp.details.env as LocalizedString),
                       }
                     : undefined
                 }
