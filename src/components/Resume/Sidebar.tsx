@@ -11,46 +11,48 @@ export function Sidebar() {
   return (
     <div className="p-8 bg-gradient-to-b from-resume-sidebar-from to-resume-sidebar-to">
       {/* Skills */}
-      <SidebarSection title={resolve(labels.sections.skills)}>
-        <div className="space-y-4">
-          {skills.map((category, i) => (
-            <SkillCategory key={`${resolve(category.title)}-${i}`} title={resolve(category.title)}>
-              {category.type === 'badges' && (
-                <div className="flex flex-wrap gap-1.5">
-                  {category.items.map((item) => {
-                    const techName = typeof item.name === 'string' ? item.name : Object.values(item.name)[0]
-                    return <TechBadge key={techName} tech={techName} color={item.color} />
-                  })}
-                </div>
-              )}
-              {category.type === 'text' && (
-                <p className="text-xs text-resume-text-secondary">
-                  {category.items
-                    .map((item) => (typeof item.name === 'string' ? item.name : resolve(item.name)))
-                    .join(', ')}
-                </p>
-              )}
-              {category.type === 'languages' && (
-                <div className="flex items-center gap-3 text-sm flex-wrap">
-                  {category.items.map((item, j) => {
-                    const name = typeof item.name === 'string' ? item.name : resolve(item.name)
-                    return (
-                      <span key={`${name}-${j}`} className="flex items-center gap-1">
-                        <span className="text-resume-text-secondary">
-                          {name} {item.level ? resolve(item.level) : ''}
-                          {item.details && (
-                            <span className="text-xs opacity-70 ml-1">{item.details}</span>
-                          )}
+      {skills && labels.sections.skills && (
+        <SidebarSection title={resolve(labels.sections.skills)}>
+          <div className="space-y-4">
+            {skills.map((category, i) => (
+              <SkillCategory key={`${resolve(category.title)}-${i}`} title={resolve(category.title)}>
+                {category.type === 'badges' && (
+                  <div className="flex flex-wrap gap-1.5">
+                    {category.items.map((item) => {
+                      const techName = typeof item.name === 'string' ? item.name : Object.values(item.name)[0]
+                      return <TechBadge key={techName} tech={techName} color={item.color} />
+                    })}
+                  </div>
+                )}
+                {category.type === 'text' && (
+                  <p className="text-xs text-resume-text-secondary">
+                    {category.items
+                      .map((item) => (typeof item.name === 'string' ? item.name : resolve(item.name)))
+                      .join(', ')}
+                  </p>
+                )}
+                {category.type === 'languages' && (
+                  <div className="flex items-center gap-3 text-sm flex-wrap">
+                    {category.items.map((item, j) => {
+                      const name = typeof item.name === 'string' ? item.name : resolve(item.name)
+                      return (
+                        <span key={`${name}-${j}`} className="flex items-center gap-1">
+                          <span className="text-resume-text-secondary">
+                            {name} {item.level ? resolve(item.level) : ''}
+                            {item.details && (
+                              <span className="text-xs opacity-70 ml-1">{item.details}</span>
+                            )}
+                          </span>
                         </span>
-                      </span>
-                    )
-                  })}
-                </div>
-              )}
-            </SkillCategory>
-          ))}
-        </div>
-      </SidebarSection>
+                      )
+                    })}
+                  </div>
+                )}
+              </SkillCategory>
+            ))}
+          </div>
+        </SidebarSection>
+      )}
 
       {/* Hobbies */}
       {hobbies && hobbies.length > 0 && labels.sections.hobbies && (
