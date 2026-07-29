@@ -45,13 +45,25 @@ export interface EducationItem {
   school: LocalizedString
   degree: LocalizedString
   period: string
+  specialty?: LocalizedString | string
+  logo?: string
+}
+
+export interface ProjectItem {
+  id?: string
+  title: LocalizedString | string
+  description?: LocalizedString | string
+  link?: string
+  techs?: string[]
 }
 
 export interface ResumeConfig {
   personal: {
     name: string
+    photo?: string
     photoBackEmoji?: string
     title: LocalizedString
+    subtitle?: LocalizedString | string
     location: string
   }
   seo: {
@@ -67,6 +79,7 @@ export interface ResumeConfig {
   skills: SkillCategory[]
   experiences: Experience[]
   education: EducationItem[]
+  projects?: ProjectItem[]
   theme: {
     preset: PresetName
   }
