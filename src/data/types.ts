@@ -15,6 +15,8 @@ export interface ContactItemConfig {
 
 export interface SkillItem {
   name: LocalizedString | { name: LocalizedString } | { name: string } | string
+  level?: string | number
+  color?: string
 }
 
 export interface SkillCategory {
@@ -29,11 +31,15 @@ export interface Experience {
   company: LocalizedString
   period: LocalizedString
   description?: LocalizedString
-  techs: string[]
+  techs?: string[]
   isHighlighted?: boolean
   details?: {
     context?: LocalizedString
     tasks?: {
+      en: string[]
+      fr: string[]
+    }
+    training?: {
       en: string[]
       fr: string[]
     }
@@ -56,7 +62,7 @@ export interface ProjectItem {
   link?: string
   url?: string
   github?: string
-  techs: string[]
+  techs?: string[]
 }
 
 export interface ResumeConfig {
@@ -85,6 +91,8 @@ export interface ResumeConfig {
   pdf?: {
     filename?: string
     author?: string
+    label?: LocalizedString | string
+    path?: string
   }
   theme: {
     preset: PresetName
@@ -96,12 +104,12 @@ export interface ResumeConfig {
       experience: LocalizedString
       education: LocalizedString
       projects: LocalizedString
-      hobbies: LocalizedString
+      hobbies?: LocalizedString
     }
     experience: {
       mainTasks: LocalizedString
       moreTasks: LocalizedString
-      training: LocalizedString
+      training?: LocalizedString
       techEnv: LocalizedString
       technologies: LocalizedString
     }
