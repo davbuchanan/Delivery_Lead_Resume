@@ -74,7 +74,7 @@ function ProfilePhoto({ photo, name, emoji }: { photo?: string; name: string; em
 
 export function MainContent() {
   const { resolve, resolveArray } = useTranslation()
-  const { personal, contact, summary, experiences, projects, education, labels } = resumeConfig
+  const { personal, contact, experiences, projects, education, labels } = resumeConfig
   const [expandedExp, setExpandedExp] = useState<string | null>(null)
 
   const toggleExp = (id: string) => {
@@ -88,6 +88,9 @@ export function MainContent() {
     techEnv: resolve(labels.experience.techEnv),
     technologies: resolve(labels.experience.technologies),
   }
+
+  // Type-safe check for summary if it exists on personal data
+  const userSummary = (personal as Record<string, any>).summary
 
   return (
     <div className="w-full p-8">
@@ -116,13 +119,13 @@ export function MainContent() {
       </div>
 
       {/* Professional Summary */}
-      {summary && labels.sections.summary && (
+      {userSummary && labels.sections && (labels.sections as Record<string, any>).summary && (
         <div className="mb-8">
           <h2 className="text-sm font-bold tracking-widest text-resume-text mb-4 pb-2 border-b border-resume-primary/20">
-            {resolve(labels.sections.summary)}
+            {resolve((labels.sections as Record<string, any>).summary)}
           </h2>
           <p className="text-sm text-resume-text-secondary leading-relaxed whitespace-pre-line">
-            {resolve(summary)}
+            {resolve(userSummary)}
           </p>
         </div>
       )}
