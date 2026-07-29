@@ -106,20 +106,25 @@ export function MainContent() {
           <h1 className="text-2xl font-bold text-resume-text">{personal.name}</h1>
           <p className="text-sm font-semibold text-resume-primary mb-2">{resolve(personal.title)}</p>
           
-          {/* Inline Contact Details */}
+          {/* Inline Contact Details (Fixed to prevent duplicate labels/names) */}
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-2 gap-y-1 text-sm text-resume-text-secondary">
-            {contact.map((item, index) => (
-              <div key={`${item.type}-${item.label}`} className="flex items-center">
-                {index > 0 && <span className="mr-2 text-resume-primary/40">|</span>}
-                {item.href ? (
-                  <a href={item.href} target="_blank" rel="noopener noreferrer" className="hover:text-resume-primary transition-colors">
-                    {item.label}
-                  </a>
-                ) : (
-                  <span>{item.label}</span>
-                )}
-              </div>
-            ))}
+            {contact.map((item, index) => {
+              const displayValue = item.label || item.href?.replace(/^https?:\/\//, '')
+              if (!displayValue) return null
+
+              return (
+                <div key={`${item.type}-${displayValue}`} className="flex items-center">
+                  {index > 0 && <span className="mr-2 text-resume-primary/40">|</span>}
+                  {item.href ? (
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="hover:text-resume-primary transition-colors">
+                      {displayValue}
+                    </a>
+                  ) : (
+                    <span>{displayValue}</span>
+                  )}
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
@@ -143,7 +148,6 @@ export function MainContent() {
             {resolve(sectionLabels.skills)}
           </h2>
           <p className="text-sm text-resume-text-secondary leading-relaxed">
-            {/* Customize your inline skills text here or pull from config */}
             Agile & Framework Leadership: SAFe Framework & PI Optimization · Cross-Functional Team Leadership · SMART Objective Formulation · Data-Driven Process Optimization · Release Governance & Execution: End-to-End Release Scheduling · Production Change Management · Risk & Dependency Mitigation · Defect Lifecycle · Supplier Alignment · Stakeholder & Team Alignment: Executive Stakeholder Management · Cross-Departmental Communication
           </p>
         </div>
