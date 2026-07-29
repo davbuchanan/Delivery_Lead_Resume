@@ -89,26 +89,8 @@ export function MainContent() {
     technologies: resolve(labels.experience.technologies),
   }
 
-  const customMsiExperience = {
-    id: 'msi-rte',
-    period: '',
-    company: 'MSI Experts | Airbus Cybersecurity',
-    role: 'Release Train Engineer (RTE)',
-    description: 'Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.',
-    techs: ['Jira', 'Confluence', 'SAFe', 'Klaxoon'],
-    isHighlighted: false,
-    details: {
-      context: 'Setting up how the teams work together and keeping our strategy on track.',
-      tasks: [
-        'PI Optimisation: Orchestrated a total re-architecture of PI Planning; eliminated redundant overhead, compressing a 3-day event into a single high-impact day (66% efficiency gain) while increasing stakeholder alignment.',
-        'Strategic Alignment: Partnered with leadership to realign Epics and Capabilities, accelerating roadmap execution and achieving an 86% success rate (478 of 557 objectives delivered).',
-        'Governance & Scaling: Established a robust framework to decompose high-level strategy into 11,261 actionable user stories; normalized capacity planning and velocity across 89 iterations to instill high-predictability delivery across the ART.'
-      ],
-      env: 'Jira / Confluence / SAFe / Klaxoon'
-    }
-  }
-
-  const updatedExperiences = [customMsiExperience, ...experiences]
+  const topTwoExperiences = experiences.slice(0, 2)
+  const remainingExperiences = experiences.slice(2)
 
   return (
     <div className="w-full p-8">
@@ -167,7 +149,49 @@ export function MainContent() {
           {resolve(labels.sections.experience)}
         </h2>
         <div className="space-y-2">
-          {updatedExperiences.map((exp, idx) => {
+          {/* Top two experiences with dates on the left */}
+          {topTwoExperiences.map((exp, idx) => {
+            const expType = 'type' in exp && exp.type ? resolve(exp.type as Parameters<typeof resolve>[0]) : undefined
+            const expSubItem = 'subItem' in exp && exp.subItem ? (exp.subItem as { title: Parameters<typeof resolve>[0]; description: Parameters<typeof resolve>[0] }) : undefined
+            const expIsHighlighted = 'isHighlighted' in exp ? exp.isHighlighted : undefined
+
+            return (
+              <ExperienceItem
+                key={exp.id || idx}
+                year={resolve(exp.period as Parameters<typeof resolve>[0])}
+                company={resolve(exp.company as Parameters<typeof resolve>[0])}
+                type={expType}
+                role={resolve(exp.role as Parameters<typeof resolve>[0])}
+                description={resolve(exp.description as Parameters<typeof resolve>[0])}
+                techs={exp.techs}
+                expanded={expandedExp === (exp.id || String(idx))}
+                onToggle={() => toggleExp(exp.id || String(idx))}
+                details={
+                  exp.details
+                    ? {
+                        context: resolve(exp.details.context as Parameters<typeof resolve>[0]),
+                        tasks: exp.details.tasks ? resolveArray(exp.details.tasks as Parameters<typeof resolveArray>[0]) : undefined,
+                        training: 'training' in exp.details && exp.details.training ? resolveArray((exp.details as { training: Parameters<typeof resolveArray>[0] }).training) : undefined,
+                        env: resolve(exp.details.env as Parameters<typeof resolve>[0]),
+                      }
+                    : undefined
+                }
+                subItem={
+                  expSubItem
+                    ? {
+                        title: resolve(expSubItem.title),
+                        description: resolve(expSubItem.description),
+                      }
+                    : undefined
+                }
+                labels={experienceLabels}
+                isHighlighted={expIsHighlighted}
+              />
+            )
+          })}
+
+          {/* Remaining experiences without dates on the left */}
+          {remainingExperiences.map((exp, idx) => {
             const expType = 'type' in exp && exp.type ? resolve(exp.type as Parameters<typeof resolve>[0]) : undefined
             const expSubItem = 'subItem' in exp && exp.subItem ? (exp.subItem as { title: Parameters<typeof resolve>[0]; description: Parameters<typeof resolve>[0] }) : undefined
             const expIsHighlighted = 'isHighlighted' in exp ? exp.isHighlighted : undefined
