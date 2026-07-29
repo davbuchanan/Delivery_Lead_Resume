@@ -29,16 +29,14 @@ function SidebarPhoto({ photo, name, emoji }: { photo?: string; name: string; em
 
   if (!photo || hasError) {
     return (
-      <div className="flex justify-center mb-4">
-        <div className="w-28 h-28 rounded-full bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center border-4 border-resume-bg/30 shadow-lg">
-          <span className="text-3xl">{emoji || '👨‍💻'}</span>
-        </div>
+      <div className="w-28 h-28 rounded-full bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center border-4 border-resume-bg/30 shadow-lg shrink-0">
+        <span className="text-3xl">{emoji || '👨‍💻'}</span>
       </div>
     )
   }
 
   return (
-    <div className="flex justify-center mb-4" style={{ perspective: '300px' }}>
+    <div style={{ perspective: '300px' }} className="shrink-0">
       <motion.div
         onClick={handleFlip}
         onKeyDown={handleKeyDown}
@@ -80,24 +78,27 @@ export function Sidebar() {
 
   return (
     <div className="p-8 bg-gradient-to-b from-resume-sidebar-from to-resume-sidebar-to">
-      {/* Top Header Group: Photo, Name, Title, and Contact details underneath */}
-      <div className="text-center mb-8 pb-6 border-b border-resume-primary/20">
+      {/* Top Header Group: Photo on left, Details on right */}
+      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8 pb-6 border-b border-resume-primary/20">
         <SidebarPhoto
           photo={(personal.photo || detectedAssets.photo) ? assetUrl(personal.photo || detectedAssets.photo!) : undefined}
           name={personal.name}
           emoji={personal.photoBackEmoji}
         />
-        <h1 className="text-2xl font-bold text-resume-text mb-1">{personal.name}</h1>
-        <p className="text-base font-semibold text-resume-primary mb-1">{resolve(personal.title)}</p>
-        {personal.subtitle && (
-          <p className="text-sm text-resume-text-secondary mb-6">{resolve(personal.subtitle)}</p>
-        )}
 
-        {/* Contact details directly underneath, without a "Contact" header box */}
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
-          {contact.map((item) => (
-            <ContactItem key={`${item.type}-${item.label}`} type={item.type} label={item.label} href={item.href} />
-          ))}
+        <div className="flex flex-col text-center sm:text-left">
+          <h1 className="text-2xl font-bold text-resume-text">{personal.name}</h1>
+          <p className="text-sm font-semibold text-resume-primary mb-2">{resolve(personal.title)}</p>
+          {personal.subtitle && (
+            <p className="text-xs text-resume-text-secondary mb-3">{resolve(personal.subtitle)}</p>
+          )}
+
+          {/* Contact Details List */}
+          <div className="flex flex-col space-y-1.5 text-sm">
+            {contact.map((item) => (
+              <ContactItem key={`${item.type}-${item.label}`} type={item.type} label={item.label} href={item.href} />
+            ))}
+          </div>
         </div>
       </div>
 
