@@ -89,7 +89,9 @@ export function Sidebar() {
         />
         <h1 className="text-2xl font-bold text-resume-text mb-1">{personal.name}</h1>
         <p className="text-base font-semibold text-resume-primary mb-1">{resolve(personal.title)}</p>
-        <p className="text-sm text-resume-text-secondary mb-6">{resolve(personal.subtitle)}</p>
+        {personal.subtitle && (
+          <p className="text-sm text-resume-text-secondary mb-6">{resolve(personal.subtitle)}</p>
+        )}
 
         {/* Contact details directly underneath, without a "Contact" header box */}
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
