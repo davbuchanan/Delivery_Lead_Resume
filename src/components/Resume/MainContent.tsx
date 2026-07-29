@@ -96,7 +96,7 @@ export function MainContent() {
     role: 'Release Train Engineer (RTE)',
     description: 'Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.',
     techs: ['Jira', 'Confluence', 'SAFe', 'Klaxoon'],
-    isHighlighted: true,
+    isHighlighted: false,
     details: {
       context: 'Setting up how the teams work together and keeping our strategy on track.',
       tasks: [
