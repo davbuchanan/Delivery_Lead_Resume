@@ -14,19 +14,16 @@ const PHOTO_ANIMATION_DURATION = 0.8
 function ProfilePhoto({ photo, name, emoji }: { photo?: string; name: string; emoji?: string }) {
   const [isSpinning, setIsSpinning] = useState(false)
   const [hasError, setHasError] = useState(false)
-
   const handleFlip = () => {
     if (isSpinning) return
     setIsSpinning(true)
   }
-
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault()
       handleFlip()
     }
   }
-
   if (!photo || hasError) {
     return (
       <div className="w-36 h-36 rounded-full bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center border-4 border-resume-bg/30 shadow-lg shrink-0">
@@ -34,7 +31,6 @@ function ProfilePhoto({ photo, name, emoji }: { photo?: string; name: string; em
       </div>
     )
   }
-
   return (
     <div style={{ perspective: '300px' }} className="shrink-0">
       <motion.div
@@ -89,24 +85,6 @@ export function MainContent() {
     technologies: resolve(labels.experience.technologies),
   }
 
-  // Custom data overrides for the first experience item
-  const customFirstExp = {
-    company: 'MSI Experts | Airbus Cybersecurity',
-    role: 'Release Train Engineer (RTE)',
-    period: 'July 2024 – Present',
-    description: 'Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.',
-    techs: ['Jira', 'Confluence', 'Klaxoon', 'SAFe'],
-    details: {
-      context: 'Setting up how the teams work together and keeping our strategy on track.',
-      tasks: [
-        'PI Optimisation: Orchestrated a total re-architecture of PI Planning; eliminated redundant overhead, compressing a 3-day event into a single high-impact day (66% efficiency gain) while increasing stakeholder alignment.',
-        'Strategic Alignment: Partnered with leadership to realign Epics and Capabilities, accelerating roadmap execution and achieving an 86% success rate (478 of 557 objectives delivered).',
-        'Governance & Scaling: Established a robust framework to decompose high-level strategy into 11,261 actionable user stories; normalized capacity planning and velocity across 89 iterations to instill high-predictability delivery across the ART.'
-      ],
-      env: 'Jira / Confluence / SAFe / Klaxoon'
-    }
-  }
-
   return (
     <div className="w-full p-8">
       {/* Top Header Group */}
@@ -116,14 +94,12 @@ export function MainContent() {
           name={personal.name}
           emoji={personal.photoBackEmoji}
         />
-
         <div className="flex flex-col items-center sm:items-start">
           <h1 className="text-2xl font-bold text-resume-text">{personal.name}</h1>
           <p className="text-sm font-semibold text-resume-primary mb-2">{resolve(personal.title)}</p>
           {personal.subtitle && (
             <p className="text-xs text-resume-text-secondary mb-3">{resolve(personal.subtitle)}</p>
           )}
-
           {/* Contact Details List */}
           <div className="flex flex-col space-y-1.5 text-sm items-center sm:items-start">
             {contact.map((item) => (
@@ -139,7 +115,7 @@ export function MainContent() {
           Professional Summary
         </h2>
         <p className="text-sm text-resume-text-secondary leading-relaxed">
-          Release Train Engineer & Scrum Master with over 15 years of experience delivering complex projects. I focus on building delivery systems that actually work taking high-level strategy and turning it into predictable, reliable execution.
+          Release Train Engineer & Scrum Master with over 10 years of experience delivering complex projects. I focus on building delivery systems that actually work taking high-level strategy and turning it into predictable, reliable execution.
         </p>
         <p className="text-sm text-resume-text-secondary leading-relaxed mt-4">
           Throughout my career, I’ve moved from managing team-level delivery to architecting organization-wide Agile frameworks. My approach is simple: I standardize the mess, clear the blockers, and use data to show where we can improve. At Airbus alone I’ve led the delivery of over 11,000 user stories and 1,200 production deployments. I streamlined PI planning to cut event time by 66% while hitting an 86% objective completion rate. I’m at my best when I’m connecting leadership strategy with team reality, ensuring that teams have a clear path to deliver value without the usual corporate friction.
@@ -164,41 +140,20 @@ export function MainContent() {
           {resolve(labels.sections.experience)}
         </h2>
         <div className="space-y-2">
-          {/* Custom First Experience Item */}
-          <ExperienceItem
-            key="custom-msi-experts"
-            year=""
-            company={customFirstExp.company}
-            role={customFirstExp.role}
-            description={customFirstExp.description}
-            techs={customFirstExp.techs}
-            expanded={expandedExp === 'custom-msi-experts'}
-            onToggle={() => toggleExp('custom-msi-experts')}
-            details={{
-              context: customFirstExp.details.context,
-              tasks: customFirstExp.details.tasks,
-              env: customFirstExp.details.env
-            }}
-            labels={experienceLabels}
-            isHighlighted={false}
-          />
-
-          {/* Remaining experiences */}
-          {experiences.slice(1).map((exp, idx) => {
+          {experiences.map((exp, idx) => {
             const expType = 'type' in exp && exp.type ? resolve(exp.type as Parameters<typeof resolve>[0]) : undefined
             const expSubItem = 'subItem' in exp && exp.subItem ? (exp.subItem as { title: Parameters<typeof resolve>[0]; description: Parameters<typeof resolve>[0] }) : undefined
-
             return (
               <ExperienceItem
-                key={exp.id || idx + 1}
+                key={exp.id || idx}
                 year=""
                 company={resolve(exp.company as Parameters<typeof resolve>[0])}
                 type={expType}
                 role={resolve(exp.role as Parameters<typeof resolve>[0])}
                 description={resolve(exp.description as Parameters<typeof resolve>[0])}
                 techs={exp.techs}
-                expanded={expandedExp === (exp.id || String(idx + 1))}
-                onToggle={() => toggleExp(exp.id || String(idx + 1))}
+                expanded={expandedExp === (exp.id || String(idx))}
+                onToggle={() => toggleExp(exp.id || String(idx))}
                 details={
                   exp.details
                     ? {
@@ -218,33 +173,10 @@ export function MainContent() {
                     : undefined
                 }
                 labels={experienceLabels}
-                isHighlighted={false}
+                isHighlighted={'isHighlighted' in exp ? Boolean(exp.isHighlighted) : false}
               />
             )
           })}
-
-          {/* Additional Experience Item */}
-          <ExperienceItem
-            key="additional-airbus-consultant"
-            year=""
-            company="Airbus (via Infotel & Capgemini)"
-            role="Agile Project Manager / Scrum Master / Senior Consultant"
-            description="Led complex multi-team Agile transformations, software deployments, and system integrations across major aerospace programs."
-            techs={['Jira', 'Confluence', 'SAFe', 'Agile', 'Scrum']}
-            expanded={expandedExp === 'additional-airbus-consultant'}
-            onToggle={() => toggleExp('additional-airbus-consultant')}
-            details={{
-              context: 'Driving continuous improvement and structured execution across core engineering and operational value streams.',
-              tasks: [
-                'Directed cross-functional agile teams through large-scale system modernization and release management cycles.',
-                'Facilitated agile ceremonies, backlog refinement, and impediment removal to guarantee steady delivery cadences.',
-                'Aligned stakeholders across diverse departments to streamline requirements and accelerate time-to-market.'
-              ],
-              env: 'Jira / Confluence / SAFe / Agile / Scrum'
-            }}
-            labels={experienceLabels}
-            isHighlighted={false}
-          />
         </div>
       </div>
 
