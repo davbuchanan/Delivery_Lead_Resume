@@ -145,7 +145,7 @@ export function MainContent() {
         <h2 className="text-sm font-bold tracking-widest text-resume-text mb-6 pb-2 border-b border-resume-primary/25">
           {resolve(labels.sections.experience)}
         </h2>
-        <div className="space-y-2">
+        <div className="space-y-2 [&_*]:!pl-0 [&_*]:!ml-0">
           {experiences.map((exp, idx) => {
             const expType = 'type' in exp && exp.type ? resolve(exp.type as Parameters<typeof resolve>[0]) : undefined
             const expSubItem = 'subItem' in exp && exp.subItem ? (exp.subItem as { title: Parameters<typeof resolve>[0]; description: Parameters<typeof resolve>[0] }) : undefined
