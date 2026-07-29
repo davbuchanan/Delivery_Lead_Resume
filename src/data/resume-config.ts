@@ -109,14 +109,14 @@ export const resumeConfig: ResumeConfig = {
   experiences: [
     {
       id: 'msi-experts-rte',
-      company: { en: 'MSI Experts (at Airbus Cybersecurity)', fr: 'MSI Experts (chez Airbus Cybersecurity)' },
+      company: { en: 'MSI Experts | Airbus Cybersecurity', fr: 'MSI Experts | Airbus Cybersecurity' },
       role: { en: 'Release Train Engineer (RTE)', fr: 'Release Train Engineer (RTE)' },
-      period: { en: 'July 2024 - Present', fr: 'Juillet 2024 - Présent' },
+      period: { en: 'July 2024 – Present', fr: 'Juillet 2024 – Présent' },
       description: {
-        en: 'Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries, architecting end-to-end Agile governance and driving delivery excellence.',
-        fr: 'Autorité Agile centrale pour quatre équipes Cybersécurité transverses réparties dans trois pays, en charge de la gouvernance Agile de bout en bout et de l\'excellence de livraison.',
+        en: 'Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.',
+        fr: 'Autorité Agile centrale pour quatre équipes Cybersécurité transverses réparties dans trois pays. Responsable de l\'architecture de la gouvernance Agile de bout en bout et de l\'excellence de livraison.',
       },
-      techs: ['Jira', 'Confluence', 'Klaxoon'],
+      techs: ['Jira', 'Confluence', 'Klaxoon', 'SAFe'],
       isHighlighted: true,
       details: {
         context: {
@@ -125,14 +125,14 @@ export const resumeConfig: ResumeConfig = {
         },
         tasks: {
           en: [
-            'Orchestrated a total re-architecture of PI Planning; eliminated redundant overhead, compressing a 3-day event into a single high-impact day (66% efficiency gain) while increasing stakeholder alignment.',
-            'Partnered with leadership to realign Epics and Capabilities, accelerating roadmap execution and achieving an 86% success rate (478 of 557 objectives delivered).',
-            'Established a robust framework to decompose high-level strategy into 11,261 actionable user stories; normalized capacity planning and velocity across 89 iterations to instill high-predictability delivery across the ART.',
+            'PI Optimisation: Orchestrated a total re-architecture of PI Planning; eliminated redundant overhead, compressing a 3-day event into a single high-impact day (66% efficiency gain) while increasing stakeholder alignment.',
+            'Strategic Alignment: Partnered with leadership to realign Epics and Capabilities, accelerating roadmap execution and achieving an 86% success rate (478 of 557 objectives delivered).',
+            'Governance & Scaling: Established a robust framework to decompose high-level strategy into 11,261 actionable user stories; normalized capacity planning and velocity across 89 iterations to instill high-predictability delivery across the ART.',
           ],
           fr: [
-            'Refonte totale du PI Planning, transformant un événement de 3 jours en une seule journée à fort impact (gain d\'efficacité de 66%) tout en renforçant l\'alignement des parties prenantes.',
-            'Collaboration avec la direction pour réaligner les Epics et Capabilities, atteignant un taux de réussite de 86% (478 objectifs livrés sur 557).',
-            'Mise en place d\'un cadre pour décomposer la stratégie en 11 261 user stories actionnables, normalisant la planification de capacité et la vélocité sur 89 itérations.',
+            'Optimisation du PI : Orchestration d\'une réarchitecture complète du PI Planning ; élimination des redondances, compression d\'un événement de 3 jours en une seule journée à fort impact (gain d\'efficacité de 66%) tout en augmentant l\'alignement des parties prenantes.',
+            'Alignement Stratégique : Partenariat avec la direction pour réaligner les Epics et Capabilities, accélérant l\'exécution de la feuille de route et atteignant un taux de réussite de 86% (478 objectifs livrés sur 557).',
+            'Gouvernance & Passage à l\'échelle : Établissement d\'un cadre robuste pour décomposer la stratégie de haut niveau en 11 261 user stories actionnables ; normalisation de la planification de capacité et de la vélocité sur 89 itérations pour insuffler une livraison à haute prévisibilité à travers l\'ART.',
           ],
         },
         env: {
