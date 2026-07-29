@@ -15,10 +15,6 @@ export const resumeConfig: ResumeConfig = {
       fr: 'Plus de 10 ans d\'expérience',
     },
     location: 'Anglet, France 64600',
-    description: {
-      en: 'Release Train Engineer & Scrum Master with over 10 years of experience delivering complex projects. I focus on building delivery systems that actually work taking high-level strategy and turning it into predictable, reliable execution.\n\nThroughout my career, I\'ve moved from managing team-level delivery to architecting organization-wide Agile frameworks. My approach is simple: I standardize the mess, clear the blockers, and use data to show where we can improve. At Airbus alone I\'ve led the delivery of over 11,000 user stories and 1,200 production deployments. I streamlined PI planning to cut event time by 66% while hitting an 86% objective completion rate. I\'m at my best when I\'m connecting leadership strategy with team reality, ensuring that teams have a clear path to deliver value without the usual corporate friction.',
-      fr: 'Release Train Engineer & Scrum Master avec plus de 10 ans d\'expérience dans la livraison de projets complexes. Je me concentre sur la création de systèmes de livraison efficaces, transformant la stratégie de haut niveau en une exécution prévisible et fiable.',
-    },
   },
 
   // ===== SEO =====
@@ -44,6 +40,12 @@ export const resumeConfig: ResumeConfig = {
     { type: 'phone', label: '+33 6 95 00 11 71' },
     { type: 'location', label: 'Anglet, France 64600' },
   ],
+
+  // ===== SUMMARY / ABOUT =====
+  about: {
+    en: 'Release Train Engineer & Scrum Master with over 10 years of experience delivering complex projects. I focus on building delivery systems that actually work taking high-level strategy and turning it into predictable, reliable execution.\n\nThroughout my career, I\'ve moved from managing team-level delivery to architecting organization-wide Agile frameworks. My approach is simple: I standardize the mess, clear the blockers, and use data to show where we can improve. At Airbus alone I\'ve led the delivery of over 11,000 user stories and 1,200 production deployments. I streamlined PI planning to cut event time by 66% while hitting an 86% objective completion rate. I\'m at my best when I\'m connecting leadership strategy with team reality, ensuring that teams have a clear path to deliver value without the usual corporate friction.',
+    fr: 'Release Train Engineer & Scrum Master avec plus de 10 ans d\'expérience dans la livraison de projets complexes. Je me concentre sur la création de systèmes de livraison efficaces, transformant la stratégie de haut niveau en une exécution prévisible et fiable.',
+  },
 
   // ===== SKILLS =====
   skills: [
