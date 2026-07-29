@@ -87,14 +87,12 @@ export function Sidebar() {
         emoji={personal.photoBackEmoji}
       />
 
-      {/* Contact */}
-      <SidebarSection title={resolve(labels.sections.contact)}>
-        <div className="space-y-3">
-          {contact.map((item) => (
-            <ContactItem key={`${item.type}-${item.label}`} type={item.type} label={item.label} href={item.href} />
-          ))}
-        </div>
-      </SidebarSection>
+      {/* Contact Details Directly Underneath (No Header or Box Container) */}
+      <div className="mb-8 space-y-2.5">
+        {contact.map((item) => (
+          <ContactItem key={`${item.type}-${item.label}`} type={item.type} label={item.label} href={item.href} />
+        ))}
+      </div>
 
       {/* Skills */}
       <SidebarSection title={resolve(labels.sections.skills)}>
