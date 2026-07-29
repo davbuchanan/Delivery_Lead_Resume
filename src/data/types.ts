@@ -29,7 +29,7 @@ export interface Experience {
   company: LocalizedString
   period: LocalizedString
   description?: LocalizedString
-  techs?: string[]
+  techs: string[]
   isHighlighted?: boolean
   details?: {
     context?: LocalizedString
@@ -42,21 +42,21 @@ export interface Experience {
 }
 
 export interface EducationItem {
-  school: LocalizedString | string
-  degree: LocalizedString | string
+  school: LocalizedString
+  degree: LocalizedString
   period: string
-  specialty?: LocalizedString | string
+  specialty?: LocalizedString
   logo?: string
 }
 
 export interface ProjectItem {
   id?: string
-  title: LocalizedString | string
-  description?: LocalizedString | string
+  title: LocalizedString
+  description?: LocalizedString
   link?: string
   url?: string
   github?: string
-  techs?: string[]
+  techs: string[]
 }
 
 export interface ResumeConfig {
@@ -65,7 +65,7 @@ export interface ResumeConfig {
     photo?: string
     photoBackEmoji?: string
     title: LocalizedString
-    subtitle?: LocalizedString | string
+    subtitle?: LocalizedString
     location: string
   }
   seo: {
