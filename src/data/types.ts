@@ -1,5 +1,4 @@
 export type ContactType = 'linkedin' | 'email' | 'phone' | 'location' | 'github' | 'website' | string
-
 export type PresetName = 'minimal' | 'modern' | 'creative' | string
 
 export interface LocalizedString {
@@ -7,24 +6,40 @@ export interface LocalizedString {
   fr: string
 }
 
+export interface ThemeColors {
+  bg: string
+  bgCard: string
+  text: string
+  textSecondary: string
+  bgDark: string
+  bgCardDark: string
+  textDark: string
+  textSecondaryDark: string
+  primary: string
+  primaryLight: string
+  primaryDark: string
+  primaryLightDark: string
+  sidebarLight: string
+  sidebarLightEnd: string
+  sidebarDark: string
+  sidebarDarkEnd: string
+}
+
 export interface ContactItemConfig {
   type: ContactType
   label: string
   href?: string
 }
-
 export interface SkillItem {
   name: LocalizedString | { name: LocalizedString } | { name: string } | string
   level?: string | number
   color?: string
 }
-
 export interface SkillCategory {
   title: LocalizedString
   type: 'text' | 'badges' | string
   items: SkillItem[]
 }
-
 export interface Experience {
   id: string
   role: LocalizedString
@@ -46,7 +61,6 @@ export interface Experience {
     env?: LocalizedString
   }
 }
-
 export interface EducationItem {
   school: LocalizedString
   degree: LocalizedString
@@ -54,7 +68,6 @@ export interface EducationItem {
   specialty?: LocalizedString
   logo?: string
 }
-
 export interface ProjectItem {
   id?: string
   title: LocalizedString
@@ -64,7 +77,6 @@ export interface ProjectItem {
   github?: string
   techs?: string[]
 }
-
 export interface ResumeConfig {
   personal: {
     name: string
