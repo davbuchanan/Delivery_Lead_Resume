@@ -10,37 +10,24 @@ const DEFAULT_LABELS: Record<string, string> = {
   en: 'Download PDF',
 }
 
-// A pdf.path or pdf.label field can be a plain string or a
-// LocalizedString ({ en, fr, ... }) — normalize either into a string.
-function resolveText(value: unknown, language: string, resolve: (v: LocalizedString) => string): string | null {
-  if (value === null || value === undefined) return null
+// pdf.label can be a plain string or a LocalizedString ({ en, fr }) — normalize it.
+function resolveLabel(value: LocalizedString | string, language: string, resolve: (v: LocalizedString) => string): string {
   if (typeof value === 'string') return value
-  if (typeof value === 'object') {
-    const record = value as Record<string, string>
-    return record[language] ?? resolve(record as LocalizedString) ?? null
-  }
-  return null
+  return value[language as keyof LocalizedString] ?? resolve(value)
 }
 
 export function PdfDownload() {
   const { language, resolve } = useTranslation()
 
-  // Priority: explicit config > auto-detected from public/cv/<lang>/
-  let resolvedPath: string | null = null
-  const configPdf = resumeConfig.pdf as { path?: string | Record<string, string>; label?: string | Record<string, string> } | undefined
-
-  if (configPdf?.path) {
-    resolvedPath = resolveText(configPdf.path, language, resolve)
-  } else if (detectedAssets.pdf[language]) {
-    resolvedPath = detectedAssets.pdf[language]
-  }
+  // Priority: explicit config path > auto-detected from public/cv/<lang>/
+  const resolvedPath = resumeConfig.pdf?.path ?? detectedAssets.pdf[language] ?? null
 
   if (!resolvedPath) return null
 
   // Resolve label: explicit config > labels.actions > auto-detect default > fallback
   let downloadLabel: string
-  if (configPdf?.label) {
-    downloadLabel = resolveText(configPdf.label, language, resolve) ?? DEFAULT_LABELS[language] ?? 'Download PDF'
+  if (resumeConfig.pdf?.label) {
+    downloadLabel = resolveLabel(resumeConfig.pdf.label, language, resolve)
   } else if (resumeConfig.labels.actions.downloadPdf) {
     downloadLabel = resolve(resumeConfig.labels.actions.downloadPdf)
   } else {
