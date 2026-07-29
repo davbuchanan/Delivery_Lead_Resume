@@ -89,6 +89,24 @@ export function MainContent() {
     technologies: resolve(labels.experience.technologies),
   }
 
+  // Custom data overrides for the first experience item
+  const customFirstExp = {
+    company: 'MSI Experts | Airbus Cybersecurity',
+    role: 'Release Train Engineer (RTE)',
+    period: 'July 2024 – Present',
+    description: 'Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.',
+    techs: ['Jira', 'Confluence', 'Klaxoon', 'SAFe'],
+    details: {
+      context: 'Setting up how the teams work together and keeping our strategy on track.',
+      tasks: [
+        'PI Optimisation: Orchestrated a total re-architecture of PI Planning; eliminated redundant overhead, compressing a 3-day event into a single high-impact day (66% efficiency gain) while increasing stakeholder alignment.',
+        'Strategic Alignment: Partnered with leadership to realign Epics and Capabilities, accelerating roadmap execution and achieving an 86% success rate (478 of 557 objectives delivered).',
+        'Governance & Scaling: Established a robust framework to decompose high-level strategy into 11,261 actionable user stories; normalized capacity planning and velocity across 89 iterations to instill high-predictability delivery across the ART.'
+      ],
+      env: 'Jira / Confluence / SAFe / Klaxoon'
+    }
+  }
+
   return (
     <div className="w-full p-8">
       {/* Top Header Group */}
@@ -145,22 +163,42 @@ export function MainContent() {
         <h2 className="text-sm font-bold tracking-widest text-resume-text mb-6 pb-2 border-b border-resume-primary/25">
           {resolve(labels.sections.experience)}
         </h2>
-        <div className="space-y-2 [&_*]:!pl-0 [&_*]:!ml-0">
-          {experiences.map((exp, idx) => {
+        <div className="space-y-2">
+          {/* Custom First Experience Item */}
+          <ExperienceItem
+            key="custom-msi-experts"
+            year=""
+            company={customFirstExp.company}
+            role={customFirstExp.role}
+            description={customFirstExp.description}
+            techs={customFirstExp.techs}
+            expanded={expandedExp === 'custom-msi-experts'}
+            onToggle={() => toggleExp('custom-msi-experts')}
+            details={{
+              context: customFirstExp.details.context,
+              tasks: customFirstExp.details.tasks,
+              env: customFirstExp.details.env
+            }}
+            labels={experienceLabels}
+            isHighlighted={false}
+          />
+
+          {/* Remaining experiences */}
+          {experiences.slice(1).map((exp, idx) => {
             const expType = 'type' in exp && exp.type ? resolve(exp.type as Parameters<typeof resolve>[0]) : undefined
             const expSubItem = 'subItem' in exp && exp.subItem ? (exp.subItem as { title: Parameters<typeof resolve>[0]; description: Parameters<typeof resolve>[0] }) : undefined
 
             return (
               <ExperienceItem
-                key={exp.id || idx}
+                key={exp.id || idx + 1}
                 year=""
                 company={resolve(exp.company as Parameters<typeof resolve>[0])}
                 type={expType}
                 role={resolve(exp.role as Parameters<typeof resolve>[0])}
                 description={resolve(exp.description as Parameters<typeof resolve>[0])}
                 techs={exp.techs}
-                expanded={expandedExp === (exp.id || String(idx))}
-                onToggle={() => toggleExp(exp.id || String(idx))}
+                expanded={expandedExp === (exp.id || String(idx + 1))}
+                onToggle={() => toggleExp(exp.id || String(idx + 1))}
                 details={
                   exp.details
                     ? {
