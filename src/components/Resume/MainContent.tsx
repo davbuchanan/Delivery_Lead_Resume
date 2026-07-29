@@ -163,41 +163,41 @@ export function MainContent() {
 
       {/* Professional Experience */}
       <div className="relative">
-        <h2 className="text-sm font-bold tracking-widest text-resume-text mb-6 pb-2 border-b border-resume-primary/20">
+        <h2 className="text-sm font-bold tracking-widest text-resume-text mb-6 pb-2 border-b border-resume-primary/25">
           {resolve(labels.sections.experience)}
         </h2>
         <div className="space-y-2">
           {updatedExperiences.map((exp, idx) => {
-            const expType = 'type' in exp && exp.type ? resolve(exp.type as Parameters<typeof resolve>[0]) : undefined
-            const expSubItem = 'subItem' in exp && exp.subItem ? (exp.subItem as { title: Parameters<typeof resolve>[0]; description: Parameters<typeof resolve>[0] }) : undefined
+            const expType = 'type' in exp && exp.type ? resolve(exp.type as string) : undefined
+            const expSubItem = 'subItem' in exp && exp.subItem ? (exp.subItem as { title: string; description: string }) : undefined
             const expIsHighlighted = 'isHighlighted' in exp ? exp.isHighlighted : undefined
 
             return (
               <ExperienceItem
                 key={exp.id || idx}
-                year={resolve(exp.period as Parameters<typeof resolve>[0])}
-                company={resolve(exp.company as Parameters<typeof resolve>[0])}
+                year={exp.period}
+                company={exp.company}
                 type={expType}
-                role={resolve(exp.role as Parameters<typeof resolve>[0])}
-                description={resolve(exp.description as Parameters<typeof resolve>[0])}
+                role={exp.role}
+                description={exp.description}
                 techs={exp.techs}
                 expanded={expandedExp === (exp.id || String(idx))}
                 onToggle={() => toggleExp(exp.id || String(idx))}
                 details={
                   exp.details
                     ? {
-                        context: resolve(exp.details.context as Parameters<typeof resolve>[0]),
-                        tasks: exp.details.tasks ? resolveArray(exp.details.tasks as Parameters<typeof resolveArray>[0]) : undefined,
-                        training: 'training' in exp.details && exp.details.training ? resolveArray((exp.details as { training: Parameters<typeof resolveArray>[0] }).training) : undefined,
-                        env: resolve(exp.details.env as Parameters<typeof resolve>[0]),
+                        context: exp.details.context,
+                        tasks: exp.details.tasks,
+                        training: 'training' in exp.details ? (exp.details as { training?: string[] }).training : undefined,
+                        env: exp.details.env,
                       }
                     : undefined
                 }
                 subItem={
                   expSubItem
                     ? {
-                        title: resolve(expSubItem.title),
-                        description: resolve(expSubItem.description),
+                        title: expSubItem.title,
+                        description: expSubItem.description,
                       }
                     : undefined
                 }
