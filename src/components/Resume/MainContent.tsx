@@ -4,6 +4,7 @@ import { useTranslation } from '@/lib/i18n'
 import { resumeConfig } from '@/data/resume-config'
 import { assetUrl } from '@/lib/utils'
 import { detectedAssets } from 'virtual:detected-assets'
+import { ContactItem } from './ContactItem'
 import { ExperienceItem } from './ExperienceItem'
 import { ProjectItem } from './ProjectItem'
 import { EducationItem } from './EducationItem'
@@ -90,7 +91,7 @@ export function MainContent() {
 
   return (
     <div className="w-full p-8">
-      {/* Top Header: Original Inline Contact Layout */}
+      {/* Top Header Group */}
       <div className="flex flex-col sm:flex-row items-center sm:items-start justify-start gap-6 mb-8 pb-6 border-b border-resume-primary/20 text-center sm:text-left">
         <ProfilePhoto
           photo={(personal.photo || detectedAssets.photo) ? assetUrl(personal.photo || detectedAssets.photo!) : undefined}
@@ -102,31 +103,20 @@ export function MainContent() {
           <h1 className="text-2xl font-bold text-resume-text">{personal.name}</h1>
           <p className="text-sm font-semibold text-resume-primary mb-2">{resolve(personal.title)}</p>
 
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-2 gap-y-1 text-sm text-resume-text-secondary">
-            {contact.map((item, index) => {
-              const displayValue = item.label || item.href?.replace(/^https?:\/\//, '')
-              if (!displayValue) return null
-
-              return (
-                <div key={`${item.type}-${displayValue}`} className="flex items-center">
-                  {index > 0 && <span className="mr-2 text-resume-primary/40">|</span>}
-                  {item.href ? (
-                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="hover:text-resume-primary transition-colors">
-                      {displayValue}
-                    </a>
-                  ) : (
-                    <span>{displayValue}</span>
-                  )}
-                </div>
-              )
-            })}
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-1.5 text-sm">
+            {contact.map((item, index) => (
+              <div key={`${item.type}-${item.label}`} className="flex items-center">
+                {index > 0 && <span className="mr-4 text-resume-primary/30">|</span>}
+                <ContactItem type={item.type} label={item.label} href={item.href} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Professional Summary */}
+      {/* Professional Summary (Line removed) */}
       <div className="mb-8">
-        <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3 pb-1 border-b border-resume-primary/20">
+        <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3">
           Professional Summary
         </h2>
         <p className="text-sm text-resume-text-secondary leading-relaxed">
@@ -134,9 +124,9 @@ export function MainContent() {
         </p>
       </div>
 
-      {/* Professional Skills */}
+      {/* Professional Skills (Line removed) */}
       <div className="mb-8">
-        <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3 pb-1 border-b border-resume-primary/20">
+        <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3">
           Professional Skills
         </h2>
         <p className="text-sm text-resume-text-secondary leading-relaxed">
