@@ -89,8 +89,8 @@ export function MainContent() {
     technologies: resolve(labels.experience.technologies),
   }
 
-  // Type-safe check for summary if it exists on personal data
   const userSummary = (personal as Record<string, any>).summary
+  const sectionLabels = labels.sections as Record<string, any>
 
   return (
     <div className="w-full p-8">
@@ -119,10 +119,10 @@ export function MainContent() {
       </div>
 
       {/* Professional Summary */}
-      {userSummary && labels.sections && (labels.sections as Record<string, any>).summary && (
+      {userSummary && sectionLabels.summary && (
         <div className="mb-8">
           <h2 className="text-sm font-bold tracking-widest text-resume-text mb-4 pb-2 border-b border-resume-primary/20">
-            {resolve((labels.sections as Record<string, any>).summary)}
+            {resolve(sectionLabels.summary)}
           </h2>
           <p className="text-sm text-resume-text-secondary leading-relaxed whitespace-pre-line">
             {resolve(userSummary)}
