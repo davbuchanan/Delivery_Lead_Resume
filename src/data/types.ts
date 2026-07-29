@@ -1,44 +1,95 @@
-// Add or update these exports in your types definition file (e.g., src/data/types.ts)
+export type ContactType = 'linkedin' | 'email' | 'phone' | 'location' | 'github' | 'website' | string
 
-export type ContactType = 'linkedin' | 'email' | 'phone' | 'location' | 'github' | 'website' | string;
+export type PresetName = 'minimal' | 'modern' | 'creative' | string
 
-export type PresetName = 'minimal' | 'modern' | 'creative' | string;
+export interface LocalizedString {
+  en: string
+  fr: string
+}
 
-// Ensure your Experience interface matches this structure:
+export interface ContactItemConfig {
+  type: ContactType
+  label: string
+  href?: string
+}
+
+export interface SkillItem {
+  name: LocalizedString | { name: LocalizedString } | { name: string } | string
+}
+
+export interface SkillCategory {
+  title: LocalizedString
+  type: 'text' | 'badges' | string
+  items: SkillItem[]
+}
+
 export interface Experience {
   id: string
-  role: {
-    en: string
-    fr: string
-  }
-  company: {
-    en: string
-    fr: string
-  }
-  period: {
-    en: string
-    fr: string
-  }
-  description?: {
-    en: string
-    fr: string
-  }
+  role: LocalizedString
+  company: LocalizedString
+  period: LocalizedString
+  description?: LocalizedString
   techs?: string[]
   isHighlighted?: boolean
   details?: {
-    context?: {
-      en: string
-      fr: string
-    }
+    context?: LocalizedString
     tasks?: {
       en: string[]
       fr: string[]
     }
-    env?: {
-      en: string
-      fr: string
-    }
+    env?: LocalizedString
   }
 }
 
-// (Keep the rest of your existing types below...)
+export interface EducationItem {
+  school: LocalizedString
+  degree: LocalizedString
+  period: string
+}
+
+export interface ResumeConfig {
+  personal: {
+    name: string
+    photoBackEmoji?: string
+    title: LocalizedString
+    location: string
+  }
+  seo: {
+    title: string
+    description: string
+  }
+  languages: {
+    default: string
+    available: string[]
+    labels: Record<string, string>
+  }
+  contact: ContactItemConfig[]
+  skills: SkillCategory[]
+  experiences: Experience[]
+  education: EducationItem[]
+  theme: {
+    preset: PresetName
+  }
+  labels: {
+    sections: {
+      contact: LocalizedString
+      skills: LocalizedString
+      experience: LocalizedString
+      education: LocalizedString
+      projects: LocalizedString
+      hobbies: LocalizedString
+    }
+    experience: {
+      mainTasks: LocalizedString
+      moreTasks: LocalizedString
+      training: LocalizedString
+      techEnv: LocalizedString
+      technologies: LocalizedString
+    }
+    actions: {
+      clickHint: LocalizedString
+      switchTheme: LocalizedString
+      downloadPdf: LocalizedString
+    }
+  }
+}
