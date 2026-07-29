@@ -109,20 +109,15 @@ export const resumeConfig: ResumeConfig = {
   experiences: [
     {
       id: 'msi-experts-rte',
-      company: { en: 'MSI Experts | Airbus Cybersecurity', fr: 'MSI Experts | Airbus Cybersecurity' },
       role: { en: 'Release Train Engineer (RTE)', fr: 'Release Train Engineer (RTE)' },
+      company: { en: 'MSI Experts | Airbus Cybersecurity', fr: 'MSI Experts | Airbus Cybersecurity' },
       period: { en: 'July 2024 – Present', fr: 'Juillet 2024 – Présent' },
       description: {
-        en: 'Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.',
-        fr: 'Autorité Agile centrale pour quatre équipes Cybersécurité transverses réparties dans trois pays. Responsable de l\'architecture de la gouvernance Agile de bout en bout et de l\'excellence de livraison.',
+        en: 'Focus: Setting up how the teams work together and keeping our strategy on track. Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.',
+        fr: 'Focus : Structuration de la collaboration entre les équipes et suivi de la trajectoire stratégique. Autorité Agile centrale pour quatre équipes de cybersécurité pluridisciplinaires réparties dans trois pays. Responsable de l'architecture de la gouvernance Agile de bout en bout et de l'excellence de la livraison.',
       },
       techs: ['Jira', 'Confluence', 'Klaxoon', 'SAFe'],
       isHighlighted: true,
-      details: {
-        context: {
-          en: 'Setting up how the teams work together and keeping our strategy on track.',
-          fr: 'Mise en place du fonctionnement des équipes et maintien de la stratégie sur la bonne voie.',
-        },
         tasks: {
           en: [
             'PI Optimisation: Orchestrated a total re-architecture of PI Planning; eliminated redundant overhead, compressing a 3-day event into a single high-impact day (66% efficiency gain) while increasing stakeholder alignment.',
@@ -130,9 +125,9 @@ export const resumeConfig: ResumeConfig = {
             'Governance & Scaling: Established a robust framework to decompose high-level strategy into 11,261 actionable user stories; normalized capacity planning and velocity across 89 iterations to instill high-predictability delivery across the ART.',
           ],
           fr: [
-            'Optimisation du PI : Orchestration d\'une réarchitecture complète du PI Planning ; élimination des redondances, compression d\'un événement de 3 jours en une seule journée à fort impact (gain d\'efficacité de 66%) tout en augmentant l\'alignement des parties prenantes.',
-            'Alignement Stratégique : Partenariat avec la direction pour réaligner les Epics et Capabilities, accélérant l\'exécution de la feuille de route et atteignant un taux de réussite de 86% (478 objectifs livrés sur 557).',
-            'Gouvernance & Passage à l\'échelle : Établissement d\'un cadre robuste pour décomposer la stratégie de haut niveau en 11 261 user stories actionnables ; normalisation de la planification de capacité et de la vélocité sur 89 itérations pour insuffler une livraison à haute prévisibilité à travers l\'ART.',
+            'Optimisation PI : Réarchitecture complète de la planification PI ; élimination des redondances, compression d'un événement de 3 jours à une seule journée à fort impact (gain d'efficacité de 66 %) tout en renforçant l'alignement des parties prenantes.',
+            'Alignement Stratégique : Partenariat avec la direction pour réaligner les Epics et les Capabilities, accélérant l'exécution de la feuille de route et atteignant un taux de réussite de 86 % (478 objectifs livrés sur 557).',
+            'Gouvernance & Passage à l'Échelle : Établissement d'un cadre robuste pour décomposer la stratégie de haut niveau en 11 261 user stories exploitables ; normalisation de la planification de la capacité et de la vélocité sur 89 itérations pour insuffler une livraison à haute prévisibilité au sein de l'ART.',
           ],
         },
         env: {
