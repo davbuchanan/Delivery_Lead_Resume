@@ -9,6 +9,10 @@ export const resumeConfig: ResumeConfig = {
       en: 'Delivery Lead',
       fr: 'Delivery Lead',
     },
+    subtitle: {
+      en: '10+ years of experience',
+      fr: 'Plus de 10 ans d\'expérience',
+    },
     location: 'Anglet, France 64600',
   },
   // ===== SEO =====
@@ -107,8 +111,8 @@ export const resumeConfig: ResumeConfig = {
       company: { en: 'MSI Experts | Airbus Cybersecurity', fr: 'MSI Experts | Airbus Cybersecurity' },
       period: { en: 'July 2024 – Present', fr: 'Juillet 2024 – Présent' },
       description: {
-        en: 'Setting up how the teams work together and keeping our strategy on track.',
-        fr: 'Structuration de la collaboration entre les équipes et suivi de la trajectoire stratégique.',
+        en: 'Focus: Setting up how the teams work together and keeping our strategy on track. Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.',
+        fr: 'Focus : Structuration de la collaboration entre les équipes et suivi de la trajectoire stratégique. Autorité Agile centrale pour quatre équipes de cybersécurité pluridisciplinaires réparties dans trois pays. Responsable de l\'architecture de la gouvernance Agile de bout en bout et de l\'excellence de la livraison.',
       },
       techs: ['Jira', 'Confluence', 'Klaxoon', 'SAFe'],
       isHighlighted: true,
@@ -122,13 +126,11 @@ export const resumeConfig: ResumeConfig = {
             'PI Optimisation: Orchestrated a total re-architecture of PI Planning; eliminated redundant overhead, compressing a 3-day event into a single high-impact day (66% efficiency gain) while increasing stakeholder alignment.',
             'Strategic Alignment: Partnered with leadership to realign Epics and Capabilities, accelerating roadmap execution and achieving an 86% success rate (478 of 557 objectives delivered).',
             'Governance & Scaling: Established a robust framework to decompose high-level strategy into 11,261 actionable user stories; normalized capacity planning and velocity across 89 iterations to instill high-predictability delivery across the ART.',
-            'Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.'
           ],
           fr: [
             'Optimisation PI : Réarchitecture complète de la planification PI ; élimination des redondances, compression d\'un événement de 3 jours à une seule journée à fort impact (gain d\'efficacité de 66 %) tout en renforçant l\'alignement des parties prenantes.',
             'Alignement Stratégique : Partenariat avec la direction pour réaligner les Epics et les Capabilities, accélérant l\'exécution de la feuille de route et atteignant un taux de réussite de 86 % (478 objectifs livrés sur 557).',
             'Gouvernance & Passage à l\'Échelle : Établissement d\'un cadre robuste pour décomposer la stratégie de haut niveau en 11 261 user stories exploitables ; normalisation de la planification de la capacité et de la vélocité sur 89 itérations pour insuffler une livraison à haute prévisibilité au sein de l\'ART.',
-            'Autorité Agile centrale pour quatre équipes de cybersécurité pluridisciplinaires réparties dans trois pays. Responsable de l\'architecture de la gouvernance Agile de bout en bout et de l\'excellence de la livraison.'
           ],
         },
         env: {
@@ -143,8 +145,8 @@ export const resumeConfig: ResumeConfig = {
       company: { en: 'Amaris | Airbus Cybersecurity', fr: 'Amaris | Airbus Cybersecurity' },
       period: { en: 'September 2019 – June 2024', fr: 'Septembre 2019 – Juin 2024' },
       description: {
-        en: 'Keeping our delivery pipelines moving and helping four different teams hit their goals.',
-        fr: 'Maintien du dynamisme des pipelines de livraison et accompagnement de quatre équipes différentes dans l\'atteinte de leurs objectifs.',
+        en: 'Focus: Keeping our delivery pipelines moving and helping four different teams hit their goals. Directed delivery pipelines for four high-impact functions: Software Maintenance, Detection Engineering, Operations/Run Request Management, and Organisational Data Compliance.',
+        fr: 'Focus : Maintien du dynamisme des pipelines de livraison et accompagnement de quatre équipes différentes dans l\'atteinte de leurs objectifs. Direction des pipelines de livraison pour quatre fonctions à fort impact : Maintenance Logicielle, Ingénierie de Détection, Gestion des Opérations/Run, et Conformité des Données Organisationnelles.',
       },
       techs: ['Jira', 'Confluence', 'ZohoSprints', 'Slack'],
       details: {
@@ -158,14 +160,12 @@ export const resumeConfig: ResumeConfig = {
             'Vendor & Stakeholder Management: Led weekly synchronization with cybersecurity vendors to resolve bugs and feature requests. Chaired department-wide showcases, ensuring leadership alignment on risk reduction and business value.',
             'Release Governance & Operations: Directed the Change Advisory Board (CAB) pipeline; oversaw 1,202 production deployments and resolved 1,155 technical defects, maintaining operational stability and a zero-incident deployment culture.',
             'Operational Optimization: Standardised departmental workflows, authored critical operational communications, and managed cross-functional PI-cycle logistics to ensure continuity across diverse team functions.',
-            'Directed delivery pipelines for four high-impact functions: Software Maintenance, Detection Engineering, Operations/Run Request Management, and Organisational Data Compliance.'
           ],
           fr: [
             'Gouvernance Agile : Orchestration des cérémonies Agiles clés et gestion du cycle de vie des itérations de bout en bout pour quatre équipes, de la planification initiale des capacités et du raffinement des user stories jusqu\'au suivi de la livraison, à l\'atténuation des risques et au reporting de vélocité. Pilotage de plus de 2 000 réunions debout quotidiennes pour maintenir l\'alignement des équipes et la résolution rapide des obstacles.',
             'Gestion des Fournisseurs & des Parties Prenantes : Animation de synchronisations hebdomadaires avec les fournisseurs de cybersécurité pour résoudre les bugs et les demandes de fonctionnalités. Présentation de bilans à l\'échelle du département, garantissant l\'alignement de la direction sur la réduction des risques et la valeur commerciale.',
             'Gouvernance & Opérations de Livraison : Pilotage du pipeline du Comité Consultatif des Changements (CAB) ; supervision de 1 202 déploiements en production et résolution de 1 155 défauts techniques, maintenant ainsi la stabilité opérationnelle et une culture de déploiement zéro incident.',
             'Optimisation Opérationnelle : Standardisation des flux de travail départementaux, rédaction de communications opérationnelles critiques et gestion de la logistique du cycle PI interfonctionnel pour assurer la continuité entre diverses fonctions d\'équipe.',
-            'Direction des pipelines de livraison pour quatre fonctions à fort impact : Maintenance Logicielle, Ingénierie de Détection, Gestion des Opérations/Run, et Conformité des Données Organisationnelles.'
           ],
         },
         env: {
@@ -180,8 +180,8 @@ export const resumeConfig: ResumeConfig = {
       company: { en: 'Invesco', fr: 'Invesco' },
       period: { en: '2015 – 2019', fr: '2015 – 2019' },
       description: {
-        en: 'Helping major financial institutions get the most out of our software and making sure our implementation projects actually crossed the finish line.',
-        fr: 'Accompagnement des principales institutions financières pour tirer le meilleur parti de notre logiciel et garantie de l\'aboutissement de nos projets de mise en œuvre.',
+        en: 'Focus: Helping major financial institutions get the most out of our software and making sure our implementation projects actually crossed the finish line.',
+        fr: 'Focus : Accompagnement des principales institutions financières pour tirer le meilleur parti de notre logiciel et garantie de l\'aboutissement de nos projets de mise en œuvre.',
       },
       details: {
         context: {
@@ -190,18 +190,18 @@ export const resumeConfig: ResumeConfig = {
         },
         tasks: {
           en: [
+            'End-to-End Implementation: Owned the full project lifecycle for major banks, investment firms, and insurers. Managed 6–12 month projects by translating complex client needs into technical configurations that actually worked for their business.',
             'Bridging Business & Tech: Acted as the go-between for clients and developers. I took high-level client goals and turned them into clear requirements, ensuring the development team built what the client actually needed, not just what was requested.',
             'Project Governance: Cut through project clutter by setting up simple, clear frameworks for project charters, risks, and internal roles, making it easy for teams to know exactly what needed to get done and when.',
             'Operational Problem Solving: Managed multiple implementation projects at once. I kept things moving by identifying bottlenecks early and coordinating between internal support teams and client stakeholders to keep momentum high.',
             'Product Growth & Advocacy: Served as the voice of the customer. I drove product adoption and identified new opportunities by listening to client feedback and using that data to help shape future product strategy.',
-            'End-to-End Implementation: Owned the full project lifecycle for major banks, investment firms, and insurers. Managed 6–12 month projects by translating complex client needs into technical configurations that actually worked for their business.'
           ],
           fr: [
+            'Implémentation de Bout en Bout : Prise en charge du cycle de vie complet des projets pour des banques de premier plan, des sociétés d\'investissement et des assureurs. Gestion de projets de 6 à 12 mois en traduisant des besoins clients complexes en configurations techniques adaptées à leur activité.',
             'Mise en Relation entre Métier et Technologie : Rôle d\'intermédiaire entre les clients et les développeurs. Transformation des objectifs clients de haut niveau en exigences claires, garantissant que l\'équipe de développement construisait ce dont le client avait réellement besoin, et non seulement ce qui avait été demandé.',
             'Gouvernance de Projet : Simplification des structures de projet grâce à la mise en place de cadres clairs pour les chartes de projet, les risques et les rôles internes, permettant aux équipes de savoir exactement ce qui devait être fait et quand.',
             'Résolution de Problèmes Opérationnels : Gestion simultanée de plusieurs projets d\'implémentation. Maintien de la dynamique grâce à l\'identification précoce des goulets d\'étranglement et à la coordination entre les équipes de support interne et les parties prenantes clientes.',
             'Croissance et Promotion du Produit : Rôle de porte-parole des clients. Stimulation de l\'adoption du produit et identification de nouvelles opportunités en écoutant les retours des clients et en utilisant ces données pour façonner la stratégie future du produit.',
-            'Implémentation de Bout en Bout : Prise en charge du cycle de vie complet des projets pour des banques de premier plan, des sociétés d\'investissement et des assureurs. Gestion de projets de 6 à 12 mois en traduisant des besoins clients complexes en configurations techniques adaptées à leur activité.'
           ],
         },
         env: {
@@ -217,8 +217,8 @@ export const resumeConfig: ResumeConfig = {
       role: { en: 'Product Owner', fr: 'Product Owner' },
       period: { en: '2008 - 2014', fr: '2008 - 2014' },
       description: {
-        en: 'Product ownership and agile backlog management.',
-        fr: 'Gestion de produit et gestion de backlog agile.',
+        en: 'Product Owner role at Jemstep.',
+        fr: 'Poste de Product Owner chez Jemstep.',
       },
       techs: [],
     },
