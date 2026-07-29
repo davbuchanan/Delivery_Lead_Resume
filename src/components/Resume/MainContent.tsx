@@ -89,6 +89,28 @@ export function MainContent() {
     technologies: resolve(labels.experience.technologies),
   }
 
+  const updatedExperiences = [
+    {
+      id: 'msi-rte',
+      period: 'July 2024 – Present',
+      company: 'MSI Experts | Airbus Cybersecurity',
+      role: 'Release Train Engineer (RTE)',
+      description: 'Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.',
+      techs: ['Jira', 'Confluence', 'SAFe', 'Klaxoon'],
+      isHighlighted: true,
+      details: {
+        context: 'Setting up how the teams work together and keeping our strategy on track.',
+        tasks: [
+          'PI Optimisation: Orchestrated a total re-architecture of PI Planning; eliminated redundant overhead, compressing a 3-day event into a single high-impact day (66% efficiency gain) while increasing stakeholder alignment.',
+          'Strategic Alignment: Partnered with leadership to realign Epics and Capabilities, accelerating roadmap execution and achieving an 86% success rate (478 of 557 objectives delivered).',
+          'Governance & Scaling: Established a robust framework to decompose high-level strategy into 11,261 actionable user stories; normalized capacity planning and velocity across 89 iterations to instill high-predictability delivery across the ART.'
+        ],
+        env: 'Jira / Confluence / SAFe / Klaxoon'
+      }
+    },
+    ...experiences
+  ]
+
   return (
     <div className="w-full p-8">
       {/* Top Header Group */}
@@ -146,17 +168,17 @@ export function MainContent() {
           {resolve(labels.sections.experience)}
         </h2>
         <div className="space-y-2">
-          {experiences.map((exp) => (
+          {updatedExperiences.map((exp, idx) => (
             <ExperienceItem
-              key={exp.id}
+              key={exp.id || idx}
               year={resolve(exp.period)}
               company={resolve(exp.company)}
               type={exp.type ? resolve(exp.type) : undefined}
               role={resolve(exp.role)}
               description={resolve(exp.description)}
               techs={exp.techs}
-              expanded={expandedExp === exp.id}
-              onToggle={() => toggleExp(exp.id)}
+              expanded={expandedExp === (exp.id || String(idx))}
+              onToggle={() => toggleExp(exp.id || String(idx))}
               details={
                 exp.details
                   ? {
