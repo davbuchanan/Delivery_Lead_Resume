@@ -110,9 +110,12 @@ export function MainContent() {
           )}
 
           {/* Contact Details List */}
-          <div className="flex flex-col space-y-1.5 text-sm items-center sm:items-start">
-            {contact.map((item) => (
-              <ContactItem key={`${item.type}-${item.label}`} type={item.type} label={item.label} href={item.href} />
+          <div className="flex flex-col sm:flex-row sm:flex-wrap items-center sm:items-center justify-center sm:justify-start gap-x-3 gap-y-1 text-sm">
+            {contact.map((item, index) => (
+              <div key={`${item.type}-${item.label}`} className="flex items-center">
+                {index > 0 && <span className="hidden sm:inline mr-3 text-resume-primary/30 select-none">|</span>}
+                <ContactItem type={item.type} label={item.label} href={item.href} />
+              </div>
             ))}
           </div>
         </div>
@@ -124,7 +127,9 @@ export function MainContent() {
           Professional Summary
         </h2>
         <p className="text-sm text-resume-text-secondary leading-relaxed">
-          Release Train Engineer & Scrum Master with over 15 years of experience delivering complex projects. I focus on building delivery systems that actually work taking high-level strategy and turning it into predictable, reliable execution. <br />
+          Release Train Engineer & Scrum Master with over 15 years of experience delivering complex projects. I focus on building delivery systems that actually work taking high-level strategy and turning it into predictable, reliable execution.
+        </p>
+        <p className="text-sm text-resume-text-secondary leading-relaxed mt-4">
           Throughout my career, I’ve moved from managing team-level delivery to architecting organization-wide Agile frameworks. My approach is simple: I standardize the mess, clear the blockers, and use data to show where we can improve. At Airbus alone I’ve led the delivery of over 11,000 user stories and 1,200 production deployments. I streamlined PI planning to cut event time by 66% while hitting an 86% objective completion rate. I’m at my best when I’m connecting leadership strategy with team reality, ensuring that teams have a clear path to deliver value without the usual corporate friction.
         </p>
       </div>
