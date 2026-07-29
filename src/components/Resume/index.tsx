@@ -1,12 +1,3 @@
-import { motion } from 'framer-motion'
-import { useTranslation } from '@/lib/i18n'
-import { resumeConfig } from '@/data/resume-config'
-import { Sidebar } from './Sidebar'
-import { MainContent } from './MainContent'
-import { ThemeToggle } from './ThemeToggle'
-import { LanguageToggle } from './LanguageToggle'
-import { PdfDownload } from './PdfDownload'
-
 export function Resume() {
   const { resolve } = useTranslation()
 
@@ -27,7 +18,7 @@ export function Resume() {
         animate={{ opacity: 1, y: 0 }}
         className="bg-resume-bg-card rounded-lg shadow-2xl overflow-hidden dark:border dark:border-resume-primary/10"
       >
-        <div className="flex flex-col-reverse md:flex-row">
+        <div className="flex flex-col">
           <Sidebar />
           <MainContent />
         </div>
