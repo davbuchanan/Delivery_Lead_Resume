@@ -42,8 +42,8 @@ export interface Experience {
 }
 
 export interface EducationItem {
-  school: LocalizedString
-  degree: LocalizedString
+  school: LocalizedString | string
+  degree: LocalizedString | string
   period: string
   specialty?: LocalizedString | string
   logo?: string
@@ -54,6 +54,8 @@ export interface ProjectItem {
   title: LocalizedString | string
   description?: LocalizedString | string
   link?: string
+  url?: string
+  github?: string
   techs?: string[]
 }
 
@@ -80,6 +82,10 @@ export interface ResumeConfig {
   experiences: Experience[]
   education: EducationItem[]
   projects?: ProjectItem[]
+  pdf?: {
+    filename?: string
+    author?: string
+  }
   theme: {
     preset: PresetName
   }
