@@ -173,7 +173,7 @@ export function MainContent() {
               key={exp.id || idx}
               year={resolve(exp.period)}
               company={resolve(exp.company)}
-              type={exp.type ? resolve(exp.type) : undefined}
+              type={'type' in exp && exp.type ? resolve(exp.type as any) : undefined}
               role={resolve(exp.role)}
               description={resolve(exp.description)}
               techs={exp.techs}
@@ -183,22 +183,22 @@ export function MainContent() {
                 exp.details
                   ? {
                       context: resolve(exp.details.context),
-                      tasks: exp.details.tasks ? resolveArray(exp.details.tasks) : undefined,
-                      training: exp.details.training ? resolveArray(exp.details.training) : undefined,
+                      tasks: exp.details.tasks ? resolveArray(exp.details.tasks as any) : undefined,
+                      training: 'training' in exp.details && exp.details.training ? resolveArray(exp.details.training as any) : undefined,
                       env: resolve(exp.details.env),
                     }
                   : undefined
               }
               subItem={
-                exp.subItem
+                'subItem' in exp && exp.subItem
                   ? {
-                      title: resolve(exp.subItem.title),
-                      description: resolve(exp.subItem.description),
+                      title: resolve((exp.subItem as any).title),
+                      description: resolve((exp.subItem as any).description),
                     }
                   : undefined
               }
               labels={experienceLabels}
-              isHighlighted={exp.isHighlighted}
+              isHighlighted={'isHighlighted' in exp ? exp.isHighlighted : undefined}
             />
           ))}
 
