@@ -29,23 +29,23 @@ function SidebarPhoto({ photo, name, emoji }: { photo?: string; name: string; em
 
   if (!photo || hasError) {
     return (
-      <div className="flex justify-center mb-6">
-        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center border-4 border-resume-bg/30 shadow-lg">
-          <span className="text-4xl">{emoji || '👨‍💻'}</span>
+      <div className="flex justify-center mb-4">
+        <div className="w-28 h-28 rounded-full bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center border-4 border-resume-bg/30 shadow-lg">
+          <span className="text-3xl">{emoji || '👨‍💻'}</span>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="flex justify-center mb-6" style={{ perspective: '300px' }}>
+    <div className="flex justify-center mb-4" style={{ perspective: '300px' }}>
       <motion.div
         onClick={handleFlip}
         onKeyDown={handleKeyDown}
         onAnimationComplete={() => setIsSpinning(false)}
         animate={{ rotateY: isSpinning ? 360 : 0 }}
         transition={{ duration: PHOTO_ANIMATION_DURATION, ease: 'easeInOut' }}
-        className="relative w-32 h-32 cursor-pointer"
+        className="relative w-28 h-28 cursor-pointer"
         style={{ transformStyle: 'preserve-3d' }}
         role="button"
         tabIndex={0}
@@ -67,7 +67,7 @@ function SidebarPhoto({ photo, name, emoji }: { photo?: string; name: string; em
           className="absolute inset-0 rounded-full border-4 border-resume-bg/30 shadow-lg bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center"
           style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
         >
-          <span className="text-4xl">{emoji || '👨‍💻'}</span>
+          <span className="text-3xl">{emoji || '👨‍💻'}</span>
         </div>
       </motion.div>
     </div>
@@ -79,19 +79,24 @@ export function Sidebar() {
   const { personal, contact, skills, hobbies, labels } = resumeConfig
 
   return (
-    <div className="md:w-[38%] bg-gradient-to-b from-resume-sidebar-from to-resume-sidebar-to p-8">
-      {/* Photo / Profile image — priority: config > auto-detected > emoji fallback */}
-      <SidebarPhoto
-        photo={(personal.photo || detectedAssets.photo) ? assetUrl(personal.photo || detectedAssets.photo!) : undefined}
-        name={personal.name}
-        emoji={personal.photoBackEmoji}
-      />
+    <div className="p-8 bg-gradient-to-b from-resume-sidebar-from to-resume-sidebar-to">
+      {/* Top Header Group: Photo, Name, Title, and Contact details underneath */}
+      <div className="text-center mb-8 pb-6 border-b border-resume-primary/20">
+        <SidebarPhoto
+          photo={(personal.photo || detectedAssets.photo) ? assetUrl(personal.photo || detectedAssets.photo!) : undefined}
+          name={personal.name}
+          emoji={personal.photoBackEmoji}
+        />
+        <h1 className="text-2xl font-bold text-resume-text mb-1">{personal.name}</h1>
+        <p className="text-base font-semibold text-resume-primary mb-1">{resolve(personal.title)}</p>
+        <p className="text-sm text-resume-text-secondary mb-6">{resolve(personal.subtitle)}</p>
 
-      {/* Contact Details Directly Underneath (No Header or Box Container) */}
-      <div className="mb-8 space-y-2.5">
-        {contact.map((item) => (
-          <ContactItem key={`${item.type}-${item.label}`} type={item.type} label={item.label} href={item.href} />
-        ))}
+        {/* Contact details directly underneath, without a "Contact" header box */}
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+          {contact.map((item) => (
+            <ContactItem key={`${item.type}-${item.label}`} type={item.type} label={item.label} href={item.href} />
+          ))}
+        </div>
       </div>
 
       {/* Skills */}
