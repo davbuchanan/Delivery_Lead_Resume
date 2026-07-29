@@ -103,10 +103,11 @@ export function MainContent() {
           <h1 className="text-2xl font-bold text-resume-text">{personal.name}</h1>
           <p className="text-sm font-semibold text-resume-primary mb-2">{resolve(personal.title)}</p>
 
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-1.5 text-sm">
+          {/* Fixed Contact Details Flow */}
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1.5 text-sm">
             {contact.map((item, index) => (
               <div key={`${item.type}-${item.label}`} className="flex items-center">
-                {index > 0 && <span className="mr-4 text-resume-primary/30">|</span>}
+                {index > 0 && <span className="mr-3 text-resume-primary/30 select-none">|</span>}
                 <ContactItem type={item.type} label={item.label} href={item.href} />
               </div>
             ))}
@@ -114,7 +115,7 @@ export function MainContent() {
         </div>
       </div>
 
-      {/* Professional Summary (Line removed) */}
+      {/* Professional Summary */}
       <div className="mb-8">
         <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3">
           Professional Summary
@@ -124,7 +125,7 @@ export function MainContent() {
         </p>
       </div>
 
-      {/* Professional Skills (Line removed) */}
+      {/* Professional Skills */}
       <div className="mb-8">
         <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3">
           Professional Skills
