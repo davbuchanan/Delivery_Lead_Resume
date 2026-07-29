@@ -74,7 +74,7 @@ function ProfilePhoto({ photo, name, emoji }: { photo?: string; name: string; em
 
 export function MainContent() {
   const { resolve, resolveArray } = useTranslation()
-  const { personal, contact, experiences, projects, education, labels } = resumeConfig
+  const { personal, contact, summary, experiences, projects, education, labels } = resumeConfig
   const [expandedExp, setExpandedExp] = useState<string | null>(null)
 
   const toggleExp = (id: string) => {
@@ -116,13 +116,13 @@ export function MainContent() {
       </div>
 
       {/* Professional Summary */}
-      {personal.summary && labels.sections.summary && (
+      {summary && labels.sections.summary && (
         <div className="mb-8">
           <h2 className="text-sm font-bold tracking-widest text-resume-text mb-4 pb-2 border-b border-resume-primary/20">
             {resolve(labels.sections.summary)}
           </h2>
           <p className="text-sm text-resume-text-secondary leading-relaxed whitespace-pre-line">
-            {resolve(personal.summary)}
+            {resolve(summary)}
           </p>
         </div>
       )}
