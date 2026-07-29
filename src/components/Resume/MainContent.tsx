@@ -8,7 +8,6 @@ import { ContactItem } from './ContactItem'
 import { ExperienceItem } from './ExperienceItem'
 import { ProjectItem } from './ProjectItem'
 import { EducationItem } from './EducationItem'
-import type { LocalizedString } from '@/lib/i18n'
 
 const PHOTO_ANIMATION_DURATION = 0.8
 
@@ -90,8 +89,9 @@ export function MainContent() {
     technologies: resolve(labels.experience.technologies),
   }
 
-  const userSummary = (personal as { summary?: LocalizedString }).summary
-  const sectionLabels = labels.sections as Record<string, LocalizedString>
+  type Translatable = Parameters<typeof resolve>[0]
+  const userSummary = (personal as { summary?: Translatable }).summary
+  const sectionLabels = labels.sections as Record<string, Translatable>
 
   return (
     <div className="w-full p-8">
