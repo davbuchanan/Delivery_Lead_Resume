@@ -78,8 +78,8 @@ export function Sidebar() {
 
   return (
     <div className="p-8 bg-gradient-to-b from-resume-sidebar-from to-resume-sidebar-to">
-      {/* Top Header Group: Larger photo next to text block */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 pb-6 border-b border-resume-primary/20 text-center sm:text-left">
+      {/* Top Header Group: Left-aligned layout */}
+      <div className="flex flex-col sm:flex-row items-center sm:items-start justify-start gap-6 mb-8 pb-6 border-b border-resume-primary/20 text-center sm:text-left">
         <SidebarPhoto
           photo={(personal.photo || detectedAssets.photo) ? assetUrl(personal.photo || detectedAssets.photo!) : undefined}
           name={personal.name}
