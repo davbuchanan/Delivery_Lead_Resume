@@ -1,13 +1,80 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { useTranslation } from '@/lib/i18n'
 import { resumeConfig } from '@/data/resume-config'
+import { assetUrl } from '@/lib/utils'
+import { detectedAssets } from 'virtual:detected-assets'
+import { ContactItem } from './ContactItem'
 import { ExperienceItem } from './ExperienceItem'
 import { ProjectItem } from './ProjectItem'
 import { EducationItem } from './EducationItem'
 
+const PHOTO_ANIMATION_DURATION = 0.8
+
+function ProfilePhoto({ photo, name, emoji }: { photo?: string; name: string; emoji?: string }) {
+  const [isSpinning, setIsSpinning] = useState(false)
+  const [hasError, setHasError] = useState(false)
+
+  const handleFlip = () => {
+    if (isSpinning) return
+    setIsSpinning(true)
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      handleFlip()
+    }
+  }
+
+  if (!photo || hasError) {
+    return (
+      <div className="w-36 h-36 rounded-full bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center border-4 border-resume-bg/30 shadow-lg shrink-0">
+        <span className="text-4xl">{emoji || '👨‍💻'}</span>
+      </div>
+    )
+  }
+
+  return (
+    <div style={{ perspective: '300px' }} className="shrink-0">
+      <motion.div
+        onClick={handleFlip}
+        onKeyDown={handleKeyDown}
+        onAnimationComplete={() => setIsSpinning(false)}
+        animate={{ rotateY: isSpinning ? 360 : 0 }}
+        transition={{ duration: PHOTO_ANIMATION_DURATION, ease: 'easeInOut' }}
+        className="relative w-36 h-36 cursor-pointer"
+        style={{ transformStyle: 'preserve-3d' }}
+        role="button"
+        tabIndex={0}
+        aria-label={`Photo of ${name} — click to flip`}
+      >
+        <div
+          className="absolute inset-0 rounded-full overflow-hidden border-4 border-resume-bg/30 shadow-lg"
+          style={{ backfaceVisibility: 'hidden' }}
+        >
+          <img
+            src={photo}
+            alt={`Profile photo of ${name}`}
+            className="object-cover w-full h-full"
+            loading="lazy"
+            onError={() => setHasError(true)}
+          />
+        </div>
+        <div
+          className="absolute inset-0 rounded-full border-4 border-resume-bg/30 shadow-lg bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center"
+          style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+        >
+          <span className="text-4xl">{emoji || '👨‍💻'}</span>
+        </div>
+      </motion.div>
+    </div>
+  )
+}
+
 export function MainContent() {
   const { resolve, resolveArray } = useTranslation()
-  const { personal, experiences, projects, education, labels } = resumeConfig
+  const { personal, contact, summary, experiences, projects, education, labels } = resumeConfig
   const [expandedExp, setExpandedExp] = useState<string | null>(null)
 
   const toggleExp = (id: string) => {
@@ -23,19 +90,42 @@ export function MainContent() {
   }
 
   return (
-    <div className="md:w-[62%] p-8">
-      {/* Header */}
-      <div className="text-center mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold tracking-[0.15em] text-resume-text">
-          {personal.name.toUpperCase()}
-        </h1>
-        <p className="text-base text-resume-text-secondary tracking-widest mt-2">
-          {resolve(personal.title).toUpperCase()}
-        </p>
-        {personal.subtitle && (
-          <p className="text-sm text-resume-primary mt-1">{resolve(personal.subtitle)}</p>
-        )}
+    <div className="w-full p-8">
+      {/* Top Header Group: Left-aligned Photo + Name/Title + Contact Info */}
+      <div className="flex flex-col sm:flex-row items-center sm:items-start justify-start gap-6 mb-8 pb-6 border-b border-resume-primary/20 text-center sm:text-left">
+        <ProfilePhoto
+          photo={(personal.photo || detectedAssets.photo) ? assetUrl(personal.photo || detectedAssets.photo!) : undefined}
+          name={personal.name}
+          emoji={personal.photoBackEmoji}
+        />
+
+        <div className="flex flex-col items-center sm:items-start">
+          <h1 className="text-2xl font-bold text-resume-text">{personal.name}</h1>
+          <p className="text-sm font-semibold text-resume-primary mb-2">{resolve(personal.title)}</p>
+          {personal.subtitle && (
+            <p className="text-xs text-resume-text-secondary mb-3">{resolve(personal.subtitle)}</p>
+          )}
+
+          {/* Contact Details List */}
+          <div className="flex flex-col space-y-1.5 text-sm items-center sm:items-start">
+            {contact.map((item) => (
+              <ContactItem key={`${item.type}-${item.label}`} type={item.type} label={item.label} href={item.href} />
+            ))}
+          </div>
+        </div>
       </div>
+
+      {/* Professional Summary */}
+      {summary && labels.sections.summary && (
+        <div className="mb-8">
+          <h2 className="text-sm font-bold tracking-widest text-resume-text mb-4 pb-2 border-b border-resume-primary/20">
+            {resolve(labels.sections.summary)}
+          </h2>
+          <p className="text-sm text-resume-text-secondary leading-relaxed whitespace-pre-line">
+            {resolve(summary)}
+          </p>
+        </div>
+      )}
 
       {/* Experiences */}
       <div className="relative">
