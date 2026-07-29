@@ -4,7 +4,6 @@ import { useTranslation } from '@/lib/i18n'
 import { resumeConfig } from '@/data/resume-config'
 import { assetUrl } from '@/lib/utils'
 import { detectedAssets } from 'virtual:detected-assets'
-import { ContactItem } from './ContactItem'
 import { ExperienceItem } from './ExperienceItem'
 import { ProjectItem } from './ProjectItem'
 import { EducationItem } from './EducationItem'
@@ -91,7 +90,7 @@ export function MainContent() {
 
   return (
     <div className="w-full p-8">
-      {/* Top Header Group */}
+      {/* Top Header Group with Inline Contact Details */}
       <div className="flex flex-col sm:flex-row items-center sm:items-start justify-start gap-6 mb-8 pb-6 border-b border-resume-primary/20 text-center sm:text-left">
         <ProfilePhoto
           photo={(personal.photo || detectedAssets.photo) ? assetUrl(personal.photo || detectedAssets.photo!) : undefined}
@@ -102,28 +101,49 @@ export function MainContent() {
         <div className="flex flex-col items-center sm:items-start">
           <h1 className="text-2xl font-bold text-resume-text">{personal.name}</h1>
           <p className="text-sm font-semibold text-resume-primary mb-2">{resolve(personal.title)}</p>
-          {personal.subtitle && (
-            <p className="text-xs text-resume-text-secondary mb-3">{resolve(personal.subtitle)}</p>
-          )}
 
-          {/* Contact Details List */}
-          <div className="flex flex-col space-y-1.5 text-sm items-center sm:items-start">
-            {contact.map((item) => (
-              <ContactItem key={`${item.type}-${item.label}`} type={item.type} label={item.label} href={item.href} />
-            ))}
+          {/* Inline Contact Details */}
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-2 gap-y-1 text-sm text-resume-text-secondary">
+            {contact.map((item, index) => {
+              const displayValue = item.label || item.href?.replace(/^https?:\/\//, '')
+              if (!displayValue) return null
+
+              return (
+                <div key={`${item.type}-${displayValue}`} className="flex items-center">
+                  {index > 0 && <span className="mr-2 text-resume-primary/40">|</span>}
+                  {item.href ? (
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="hover:text-resume-primary transition-colors">
+                      {displayValue}
+                    </a>
+                  ) : (
+                    <span>{displayValue}</span>
+                  )}
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
 
-      {/* Professional Summary (Hardcoded to bypass missing config key) */}
+      {/* Professional Summary */}
       <div className="mb-8">
         <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3 pb-1 border-b border-resume-primary/20">
-          PROFESSIONAL SUMMARY
+          Professional Summary
         </h2>
         <p className="text-sm text-resume-text-secondary leading-relaxed whitespace-pre-line">
           Release Train Engineer & Scrum Master with over 15 years of experience delivering complex projects. I focus on building delivery systems that actually work taking high-level strategy and turning it into predictable, reliable execution.
 
           Throughout my career, I’ve moved from managing team-level delivery to architecting organization-wide Agile frameworks. My approach is simple: I standardize the mess, clear the blockers, and use data to show where we can improve. At Airbus alone I’ve led the delivery of over 11,000 user stories and 1,200 production deployments. I streamlined PI planning to cut event time by 66% while hitting an 86% objective completion rate. I’m at my best when I’m connecting leadership strategy with team reality, ensuring that teams have a clear path to deliver value without the usual corporate friction.
+        </p>
+      </div>
+
+      {/* Professional Skills */}
+      <div className="mb-8">
+        <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3 pb-1 border-b border-resume-primary/20">
+          Professional Skills
+        </h2>
+        <p className="text-sm text-resume-text-secondary leading-relaxed">
+          Agile & Framework Leadership: SAFe Framework & PI Optimization · Cross-Functional Team Leadership · SMART Objective Formulation · Data-Driven Process Optimization · Release Governance & Execution: End-to-End Release Scheduling · Production Change Management · Risk & Dependency Mitigation · Defect Lifecycle · Supplier Alignment · Stakeholder & Team Alignment: Executive Stakeholder Management · Cross-Departmental Communication
         </p>
       </div>
 
