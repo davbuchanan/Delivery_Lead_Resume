@@ -89,6 +89,9 @@ export function MainContent() {
     technologies: resolve(labels.experience.technologies),
   }
 
+  type Translatable = Parameters<typeof resolve>[0]
+  const sectionLabels = labels.sections as Record<string, Translatable>
+
   return (
     <div className="w-full p-8">
       {/* Top Header Group */}
@@ -102,13 +105,14 @@ export function MainContent() {
         <div className="flex flex-col items-center sm:items-start">
           <h1 className="text-2xl font-bold text-resume-text">{personal.name}</h1>
           <p className="text-sm font-semibold text-resume-primary mb-2">{resolve(personal.title)}</p>
+          {personal.subtitle && (
+            <p className="text-xs text-resume-text-secondary mb-3">{resolve(personal.subtitle)}</p>
+          )}
 
-          <div className="flex flex-col sm:flex-row sm:flex-wrap items-center sm:items-center justify-center sm:justify-start gap-x-3 gap-y-1 text-sm">
-            {contact.map((item, index) => (
-              <div key={`${item.type}-${item.label}`} className="flex items-center">
-                {index > 0 && <span className="hidden sm:inline mr-3 text-resume-primary/30 select-none">|</span>}
-                <ContactItem type={item.type} label={item.label} href={item.href} />
-              </div>
+          {/* Contact Details List */}
+          <div className="flex flex-col space-y-1.5 text-sm items-center sm:items-start">
+            {contact.map((item) => (
+              <ContactItem key={`${item.type}-${item.label}`} type={item.type} label={item.label} href={item.href} />
             ))}
           </div>
         </div>
