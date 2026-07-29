@@ -179,6 +179,28 @@ export function MainContent() {
               isHighlighted={exp.isHighlighted}
             />
           ))}
+
+          {/* Additional Experience Item */}
+          <ExperienceItem
+            key="additional-airbus-consultant"
+            year="2011 - 2024"
+            company="Airbus (via Infotel & Capgemini)"
+            role="Agile Project Manager / Scrum Master / Senior Consultant"
+            description="Led complex multi-team Agile transformations, software deployments, and system integrations across major aerospace programs."
+            techs={['Jira', 'Confluence', 'SAFe', 'Agile', 'Scrum']}
+            expanded={expandedExp === 'additional-airbus-consultant'}
+            onToggle={() => toggleExp('additional-airbus-consultant')}
+            details={{
+              context: 'Driving continuous improvement and structured execution across core engineering and operational value streams.',
+              tasks: [
+                'Directed cross-functional agile teams through large-scale system modernization and release management cycles.',
+                'Facilitated agile ceremonies, backlog refinement, and impediment removal to guarantee steady delivery cadences.',
+                'Aligned stakeholders across diverse departments to streamline requirements and accelerate time-to-market.'
+              ],
+              env: 'Jira / Confluence / SAFe / Agile / Scrum'
+            }}
+            labels={experienceLabels}
+          />
         </div>
       </div>
 
