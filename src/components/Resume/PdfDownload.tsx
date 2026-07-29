@@ -3,6 +3,7 @@ import { useTranslation } from '@/lib/i18n'
 import { resumeConfig } from '@/data/resume-config'
 import { assetUrl } from '@/lib/utils'
 import { detectedAssets } from 'virtual:detected-assets'
+import type { LocalizedString } from '@/data/types'
 
 const DEFAULT_LABELS: Record<string, string> = {
   fr: 'Télécharger le PDF',
@@ -11,12 +12,12 @@ const DEFAULT_LABELS: Record<string, string> = {
 
 // A pdf.path or pdf.label field can be a plain string or a
 // LocalizedString ({ en, fr, ... }) — normalize either into a string.
-function resolveText(value: unknown, language: string, resolve: (v: Record<string, string>) => string): string | null {
+function resolveText(value: unknown, language: string, resolve: (v: LocalizedString) => string): string | null {
   if (value === null || value === undefined) return null
   if (typeof value === 'string') return value
   if (typeof value === 'object') {
     const record = value as Record<string, string>
-    return record[language] ?? resolve(record) ?? null
+    return record[language] ?? resolve(record as LocalizedString) ?? null
   }
   return null
 }
