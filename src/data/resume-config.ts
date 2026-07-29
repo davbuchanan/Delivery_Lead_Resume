@@ -4,7 +4,6 @@ export const resumeConfig: ResumeConfig = {
   // ===== PERSONAL INFO =====
   personal: {
     name: 'David Buchanan',
-    // photo : auto-détectée depuis public/images/ — ne pas renseigner ici
     photoBackEmoji: '🏆',
     title: {
       en: 'Delivery Lead',
@@ -107,8 +106,7 @@ export const resumeConfig: ResumeConfig = {
       role: { en: 'Release Train Engineer (RTE)', fr: 'Release Train Engineer (RTE)' },
       company: { en: 'MSI Experts | Airbus Cybersecurity', fr: 'MSI Experts | Airbus Cybersecurity' },
       period: { en: 'July 2024 – Present', fr: 'Juillet 2024 – Présent' },
-      // Focus is now broken out cleanly here
-      focus: {
+      description: {
         en: 'Setting up how the teams work together and keeping our strategy on track.',
         fr: 'Structuration de la collaboration entre les équipes et suivi de la trajectoire stratégique.',
       },
@@ -124,7 +122,6 @@ export const resumeConfig: ResumeConfig = {
             'PI Optimisation: Orchestrated a total re-architecture of PI Planning; eliminated redundant overhead, compressing a 3-day event into a single high-impact day (66% efficiency gain) while increasing stakeholder alignment.',
             'Strategic Alignment: Partnered with leadership to realign Epics and Capabilities, accelerating roadmap execution and achieving an 86% success rate (478 of 557 objectives delivered).',
             'Governance & Scaling: Established a robust framework to decompose high-level strategy into 11,261 actionable user stories; normalized capacity planning and velocity across 89 iterations to instill high-predictability delivery across the ART.',
-            // Main description placed at the bottom of the tasks dropdown list
             'Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.'
           ],
           fr: [
@@ -145,7 +142,7 @@ export const resumeConfig: ResumeConfig = {
       role: { en: 'Scrum Master', fr: 'Scrum Master' },
       company: { en: 'Amaris | Airbus Cybersecurity', fr: 'Amaris | Airbus Cybersecurity' },
       period: { en: 'September 2019 – June 2024', fr: 'Septembre 2019 – Juin 2024' },
-      focus: {
+      description: {
         en: 'Keeping our delivery pipelines moving and helping four different teams hit their goals.',
         fr: 'Maintien du dynamisme des pipelines de livraison et accompagnement de quatre équipes différentes dans l\'atteinte de leurs objectifs.',
       },
@@ -182,7 +179,7 @@ export const resumeConfig: ResumeConfig = {
       role: { en: 'Implementation Lead (SaaS)', fr: 'Chef de Projet Implémentation (SaaS)' },
       company: { en: 'Invesco', fr: 'Invesco' },
       period: { en: '2015 – 2019', fr: '2015 – 2019' },
-      focus: {
+      description: {
         en: 'Helping major financial institutions get the most out of our software and making sure our implementation projects actually crossed the finish line.',
         fr: 'Accompagnement des principales institutions financières pour tirer le meilleur parti de notre logiciel et garantie de l\'aboutissement de nos projets de mise en œuvre.',
       },
@@ -219,7 +216,7 @@ export const resumeConfig: ResumeConfig = {
       company: { en: 'Jemstep', fr: 'Jemstep' },
       role: { en: 'Product Owner', fr: 'Product Owner' },
       period: { en: '2008 - 2014', fr: '2008 - 2014' },
-      focus: {
+      description: {
         en: 'Product ownership and agile backlog management.',
         fr: 'Gestion de produit et gestion de backlog agile.',
       },
