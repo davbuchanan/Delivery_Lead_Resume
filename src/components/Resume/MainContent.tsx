@@ -89,9 +89,6 @@ export function MainContent() {
     technologies: resolve(labels.experience.technologies),
   }
 
-  type Translatable = Parameters<typeof resolve>[0]
-  const sectionLabels = labels.sections as Record<string, Translatable>
-
   return (
     <div className="w-full p-8">
       {/* Top Header Group */}
@@ -118,19 +115,17 @@ export function MainContent() {
         </div>
       </div>
 
-      {/* Professional Summary */}
-      {sectionLabels.summary && (
-        <div className="mb-8">
-          <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3 pb-1 border-b border-resume-primary/20">
-            {resolve(sectionLabels.summary)}
-          </h2>
-          <p className="text-sm text-resume-text-secondary leading-relaxed whitespace-pre-line">
-            Release Train Engineer & Scrum Master with over 15 years of experience delivering complex projects. I focus on building delivery systems that actually work taking high-level strategy and turning it into predictable, reliable execution.
+      {/* Professional Summary (Hardcoded to bypass missing config key) */}
+      <div className="mb-8">
+        <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3 pb-1 border-b border-resume-primary/20">
+          PROFESSIONAL SUMMARY
+        </h2>
+        <p className="text-sm text-resume-text-secondary leading-relaxed whitespace-pre-line">
+          Release Train Engineer & Scrum Master with over 15 years of experience delivering complex projects. I focus on building delivery systems that actually work taking high-level strategy and turning it into predictable, reliable execution.
 
-            Throughout my career, I’ve moved from managing team-level delivery to architecting organization-wide Agile frameworks. My approach is simple: I standardize the mess, clear the blockers, and use data to show where we can improve. At Airbus alone I’ve led the delivery of over 11,000 user stories and 1,200 production deployments. I streamlined PI planning to cut event time by 66% while hitting an 86% objective completion rate. I’m at my best when I’m connecting leadership strategy with team reality, ensuring that teams have a clear path to deliver value without the usual corporate friction.
-          </p>
-        </div>
-      )}
+          Throughout my career, I’ve moved from managing team-level delivery to architecting organization-wide Agile frameworks. My approach is simple: I standardize the mess, clear the blockers, and use data to show where we can improve. At Airbus alone I’ve led the delivery of over 11,000 user stories and 1,200 production deployments. I streamlined PI planning to cut event time by 66% while hitting an 86% objective completion rate. I’m at my best when I’m connecting leadership strategy with team reality, ensuring that teams have a clear path to deliver value without the usual corporate friction.
+        </p>
+      </div>
 
       {/* Professional Experience */}
       <div className="relative">
