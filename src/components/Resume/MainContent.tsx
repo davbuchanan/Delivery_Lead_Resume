@@ -89,9 +89,6 @@ export function MainContent() {
     technologies: resolve(labels.experience.technologies),
   }
 
-  const topTwoExperiences = experiences.slice(0, 2)
-  const remainingExperiences = experiences.slice(2)
-
   return (
     <div className="w-full p-8">
       {/* Top Header Group */}
@@ -149,52 +146,9 @@ export function MainContent() {
           {resolve(labels.sections.experience)}
         </h2>
         <div className="space-y-2">
-          {/* Top two experiences with dates on the left */}
-          {topTwoExperiences.map((exp, idx) => {
+          {experiences.map((exp, idx) => {
             const expType = 'type' in exp && exp.type ? resolve(exp.type as Parameters<typeof resolve>[0]) : undefined
             const expSubItem = 'subItem' in exp && exp.subItem ? (exp.subItem as { title: Parameters<typeof resolve>[0]; description: Parameters<typeof resolve>[0] }) : undefined
-            const expIsHighlighted = 'isHighlighted' in exp ? exp.isHighlighted : undefined
-
-            return (
-              <ExperienceItem
-                key={exp.id || idx}
-                year={resolve(exp.period as Parameters<typeof resolve>[0])}
-                company={resolve(exp.company as Parameters<typeof resolve>[0])}
-                type={expType}
-                role={resolve(exp.role as Parameters<typeof resolve>[0])}
-                description={resolve(exp.description as Parameters<typeof resolve>[0])}
-                techs={exp.techs}
-                expanded={expandedExp === (exp.id || String(idx))}
-                onToggle={() => toggleExp(exp.id || String(idx))}
-                details={
-                  exp.details
-                    ? {
-                        context: resolve(exp.details.context as Parameters<typeof resolve>[0]),
-                        tasks: exp.details.tasks ? resolveArray(exp.details.tasks as Parameters<typeof resolveArray>[0]) : undefined,
-                        training: 'training' in exp.details && exp.details.training ? resolveArray((exp.details as { training: Parameters<typeof resolveArray>[0] }).training) : undefined,
-                        env: resolve(exp.details.env as Parameters<typeof resolve>[0]),
-                      }
-                    : undefined
-                }
-                subItem={
-                  expSubItem
-                    ? {
-                        title: resolve(expSubItem.title),
-                        description: resolve(expSubItem.description),
-                      }
-                    : undefined
-                }
-                labels={experienceLabels}
-                isHighlighted={expIsHighlighted}
-              />
-            )
-          })}
-
-          {/* Remaining experiences without dates on the left */}
-          {remainingExperiences.map((exp, idx) => {
-            const expType = 'type' in exp && exp.type ? resolve(exp.type as Parameters<typeof resolve>[0]) : undefined
-            const expSubItem = 'subItem' in exp && exp.subItem ? (exp.subItem as { title: Parameters<typeof resolve>[0]; description: Parameters<typeof resolve>[0] }) : undefined
-            const expIsHighlighted = 'isHighlighted' in exp ? exp.isHighlighted : undefined
 
             return (
               <ExperienceItem
@@ -226,7 +180,7 @@ export function MainContent() {
                     : undefined
                 }
                 labels={experienceLabels}
-                isHighlighted={expIsHighlighted}
+                isHighlighted={false}
               />
             )
           })}
@@ -251,6 +205,7 @@ export function MainContent() {
               env: 'Jira / Confluence / SAFe / Agile / Scrum'
             }}
             labels={experienceLabels}
+            isHighlighted={false}
           />
         </div>
       </div>
