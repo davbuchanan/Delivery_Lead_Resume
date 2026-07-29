@@ -73,7 +73,7 @@ function ProfilePhoto({ photo, name, emoji }: { photo?: string; name: string; em
 }
 
 export function MainContent() {
-  const { resolve, resolveArray } = useTranslation()
+  const { resolve } = useTranslation()
   const { personal, contact, experiences, projects, education, labels } = resumeConfig
   const [expandedExp, setExpandedExp] = useState<string | null>(null)
 
