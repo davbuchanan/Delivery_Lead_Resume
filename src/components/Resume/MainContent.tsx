@@ -91,7 +91,7 @@ export function MainContent() {
 
   const customMsiExperience = {
     id: 'msi-rte',
-    period: 'July 2024 – Present',
+    period: '',
     company: 'MSI Experts | Airbus Cybersecurity',
     role: 'Release Train Engineer (RTE)',
     description: 'Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.',
@@ -175,7 +175,7 @@ export function MainContent() {
             return (
               <ExperienceItem
                 key={exp.id || idx}
-                year={resolve(exp.period as Parameters<typeof resolve>[0])}
+                year=""
                 company={resolve(exp.company as Parameters<typeof resolve>[0])}
                 type={expType}
                 role={resolve(exp.role as Parameters<typeof resolve>[0])}
@@ -210,7 +210,7 @@ export function MainContent() {
           {/* Additional Experience Item */}
           <ExperienceItem
             key="additional-airbus-consultant"
-            year="2011 - 2024"
+            year=""
             company="Airbus (via Infotel & Capgemini)"
             role="Agile Project Manager / Scrum Master / Senior Consultant"
             description="Led complex multi-team Agile transformations, software deployments, and system integrations across major aerospace programs."
