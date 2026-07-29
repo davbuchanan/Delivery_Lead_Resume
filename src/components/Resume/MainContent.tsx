@@ -73,7 +73,7 @@ function ProfilePhoto({ photo, name, emoji }: { photo?: string; name: string; em
 }
 
 export function MainContent() {
-  const { resolve } = useTranslation()
+  const { resolve, resolveArray } = useTranslation()
   const { personal, contact, experiences, projects, education, labels } = resumeConfig
   const [expandedExp, setExpandedExp] = useState<string | null>(null)
 
@@ -168,36 +168,36 @@ export function MainContent() {
         </h2>
         <div className="space-y-2">
           {updatedExperiences.map((exp, idx) => {
-            const expType = 'type' in exp && exp.type ? resolve(exp.type as string) : undefined
-            const expSubItem = 'subItem' in exp && exp.subItem ? (exp.subItem as { title: string; description: string }) : undefined
+            const expType = 'type' in exp && exp.type ? resolve(exp.type as any) : undefined
+            const expSubItem = 'subItem' in exp && exp.subItem ? (exp.subItem as any) : undefined
             const expIsHighlighted = 'isHighlighted' in exp ? exp.isHighlighted : undefined
 
             return (
               <ExperienceItem
                 key={exp.id || idx}
-                year={exp.period}
-                company={exp.company}
+                year={resolve(exp.period as any)}
+                company={resolve(exp.company as any)}
                 type={expType}
-                role={exp.role}
-                description={exp.description}
+                role={resolve(exp.role as any)}
+                description={resolve(exp.description as any)}
                 techs={exp.techs}
                 expanded={expandedExp === (exp.id || String(idx))}
                 onToggle={() => toggleExp(exp.id || String(idx))}
                 details={
                   exp.details
                     ? {
-                        context: exp.details.context,
-                        tasks: exp.details.tasks,
-                        training: 'training' in exp.details ? (exp.details as { training?: string[] }).training : undefined,
-                        env: exp.details.env,
+                        context: resolve(exp.details.context as any),
+                        tasks: exp.details.tasks ? resolveArray(exp.details.tasks as any) : undefined,
+                        training: 'training' in exp.details && exp.details.training ? resolveArray((exp.details as any).training) : undefined,
+                        env: resolve(exp.details.env as any),
                       }
                     : undefined
                 }
                 subItem={
                   expSubItem
                     ? {
-                        title: expSubItem.title,
-                        description: expSubItem.description,
+                        title: resolve(expSubItem.title),
+                        description: resolve(expSubItem.description),
                       }
                     : undefined
                 }
