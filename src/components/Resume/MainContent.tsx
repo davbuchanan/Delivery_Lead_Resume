@@ -151,7 +151,7 @@ export function MainContent() {
                 type={expType}
                 role={resolve(exp.role as Parameters<typeof resolve>[0])}
                 description={resolve(exp.description as Parameters<typeof resolve>[0])}
-                techs={exp.techs}
+                techs={exp.techs ?? []}
                 expanded={expandedExp === (exp.id || String(idx))}
                 onToggle={() => toggleExp(exp.id || String(idx))}
                 details={
@@ -191,8 +191,8 @@ export function MainContent() {
               <ProjectItem
                 key={project.id}
                 title={resolve(project.title)}
-                description={resolve(project.description)}
-                techs={project.techs}
+                description={project.description ? resolve(project.description) : ''}
+                techs={project.techs ?? []}
                 url={project.url}
                 github={project.github}
               />
