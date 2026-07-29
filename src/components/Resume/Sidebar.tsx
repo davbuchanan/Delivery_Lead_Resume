@@ -78,15 +78,15 @@ export function Sidebar() {
 
   return (
     <div className="p-8 bg-gradient-to-b from-resume-sidebar-from to-resume-sidebar-to">
-      {/* Top Header Group: Photo on left, Details on right */}
-      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8 pb-6 border-b border-resume-primary/20">
+      {/* Top Header Group: Centered layout with photo and details side-by-side in the center */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 pb-6 border-b border-resume-primary/20 text-center sm:text-left">
         <SidebarPhoto
           photo={(personal.photo || detectedAssets.photo) ? assetUrl(personal.photo || detectedAssets.photo!) : undefined}
           name={personal.name}
           emoji={personal.photoBackEmoji}
         />
 
-        <div className="flex flex-col text-center sm:text-left">
+        <div className="flex flex-col items-center sm:items-start">
           <h1 className="text-2xl font-bold text-resume-text">{personal.name}</h1>
           <p className="text-sm font-semibold text-resume-primary mb-2">{resolve(personal.title)}</p>
           {personal.subtitle && (
@@ -94,7 +94,7 @@ export function Sidebar() {
           )}
 
           {/* Contact Details List */}
-          <div className="flex flex-col space-y-1.5 text-sm">
+          <div className="flex flex-col space-y-1.5 text-sm items-center sm:items-start">
             {contact.map((item) => (
               <ContactItem key={`${item.type}-${item.label}`} type={item.type} label={item.label} href={item.href} />
             ))}
