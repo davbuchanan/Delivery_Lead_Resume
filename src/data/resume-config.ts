@@ -5,14 +5,10 @@ export const resumeConfig: ResumeConfig = {
   personal: {
     name: 'David Buchanan',
     // photo : auto-détectée depuis public/images/ — ne pas renseigner ici
-    photoBackEmoji: '🚀',
+    photoBackEmoji: '🏆',
     title: {
       en: 'Delivery Lead',
       fr: 'Delivery Lead',
-    },
-    subtitle: {
-      en: '10+ years of experience',
-      fr: 'Plus de 10 ans d\'expérience',
     },
     location: 'Anglet, France 64600',
   },
