@@ -9,17 +9,27 @@ const DEFAULT_LABELS: Record<string, string> = {
   en: 'Download PDF',
 }
 
+// A pdf.path or pdf.label field can be a plain string or a
+// LocalizedString ({ en, fr, ... }) — normalize either into a string.
+function resolveText(value: unknown, language: string, resolve: (v: Record<string, string>) => string): string | null {
+  if (value === null || value === undefined) return null
+  if (typeof value === 'string') return value
+  if (typeof value === 'object') {
+    const record = value as Record<string, string>
+    return record[language] ?? resolve(record) ?? null
+  }
+  return null
+}
+
 export function PdfDownload() {
   const { language, resolve } = useTranslation()
 
   // Priority: explicit config > auto-detected from public/cv/<lang>/
   let resolvedPath: string | null = null
+  const configPdf = resumeConfig.pdf as { path?: string | Record<string, string>; label?: string | Record<string, string> } | undefined
 
-  if (resumeConfig.pdf) {
-    const { path } = resumeConfig.pdf
-    resolvedPath = typeof path === 'string'
-      ? path
-      : path[language] ?? null
+  if (configPdf?.path) {
+    resolvedPath = resolveText(configPdf.path, language, resolve)
   } else if (detectedAssets.pdf[language]) {
     resolvedPath = detectedAssets.pdf[language]
   }
@@ -28,9 +38,8 @@ export function PdfDownload() {
 
   // Resolve label: explicit config > labels.actions > auto-detect default > fallback
   let downloadLabel: string
-
-  if (resumeConfig.pdf?.label) {
-    downloadLabel = resolve(resumeConfig.pdf.label)
+  if (configPdf?.label) {
+    downloadLabel = resolveText(configPdf.label, language, resolve) ?? DEFAULT_LABELS[language] ?? 'Download PDF'
   } else if (resumeConfig.labels.actions.downloadPdf) {
     downloadLabel = resolve(resumeConfig.labels.actions.downloadPdf)
   } else {
