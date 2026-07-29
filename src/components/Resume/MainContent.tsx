@@ -89,9 +89,6 @@ export function MainContent() {
     technologies: resolve(labels.experience.technologies),
   }
 
-  type Translatable = Parameters<typeof resolve>[0]
-  const sectionLabels = labels.sections as Record<string, Translatable>
-
   return (
     <div className="w-full p-8">
       {/* Top Header Group */}
