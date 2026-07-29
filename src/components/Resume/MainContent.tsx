@@ -103,10 +103,10 @@ export function MainContent() {
           <h1 className="text-2xl font-bold text-resume-text">{personal.name}</h1>
           <p className="text-sm font-semibold text-resume-primary mb-2">{resolve(personal.title)}</p>
 
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1.5 text-sm">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap items-center sm:items-center justify-center sm:justify-start gap-x-3 gap-y-1 text-sm">
             {contact.map((item, index) => (
               <div key={`${item.type}-${item.label}`} className="flex items-center">
-                {index > 0 && <span className="mr-3 text-resume-primary/30 select-none">|</span>}
+                {index > 0 && <span className="hidden sm:inline mr-3 text-resume-primary/30 select-none">|</span>}
                 <ContactItem type={item.type} label={item.label} href={item.href} />
               </div>
             ))}
