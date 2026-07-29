@@ -168,39 +168,45 @@ export function MainContent() {
           {resolve(labels.sections.experience)}
         </h2>
         <div className="space-y-2">
-          {updatedExperiences.map((exp, idx) => (
-            <ExperienceItem
-              key={exp.id || idx}
-              year={resolve(exp.period)}
-              company={resolve(exp.company)}
-              type={'type' in exp && exp.type ? resolve(exp.type as any) : undefined}
-              role={resolve(exp.role)}
-              description={resolve(exp.description)}
-              techs={exp.techs}
-              expanded={expandedExp === (exp.id || String(idx))}
-              onToggle={() => toggleExp(exp.id || String(idx))}
-              details={
-                exp.details
-                  ? {
-                      context: resolve(exp.details.context),
-                      tasks: exp.details.tasks ? resolveArray(exp.details.tasks as any) : undefined,
-                      training: 'training' in exp.details && exp.details.training ? resolveArray(exp.details.training as any) : undefined,
-                      env: resolve(exp.details.env),
-                    }
-                  : undefined
-              }
-              subItem={
-                'subItem' in exp && exp.subItem
-                  ? {
-                      title: resolve((exp.subItem as any).title),
-                      description: resolve((exp.subItem as any).description),
-                    }
-                  : undefined
-              }
-              labels={experienceLabels}
-              isHighlighted={'isHighlighted' in exp ? exp.isHighlighted : undefined}
-            />
-          ))}
+          {updatedExperiences.map((exp, idx) => {
+            const expType = 'type' in exp && exp.type ? resolve(exp.type as Parameters<typeof resolve>[0]) : undefined
+            const expSubItem = 'subItem' in exp && exp.subItem ? (exp.subItem as { title: Parameters<typeof resolve>[0]; description: Parameters<typeof resolve>[0] }) : undefined
+            const expIsHighlighted = 'isHighlighted' in exp ? exp.isHighlighted : undefined
+
+            return (
+              <ExperienceItem
+                key={exp.id || idx}
+                year={resolve(exp.period)}
+                company={resolve(exp.company)}
+                type={expType}
+                role={resolve(exp.role)}
+                description={resolve(exp.description)}
+                techs={exp.techs}
+                expanded={expandedExp === (exp.id || String(idx))}
+                onToggle={() => toggleExp(exp.id || String(idx))}
+                details={
+                  exp.details
+                    ? {
+                        context: resolve(exp.details.context),
+                        tasks: exp.details.tasks ? resolveArray(exp.details.tasks as Parameters<typeof resolveArray>[0]) : undefined,
+                        training: 'training' in exp.details && exp.details.training ? resolveArray((exp.details as { training: Parameters<typeof resolveArray>[0] }).training) : undefined,
+                        env: resolve(exp.details.env),
+                      }
+                    : undefined
+                }
+                subItem={
+                  expSubItem
+                    ? {
+                        title: resolve(expSubItem.title),
+                        description: resolve(expSubItem.description),
+                      }
+                    : undefined
+                }
+                labels={experienceLabels}
+                isHighlighted={expIsHighlighted}
+              />
+            )
+          })}
 
           {/* Additional Experience Item */}
           <ExperienceItem
