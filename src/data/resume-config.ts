@@ -123,6 +123,10 @@ export const resumeConfig: ResumeConfig = {
       techs: ['Jira', 'Confluence', 'Klaxoon'],
       isHighlighted: true,
       details: {
+        context: {
+          en: 'Focus: setting up how the teams work together and keeping the strategy on track.',
+          fr: 'Focus : mise en place du fonctionnement des équipes et maintien de la stratégie sur la bonne voie.',
+        },
         tasks: {
           en: [
             'Re-architected PI Planning, compressing a 3-day event into a single high-impact day (66% efficiency gain) while increasing stakeholder alignment',
@@ -152,6 +156,10 @@ export const resumeConfig: ResumeConfig = {
       },
       techs: ['Jira', 'Confluence', 'ZohoSprints', 'Slack'],
       details: {
+        context: {
+          en: 'Focus: keeping delivery pipelines moving and helping four different teams hit their goals.',
+          fr: 'Focus : maintien des pipelines de livraison et accompagnement de quatre équipes différentes vers leurs objectifs.',
+        },
         tasks: {
           en: [
             'Orchestrated core Agile ceremonies and managed end-to-end iteration lifecycles for four teams, from capacity planning and story refinement to delivery tracking and risk mitigation',
@@ -184,6 +192,10 @@ export const resumeConfig: ResumeConfig = {
         fr: 'Responsable du cycle de vie complet des projets pour de grandes banques, sociétés d\'investissement et assureurs, traduisant des besoins clients complexes en configurations techniques adaptées à leur activité.',
       },
       details: {
+        context: {
+          en: 'Focus: helping major financial institutions get the most out of the software and making sure implementation projects actually crossed the finish line.',
+          fr: 'Focus : aider les grandes institutions financières à tirer le meilleur parti du logiciel et faire en sorte que les projets d\'implémentation aboutissent.',
+        },
         tasks: {
           en: [
             'Acted as the bridge between clients and developers, turning high-level goals into clear technical requirements',
@@ -198,6 +210,10 @@ export const resumeConfig: ResumeConfig = {
             'Porte-voix du client, favorisant l\'adoption produit et orientant la stratégie produit future',
           ],
         },
+        env: {
+          en: 'Advanced Excel/Sheets / Project Management Tools',
+          fr: 'Excel/Sheets avancé / Outils de gestion de projet',
+        },
       },
     },
     {
@@ -209,6 +225,7 @@ export const resumeConfig: ResumeConfig = {
         en: 'Product Owner role at Jemstep.',
         fr: 'Poste de Product Owner chez Jemstep.',
       },
+      techs: [],
     },
   ],
 
