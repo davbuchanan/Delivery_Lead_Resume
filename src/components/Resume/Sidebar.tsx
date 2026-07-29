@@ -29,8 +29,8 @@ function SidebarPhoto({ photo, name, emoji }: { photo?: string; name: string; em
 
   if (!photo || hasError) {
     return (
-      <div className="w-28 h-28 rounded-full bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center border-4 border-resume-bg/30 shadow-lg shrink-0">
-        <span className="text-3xl">{emoji || '👨‍💻'}</span>
+      <div className="w-36 h-36 rounded-full bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center border-4 border-resume-bg/30 shadow-lg shrink-0">
+        <span className="text-4xl">{emoji || '👨‍💻'}</span>
       </div>
     )
   }
@@ -43,7 +43,7 @@ function SidebarPhoto({ photo, name, emoji }: { photo?: string; name: string; em
         onAnimationComplete={() => setIsSpinning(false)}
         animate={{ rotateY: isSpinning ? 360 : 0 }}
         transition={{ duration: PHOTO_ANIMATION_DURATION, ease: 'easeInOut' }}
-        className="relative w-28 h-28 cursor-pointer"
+        className="relative w-36 h-36 cursor-pointer"
         style={{ transformStyle: 'preserve-3d' }}
         role="button"
         tabIndex={0}
@@ -65,7 +65,7 @@ function SidebarPhoto({ photo, name, emoji }: { photo?: string; name: string; em
           className="absolute inset-0 rounded-full border-4 border-resume-bg/30 shadow-lg bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center"
           style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
         >
-          <span className="text-3xl">{emoji || '👨‍💻'}</span>
+          <span className="text-4xl">{emoji || '👨‍💻'}</span>
         </div>
       </motion.div>
     </div>
@@ -78,7 +78,7 @@ export function Sidebar() {
 
   return (
     <div className="p-8 bg-gradient-to-b from-resume-sidebar-from to-resume-sidebar-to">
-      {/* Top Header Group: Centered layout with photo and details side-by-side in the center */}
+      {/* Top Header Group: Larger photo next to text block */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 pb-6 border-b border-resume-primary/20 text-center sm:text-left">
         <SidebarPhoto
           photo={(personal.photo || detectedAssets.photo) ? assetUrl(personal.photo || detectedAssets.photo!) : undefined}
