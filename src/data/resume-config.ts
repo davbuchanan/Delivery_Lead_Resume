@@ -41,6 +41,12 @@ export const resumeConfig: ResumeConfig = {
     { type: 'location', label: 'Anglet, France 64600' },
   ],
 
+  // ===== SUMMARY =====
+  summary: {
+    en: 'Release Train Engineer & Scrum Master with over 10 years of experience delivering complex projects. I focus on building delivery systems that actually work taking high-level strategy and turning it into predictable, reliable execution.\n\nThroughout my career, I\'ve moved from managing team-level delivery to architecting organization-wide Agile frameworks. My approach is simple: I standardize the mess, clear the blockers, and use data to show where we can improve. At Airbus alone I\'ve led the delivery of over 11,000 user stories and 1,200 production deployments. I streamlined PI planning to cut event time by 66% while hitting an 86% objective completion rate. I\'m at my best when I\'m connecting leadership strategy with team reality, ensuring that teams have a clear path to deliver value without the usual corporate friction.',
+    fr: 'Release Train Engineer & Scrum Master avec plus de 10 ans d\'expérience dans la livraison de projets complexes. Je me concentre sur la création de systèmes de livraison efficaces, transformant la stratégie de haut niveau en une exécution prévisible et fiable.',
+  },
+
   // ===== SKILLS =====
   skills: [
     {
@@ -85,9 +91,9 @@ export const resumeConfig: ResumeConfig = {
       title: { en: 'Automation & Scripting', fr: 'Automatisation & Scripting' },
       type: 'badges',
       items: [
-        { name: 'Google Apps Script' },
+        { name: 'Google Apps Script (JavaScript)' },
         { name: 'API Integrations' },
-        { name: 'Advanced Excel/Sheets' },
+        { name: 'Advanced Excel/Sheets (Pivot Tables, Query)' },
       ],
     },
     {
@@ -124,19 +130,19 @@ export const resumeConfig: ResumeConfig = {
       isHighlighted: true,
       details: {
         context: {
-          en: 'Focus: setting up how the teams work together and keeping the strategy on track.',
-          fr: 'Focus : mise en place du fonctionnement des équipes et maintien de la stratégie sur la bonne voie.',
+          en: 'Setting up how the teams work together and keeping our strategy on track.',
+          fr: 'Mise en place du fonctionnement des équipes et maintien de la stratégie sur la bonne voie.',
         },
         tasks: {
           en: [
-            'Re-architected PI Planning, compressing a 3-day event into a single high-impact day (66% efficiency gain) while increasing stakeholder alignment',
-            'Partnered with leadership to realign Epics and Capabilities, achieving an 86% success rate (478 of 557 objectives delivered)',
-            'Established a framework to decompose strategy into 11,261 actionable user stories, normalizing capacity planning and velocity across 89 iterations',
+            'Orchestrated a total re-architecture of PI Planning; eliminated redundant overhead, compressing a 3-day event into a single high-impact day (66% efficiency gain) while increasing stakeholder alignment.',
+            'Partnered with leadership to realign Epics and Capabilities, accelerating roadmap execution and achieving an 86% success rate (478 of 557 objectives delivered).',
+            'Established a robust framework to decompose high-level strategy into 11,261 actionable user stories; normalized capacity planning and velocity across 89 iterations to instill high-predictability delivery across the ART.',
           ],
           fr: [
-            'Refonte totale du PI Planning, transformant un événement de 3 jours en une seule journée à fort impact (gain d\'efficacité de 66%) tout en renforçant l\'alignement des parties prenantes',
-            'Collaboration avec la direction pour réaligner les Epics et Capabilities, atteignant un taux de réussite de 86% (478 objectifs livrés sur 557)',
-            'Mise en place d\'un cadre pour décomposer la stratégie en 11 261 user stories actionnables, normalisant la planification de capacité et la vélocité sur 89 itérations',
+            'Refonte totale du PI Planning, transformant un événement de 3 jours en une seule journée à fort impact (gain d\'efficacité de 66%) tout en renforçant l\'alignement des parties prenantes.',
+            'Collaboration avec la direction pour réaligner les Epics et Capabilities, atteignant un taux de réussite de 86% (478 objectifs livrés sur 557).',
+            'Mise en place d\'un cadre pour décomposer la stratégie en 11 261 user stories actionnables, normalisant la planification de capacité et la vélocité sur 89 itérations.',
           ],
         },
         env: {
@@ -157,23 +163,21 @@ export const resumeConfig: ResumeConfig = {
       techs: ['Jira', 'Confluence', 'ZohoSprints', 'Slack'],
       details: {
         context: {
-          en: 'Focus: keeping delivery pipelines moving and helping four different teams hit their goals.',
-          fr: 'Focus : maintien des pipelines de livraison et accompagnement de quatre équipes différentes vers leurs objectifs.',
+          en: 'Keeping our delivery pipelines moving and helping four different teams hit their goals.',
+          fr: 'Maintien des pipelines de livraison et accompagnement de quatre équipes différentes vers leurs objectifs.',
         },
         tasks: {
           en: [
-            'Orchestrated core Agile ceremonies and managed end-to-end iteration lifecycles for four teams, from capacity planning and story refinement to delivery tracking and risk mitigation',
-            'Directed over 2,000 daily standups to maintain team alignment and rapid resolution of impediments',
-            'Led weekly synchronization with cybersecurity vendors to resolve bugs and feature requests; chaired department-wide showcases',
-            'Directed the Change Advisory Board (CAB) pipeline, overseeing 1,202 production deployments and resolving 1,155 technical defects with a zero-incident deployment culture',
-            'Standardized departmental workflows and managed cross-functional PI-cycle logistics',
+            'Orchestrated core Agile ceremonies and managed end-to-end iteration lifecycles for four teams from initial capacity planning and story refinement to tracking delivery, mitigating risks, and reporting on velocity. Directed over 2,000 daily standups to maintain team alignment and rapid resolution of impediments.',
+            'Led weekly synchronization with cybersecurity vendors to resolve bugs and feature requests. Chaired department-wide showcases, ensuring leadership alignment on risk reduction and business value.',
+            'Directed the Change Advisory Board (CAB) pipeline; oversaw 1,202 production deployments and resolved 1,155 technical defects, maintaining operational stability and a zero-incident deployment culture.',
+            'Standardised departmental workflows, authored critical operational communications, and managed cross-functional PI-cycle logistics to ensure continuity across diverse team functions.',
           ],
           fr: [
-            'Organisation des cérémonies Agile clés et gestion du cycle de vie complet des itérations pour quatre équipes, de la planification de capacité au suivi de livraison et à la mitigation des risques',
-            'Animation de plus de 2 000 daily standups pour maintenir l\'alignement des équipes et la résolution rapide des blocages',
-            'Synchronisation hebdomadaire avec les fournisseurs cybersécurité pour résoudre bugs et demandes de fonctionnalités ; animation des showcases inter-départements',
-            'Pilotage du pipeline du Change Advisory Board (CAB), supervision de 1 202 déploiements en production et résolution de 1 155 défauts techniques avec une culture de déploiement zéro incident',
-            'Standardisation des processus départementaux et gestion de la logistique cross-fonctionnelle des cycles PI',
+            'Organisation des cérémonies Agile clés et gestion du cycle de vie complet des itérations pour quatre équipes.',
+            'Animation de plus de 2 000 daily standups pour maintenir l\'alignement des équipes.',
+            'Synchronisation hebdomadaire avec les fournisseurs cybersécurité pour résoudre bugs et demandes de fonctionnalités.',
+            'Pilotage du pipeline du Change Advisory Board (CAB), supervision de 1 202 déploiements en production et résolution de 1 155 défauts techniques.',
           ],
         },
         env: {
@@ -189,25 +193,24 @@ export const resumeConfig: ResumeConfig = {
       period: { en: '2015 - 2019', fr: '2015 - 2019' },
       description: {
         en: 'Owned the full project lifecycle for major banks, investment firms, and insurers, translating complex client needs into technical configurations that worked for their business.',
-        fr: 'Responsable du cycle de vie complet des projets pour de grandes banques, sociétés d\'investissement et assureurs, traduisant des besoins clients complexes en configurations techniques adaptées à leur activité.',
+        fr: 'Responsable du cycle de vie complet des projets pour de grandes banques, sociétés d\'investissement et assureurs.',
       },
       details: {
         context: {
-          en: 'Focus: helping major financial institutions get the most out of the software and making sure implementation projects actually crossed the finish line.',
-          fr: 'Focus : aider les grandes institutions financières à tirer le meilleur parti du logiciel et faire en sorte que les projets d\'implémentation aboutissent.',
+          en: 'Helping major financial institutions get the most out of our software and making sure our implementation projects actually crossed the finish line.',
+          fr: 'Aider les grandes institutions financières à tirer le meilleur parti du logiciel.',
         },
         tasks: {
           en: [
-            'Acted as the bridge between clients and developers, turning high-level goals into clear technical requirements',
-            'Set up simple, clear frameworks for project charters, risks, and internal roles',
-            'Managed multiple implementation projects simultaneously, identifying bottlenecks early and coordinating between support teams and client stakeholders',
-            'Served as the voice of the customer, driving product adoption and shaping future product strategy',
+            'End-to-End Implementation: Owned the full project lifecycle for major banks, investment firms, and insurers. Managed 6-12 month projects by translating complex client needs into technical configurations that actually worked for their business.',
+            'Bridging Business & Tech: Acted as the go-between for clients and developers. I took high-level client goals and turned them into clear requirements, ensuring the development team built what the client actually needed.',
+            'Project Governance: Cut through project clutter by setting up simple, clear frameworks for project charters, risks, and internal roles.',
+            'Operational Problem Solving: Managed multiple implementation projects at once, identifying bottlenecks early and coordinating between internal support teams and client stakeholders.',
+            'Product Growth & Advocacy: Served as the voice of the customer, driving product adoption and identifying new opportunities by listening to client feedback.',
           ],
           fr: [
-            'Interface entre clients et développeurs, traduisant des objectifs de haut niveau en exigences techniques claires',
-            'Mise en place de cadres simples et clairs pour les chartes de projet, les risques et les rôles internes',
-            'Gestion simultanée de plusieurs projets d\'implémentation, identification précoce des blocages et coordination entre équipes support et parties prenantes clients',
-            'Porte-voix du client, favorisant l\'adoption produit et orientant la stratégie produit future',
+            'Implémentation de bout en bout pour de grandes banques et institutions financières.',
+            'Interface entre clients et développeurs pour traduire les objectifs en exigences techniques.',
           ],
         },
         env: {
@@ -249,8 +252,7 @@ export const resumeConfig: ResumeConfig = {
     },
     {
       school: { en: 'Damelin', fr: 'Damelin' },
-      degree: { en: 'Bachelor of Commerce (BCom)', fr: 'Bachelor of Commerce (BCom)' },
-      specialty: { en: 'Marketing & Business Management', fr: 'Marketing & Gestion d\'Entreprise' },
+      degree: { en: 'Bachelor of Commerce (BCom) in Marketing & Business Management', fr: 'Bachelor of Commerce (BCom) en Marketing & Gestion d\'Entreprise' },
       period: '',
     },
   ],
@@ -266,7 +268,7 @@ export const resumeConfig: ResumeConfig = {
       contact: { en: 'CONTACT', fr: 'CONTACT' },
       skills: { en: 'SKILLS', fr: 'COMPÉTENCES' },
       experience: { en: 'PROFESSIONAL EXPERIENCE', fr: 'EXPÉRIENCES PROFESSIONNELLES' },
-      education: { en: 'EDUCATION', fr: 'FORMATION' },
+      education: { en: 'EDUCATION & CERTIFICATIONS', fr: 'FORMATION & CERTIFICATIONS' },
       projects: { en: 'PROJECTS', fr: 'PROJETS' },
       hobbies: { en: 'HOBBIES', fr: 'LOISIRS' },
     },
