@@ -12,13 +12,11 @@ export const resumeConfig: ResumeConfig = {
     },
     location: 'Anglet, France 64600',
   },
-
   // ===== SEO =====
   seo: {
     title: 'David Buchanan — Delivery Lead',
     description: 'Interactive resume of David Buchanan, Release Train Engineer & Scrum Master with 10+ years of experience in Agile delivery.',
   },
-
   // ===== LANGUAGES =====
   languages: {
     default: 'en',
@@ -28,7 +26,6 @@ export const resumeConfig: ResumeConfig = {
       fr: 'FR',
     },
   },
-
   // ===== CONTACT =====
   contact: [
     { type: 'linkedin', label: 'David Buchanan', href: 'https://www.linkedin.com/in/davidbuchanan-value-delivery/' },
@@ -36,7 +33,6 @@ export const resumeConfig: ResumeConfig = {
     { type: 'phone', label: '+33 6 95 00 11 71' },
     { type: 'location', label: 'Anglet, France 64600' },
   ],
-
   // ===== SKILLS =====
   skills: [
     {
@@ -104,13 +100,12 @@ export const resumeConfig: ResumeConfig = {
       ],
     },
   ],
-
   // ===== PROFESSIONAL EXPERIENCES =====
   experiences: [
     {
       id: 'msi-experts-rte',
       role: { en: 'Release Train Engineer (RTE)', fr: 'Release Train Engineer (RTE)' },
-      company: { en: 'Konectiv | Sopra Steria | Airbus Cybersecurity', fr: 'Konectiv | Sopra Steria | Airbus Cybersecurity' },
+      company: { en: 'MSI Experts | Airbus Cybersecurity', fr: 'MSI Experts | Airbus Cybersecurity' },
       period: { en: 'July 2024 – Present', fr: 'Juillet 2024 – Présent' },
       description: {
         en: 'Focus: Setting up how the teams work together and keeping our strategy on track. Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.',
@@ -120,8 +115,8 @@ export const resumeConfig: ResumeConfig = {
       isHighlighted: true,
       details: {
         context: {
-          en: 'Setting up how the teams work together and keeping our strategy on track.',
-          fr: 'Structuration de la collaboration entre les équipes et suivi de la trajectoire stratégique.',
+          en: '',
+          fr: '',
         },
         tasks: {
           en: [
@@ -153,8 +148,8 @@ export const resumeConfig: ResumeConfig = {
       techs: ['Jira', 'Confluence', 'ZohoSprints', 'Slack'],
       details: {
         context: {
-          en: 'Keeping our delivery pipelines moving and helping four different teams hit their goals.',
-          fr: 'Maintien du dynamisme des pipelines de livraison et accompagnement de quatre équipes différentes dans l\'atteinte de leurs objectifs.',
+          en: '',
+          fr: '',
         },
         tasks: {
           en: [
@@ -187,8 +182,8 @@ export const resumeConfig: ResumeConfig = {
       },
       details: {
         context: {
-          en: 'Helping major financial institutions get the most out of our software and making sure our implementation projects actually crossed the finish line.',
-          fr: 'Accompagnement des principales institutions financières pour tirer le meilleur parti de notre logiciel et garantie de l\'aboutissement de nos projets de mise en œuvre.',
+          en: '',
+          fr: '',
         },
         tasks: {
           en: [
@@ -225,7 +220,6 @@ export const resumeConfig: ResumeConfig = {
       techs: [],
     },
   ],
-
   // ===== EDUCATION & CERTIFICATIONS =====
   education: [
     {
@@ -249,12 +243,10 @@ export const resumeConfig: ResumeConfig = {
       period: '',
     },
   ],
-
   // ===== THEME =====
   theme: {
     preset: 'minimal',
   },
-
   // ===== UI LABELS =====
   labels: {
     sections: {
