@@ -215,6 +215,7 @@ export const resumeConfig: ResumeConfig = {
           fr: 'Excel/Sheets avancé / Outils de gestion de projet',
         },
       },
+      techs: ['Excel'],
     },
     {
       id: 'jemstep-product-owner',
