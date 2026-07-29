@@ -1,5 +1,6 @@
 import { useTranslation } from '@/lib/i18n'
 import { resumeConfig } from '@/data/resume-config'
+import type { LocalizedString } from '@/data/types'
 import { SidebarSection } from './SidebarSection'
 import { SkillCategory } from './SkillCategory'
 import { TechBadge } from './TechBadge'
@@ -8,14 +9,14 @@ import { TechBadge } from './TechBadge'
 // no matter which shape it comes in as: a plain string/number, a
 // LocalizedString object ({ en, fr, ... }), or a wrapper object
 // ({ name: LocalizedString | string }).
-function displayValue(value: unknown, resolve: (v: Record<string, string>) => string): string {
+function displayValue(value: unknown, resolve: (v: LocalizedString) => string): string {
   if (value === null || value === undefined) return ''
   if (typeof value === 'string' || typeof value === 'number') return String(value)
   if (typeof value === 'object') {
     if ('name' in (value as Record<string, unknown>)) {
       return displayValue((value as { name: unknown }).name, resolve)
     }
-    return resolve(value as Record<string, string>)
+    return resolve(value as LocalizedString)
   }
   return ''
 }
