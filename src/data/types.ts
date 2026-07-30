@@ -114,7 +114,7 @@ export interface ResumeConfig {
     filename?: string
     author?: string
     label?: LocalizedString | string
-    path?: string | Record<string, string>
+    path: string | Record<string, string>
   }
   theme: {
     preset: PresetName
