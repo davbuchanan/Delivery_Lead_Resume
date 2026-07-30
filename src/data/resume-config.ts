@@ -9,10 +9,6 @@ export const resumeConfig: ResumeConfig = {
       en: 'Delivery Lead',
       fr: 'Delivery Lead',
     },
-    subtitle: {
-      en: '15+ years of experience',
-      fr: 'Plus de 15 ans d\'expérience',
-    },
     location: 'Anglet, France 64600',
   },
   // ===== SEO =====
@@ -115,7 +111,6 @@ export const resumeConfig: ResumeConfig = {
         fr: 'Focus : Structuration de la collaboration entre les équipes et suivi de la trajectoire stratégique.',
       },
       techs: ['Jira', 'Confluence', 'Klaxoon', 'SAFe'],
-      isHighlighted: true,
       details: {
         context: {
           en: 'Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.',
@@ -132,10 +127,6 @@ export const resumeConfig: ResumeConfig = {
             'Alignement Stratégique : Partenariat avec la direction pour réaligner les Epics et les Capabilities, accélérant l\'exécution de la feuille de route et atteignant un taux de réussite de 86 % (478 objectifs livrés sur 557).',
             'Gouvernance & Passage à l\'Échelle : Établissement d\'un cadre robuste pour décomposer la stratégie de haut niveau en 11 261 user stories exploitables ; normalisation de la planification de la capacité et de la vélocité sur 89 itérations pour insuffler une livraison à haute prévisibilité au sein de l\'ART.',
           ],
-        },
-        env: {
-          en: 'Jira / Confluence / SAFe / Klaxoon',
-          fr: 'Jira / Confluence / SAFe / Klaxoon',
         },
       },
     },
@@ -168,10 +159,6 @@ export const resumeConfig: ResumeConfig = {
             'Optimisation Opérationnelle : Standardisation des flux de travail départementaux, rédaction de communications opérationnelles critiques et gestion de la logistique du cycle PI interfonctionnel pour assurer la continuité entre diverses fonctions d\'équipe.',
           ],
         },
-        env: {
-          en: 'Jira / Confluence / ZohoSprints / Slack',
-          fr: 'Jira / Confluence / ZohoSprints / Slack',
-        },
       },
     },
     {
@@ -203,10 +190,6 @@ export const resumeConfig: ResumeConfig = {
             'Résolution de Problèmes Opérationnels : Gestion simultanée de plusieurs projets d\'implémentation. Maintien de la dynamique grâce à l\'identification précoce des goulets d\'étranglement et à la coordination entre les équipes de support interne et les parties prenantes clientes.',
             'Croissance et Promotion du Produit : Rôle de porte-parole des clients. Stimulation de l\'adoption du produit et identification de nouvelles opportunités en écoutant les retours des clients et en utilisant ces données pour façonner la stratégie future du produit.',
           ],
-        },
-        env: {
-          en: 'Advanced Excel/Sheets / Project Management Tools',
-          fr: 'Excel/Sheets avancé / Outils de gestion de projet',
         },
       },
       techs: ['Excel'],
