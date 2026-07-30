@@ -10,15 +10,15 @@ export const resumeConfig: ResumeConfig = {
       fr: 'Delivery Lead',
     },
     subtitle: {
-      en: '10+ years of experience',
-      fr: 'Plus de 10 ans d\'expérience',
+      en: '15+ years of experience',
+      fr: 'Plus de 15 ans d\'expérience',
     },
     location: 'Anglet, France 64600',
   },
   // ===== SEO =====
   seo: {
     title: 'David Buchanan — Delivery Lead',
-    description: 'Interactive resume of David Buchanan, Release Train Engineer & Scrum Master with 10+ years of experience in Agile delivery.',
+    description: 'Interactive resume of David Buchanan, Release Train Engineer & Scrum Master with 15+ years of experience in Agile delivery.',
   },
   // ===== LANGUAGES =====
   languages: {
@@ -111,15 +111,15 @@ export const resumeConfig: ResumeConfig = {
       company: { en: 'MSI Experts | Airbus Cybersecurity', fr: 'MSI Experts | Airbus Cybersecurity' },
       period: { en: 'July 2024 – Present', fr: 'Juillet 2024 – Présent' },
       description: {
-        en: 'Focus: Setting up how the teams work together and keeping our strategy on track. Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.',
-        fr: 'Focus : Structuration de la collaboration entre les équipes et suivi de la trajectoire stratégique. Autorité Agile centrale pour quatre équipes de cybersécurité pluridisciplinaires réparties dans trois pays. Responsable de l\'architecture de la gouvernance Agile de bout en bout et de l\'excellence de la livraison.',
+        en: 'Focus: Setting up how the teams work together and keeping our strategy on track.',
+        fr: 'Focus : Structuration de la collaboration entre les équipes et suivi de la trajectoire stratégique.',
       },
       techs: ['Jira', 'Confluence', 'Klaxoon', 'SAFe'],
       isHighlighted: true,
       details: {
         context: {
-          en: '',
-          fr: '',
+          en: 'Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.',
+          fr: 'Autorité Agile centrale pour quatre équipes de cybersécurité pluridisciplinaires réparties dans trois pays. Responsable de l\'architecture de la gouvernance Agile de bout en bout et de l\'excellence de la livraison.',
         },
         tasks: {
           en: [
@@ -145,14 +145,14 @@ export const resumeConfig: ResumeConfig = {
       company: { en: 'Amaris | Airbus Cybersecurity', fr: 'Amaris | Airbus Cybersecurity' },
       period: { en: 'September 2019 – June 2024', fr: 'Septembre 2019 – Juin 2024' },
       description: {
-        en: 'Focus: Keeping our delivery pipelines moving and helping four different teams hit their goals. Directed delivery pipelines for four high-impact functions: Software Maintenance, Detection Engineering, Operations/Run Request Management, and Organisational Data Compliance.',
-        fr: 'Focus : Maintien du dynamisme des pipelines de livraison et accompagnement de quatre équipes différentes dans l\'atteinte de leurs objectifs. Direction des pipelines de livraison pour quatre fonctions à fort impact : Maintenance Logicielle, Ingénierie de Détection, Gestion des Opérations/Run, et Conformité des Données Organisationnelles.',
+        en: 'Focus: Keeping our delivery pipelines moving and helping four different teams hit their goals.',
+        fr: 'Focus : Maintien du dynamisme des pipelines de livraison et accompagnement de quatre équipes différentes dans l\'atteinte de leurs objectifs.',
       },
       techs: ['Jira', 'Confluence', 'ZohoSprints', 'Slack'],
       details: {
         context: {
-          en: '',
-          fr: '',
+          en: 'Directed delivery pipelines for four high-impact functions: Software Maintenance, Detection Engineering, Operations/Run Request Management, and Organisational Data Compliance.',
+          fr: 'Direction des pipelines de livraison pour quatre fonctions à fort impact : Maintenance Logicielle, Ingénierie de Détection, Gestion des Opérations/Run, et Conformité des Données Organisationnelles.',
         },
         tasks: {
           en: [
