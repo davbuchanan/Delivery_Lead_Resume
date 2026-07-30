@@ -114,7 +114,7 @@ export function MainContent() {
   const summaryParagraphs: Record<string, string[]> = {
     en: [
       'Release Train Engineer & Scrum Master with over 15 years of experience delivering complex projects. I focus on building delivery systems that actually work taking high-level strategy and turning it into predictable, reliable execution.',
-      'Throughout my career, I’ve moved from managing team-level delivery to architecting organization-wide Agile frameworks. My approach is simple: I standardize the mess, clear the blockers, and use data to show where we can improve. At Airbus alone I’ve led the delivery of over 11,000 user stories and 1,200 production deployments. I streamlined PI planning to cut event time by 66% while hitting an 86% objective completion rate. I’m at my best when I’m connecting leadership strategy with team reality, ensuring that teams have a clear path to deliver value without the usual corporate friction.',
+      'Throughout my career, I've moved from managing team-level delivery to architecting organization-wide Agile frameworks. My approach is simple: I standardize the mess, clear the blockers, and use data to show where we can improve. At Airbus alone I've led the delivery of over 11,000 user stories and 1,200 production deployments. I streamlined PI planning to cut event time by 66% while hitting an 86% objective completion rate. I'm at my best when I'm connecting leadership strategy with team reality, ensuring that teams have a clear path to deliver value without the usual corporate friction.',
     ],
     fr: [
       'Release Train Engineer & Scrum Master avec plus de 15 ans d\'expérience dans la livraison de projets complexes. Je me concentre sur la mise en place de systèmes de delivery qui fonctionnent réellement, en transformant une stratégie de haut niveau en exécution prévisible et fiable.',
@@ -181,6 +181,7 @@ export function MainContent() {
       <div className="border-b border-resume-primary/20" />
 
       {/* ===== Professional Experience ===== */}
+      {/* FIX 1: reduced mb-6 → mb-3 to tighten gap between heading and first role */}
       <div className="p-8">
         <div className="relative">
           <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3">
@@ -188,26 +189,32 @@ export function MainContent() {
           </h2>
           <div className="space-y-2">
             {experiences.map((exp, idx) => {
+              const expId = exp.id || String(idx)
               const expType = 'type' in exp && exp.type ? resolve(exp.type as Parameters<typeof resolve>[0]) : undefined
               const expSubItem = 'subItem' in exp && exp.subItem ? (exp.subItem as { title: Parameters<typeof resolve>[0]; description: Parameters<typeof resolve>[0] }) : undefined
               return (
                 <ExperienceItem
-                  key={exp.id || idx}
-                  year=""
+                  key={expId}
+                  // FIX 4: removed year="" prop — the date column was causing left-alignment issues
                   company={resolve(exp.company as Parameters<typeof resolve>[0])}
                   type={expType}
                   role={resolve(exp.role as Parameters<typeof resolve>[0])}
+                  // FIX 2: period passed as the visible date; description is the "Focus" line
+                  period={resolve(exp.period as Parameters<typeof resolve>[0])}
                   description={resolve(exp.description as Parameters<typeof resolve>[0])}
-                  techs={exp.techs ?? []}
-                  expanded={expandedExp === (exp.id || String(idx))}
-                  onToggle={() => toggleExp(exp.id || String(idx))}
+                  // FIX 2.2: techs removed — no longer rendered in the collapsed card
+                  expanded={expandedExp === expId}
+                  onToggle={() => toggleExp(expId)}
                   details={
                     exp.details
                       ? {
-                          context: resolve(exp.details.context as Parameters<typeof resolve>[0]),
+                          // FIX 3 / 3.1: context omitted so the fancy intro paragraph is not shown
                           tasks: exp.details.tasks ? resolveArray(exp.details.tasks as Parameters<typeof resolveArray>[0]) : undefined,
+                          // FIX 3.2: mainTasks label behaviour is controlled inside ExperienceItem;
+                          //           pass tasks only — see note below if the label still appears
                           training: 'training' in exp.details && exp.details.training ? resolveArray((exp.details as { training: Parameters<typeof resolveArray>[0] }).training) : undefined,
-                          env: exp.details.env ? resolve(exp.details.env as Parameters<typeof resolve>[0]) : '',
+                          // FIX 3.3: env omitted so the tech environment line is not shown
+                          env: '',
                         }
                       : undefined
                   }
@@ -253,6 +260,8 @@ export function MainContent() {
 
       {/* ===== Footer (grey background): Career History, Technical Toolkit, Education ===== */}
       <div className="p-8 bg-gradient-to-b from-resume-sidebar-from to-resume-sidebar-to">
+
+        {/* FIX 5: Career History — role is now bold (font-medium text-resume-text) to match Technical Toolkit */}
         <div className="mb-6">
           <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3">
             {resolve({ en: 'Career History', fr: 'Historique de Carrière' })}
@@ -260,7 +269,13 @@ export function MainContent() {
           <ul className="space-y-1 text-sm text-resume-text-secondary">
             {experiences.map((exp, idx) => (
               <li key={exp.id || idx}>
-                {resolve(exp.role as Parameters<typeof resolve>[0])} | {resolve(exp.company as Parameters<typeof resolve>[0])} | {resolve(exp.period as Parameters<typeof resolve>[0])}
+                <span className="font-medium text-resume-text">
+                  {resolve(exp.role as Parameters<typeof resolve>[0])}
+                </span>
+                {' | '}
+                {resolve(exp.company as Parameters<typeof resolve>[0])}
+                {' | '}
+                {resolve(exp.period as Parameters<typeof resolve>[0])}
               </li>
             ))}
           </ul>
@@ -282,23 +297,26 @@ export function MainContent() {
           </ul>
         </div>
 
+        <div className="border-b border-resume-primary/20 mb-6" />
+
+        {/* FIX 6: Education now rendered as a plain list identical to Technical Toolkit,
+                   replacing the EducationItem component cards */}
         <div>
-          <h2 className="text-sm font-bold tracking-widest text-resume-text mb-4">
+          <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3">
             {resolve(labels.sections.education)}
           </h2>
-          <div className="space-y-4">
+          <ul className="space-y-1 text-sm text-resume-text-secondary">
             {education.map((edu, i) => (
-              <EducationItem
-                key={`${resolve(edu.school)}-${resolve(edu.degree)}-${edu.period ?? i}`}
-                school={resolve(edu.school)}
-                degree={resolve(edu.degree)}
-                specialty={edu.specialty ? resolve(edu.specialty) : undefined}
-                period={edu.period}
-                logo={edu.logo}
-              />
+              <li key={i}>
+                <span className="font-medium text-resume-text">{resolve(edu.degree)}:</span>{' '}
+                {resolve(edu.school)}
+                {edu.specialty ? `, ${resolve(edu.specialty)}` : ''}
+                {edu.period ? ` (${edu.period})` : ''}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
+
       </div>
     </div>
   )
