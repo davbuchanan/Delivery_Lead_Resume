@@ -55,6 +55,7 @@ export interface Experience {
   role: LocalizedString
   company: LocalizedString
   period: LocalizedString
+  type?: LocalizedString
   description?: LocalizedString
   techs?: string[]
   isHighlighted?: boolean
@@ -118,7 +119,7 @@ export interface ResumeConfig {
   theme: {
     preset: PresetName
     colors?: Partial<ThemeColors>
-    defaultMode?: 'light' | 'dark' | 'auto'
+    defaultMode?: 'light' | 'dark' | 'system'
   }
   labels: {
     sections: {
