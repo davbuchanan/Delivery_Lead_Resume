@@ -183,7 +183,7 @@ export function MainContent() {
       {/* ===== Professional Experience ===== */}
       <div className="p-8">
         <div className="relative">
-          <h2 className="text-sm font-bold tracking-widest text-resume-text mb-6">
+          <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3">
             {resolve(labels.sections.experience)}
           </h2>
           <div className="space-y-2">
