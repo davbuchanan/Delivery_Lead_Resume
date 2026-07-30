@@ -277,7 +277,7 @@ function buildNoscriptHtml(
   const lang = config.languages.default
   let pdfPath: string | null = null
   if (pdf?.path) {
-    pdfPath = pdf.path
+    pdfPath = typeof pdf.path === 'string' ? pdf.path : (pdf.path[lang] ?? Object.values(pdf.path)[0] ?? null)
   } else {
     // Auto-detect from public/cv/<lang>/
     const cvLangDir = path.resolve(process.cwd(), 'public', 'cv', lang)
