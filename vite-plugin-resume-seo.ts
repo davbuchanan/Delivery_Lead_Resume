@@ -1,5 +1,5 @@
 import type { Plugin } from 'vite'
-import type { ResumeConfig } from './src/data/types'
+import type { ResumeConfig, LocalizedString } from './src/data/types'
 import fs from 'fs'
 import path from 'path'
 
@@ -82,6 +82,29 @@ function escapeHtml(str: string): string {
     .replace(/>/g, '&gt;')
 }
 
+// Resolve an optional LocalizedString field, falling back to an empty string
+// when the field itself wasn't provided in the config.
+function resolveOr(
+  value: LocalizedString | undefined,
+  resolve: (ls: Record<string, string>) => string,
+): string {
+  return value ? resolve(value) : ''
+}
+
+// Safely turn a skill item's `name` field into a displayable string,
+// whether it's a plain string, a LocalizedString, or a wrapper object.
+function skillItemName(item: { name: unknown }, resolve: (v: Record<string, string>) => string): string {
+  const name = item.name
+  if (typeof name === 'string') return name
+  if (name && typeof name === 'object') {
+    if ('name' in (name as Record<string, unknown>)) {
+      return skillItemName(name as { name: unknown }, resolve)
+    }
+    return resolve(name as Record<string, string>)
+  }
+  return ''
+}
+
 function buildJsonLd(
   config: ResumeConfig,
   resolve: (ls: Record<string, string>) => string,
@@ -98,7 +121,7 @@ function buildJsonLd(
     if (c.type === 'email') email = c.label
   }
 
-  const techs = [...new Set(config.experiences.flatMap((exp) => exp.techs))]
+  const techs = [...new Set(config.experiences.flatMap((exp) => exp.techs ?? []))]
 
   return {
     '@context': 'https://schema.org',
@@ -164,9 +187,9 @@ function buildNoscriptHtml(
     for (const cat of skills) {
       lines.push(`${indent}    <p style="margin: 0.5rem 0 0.25rem 0; font-weight: 600;">${escapeHtml(resolve(cat.title))}</p>`)
       const skillNames = cat.items.map((item) => {
-        const name = typeof item.name === 'string' ? item.name : resolve(item.name)
-        if (cat.type === 'languages' && item.level) {
-          return `${name} (${resolve(item.level)})`
+        const name = skillItemName(item, resolve)
+        if (cat.type === 'languages' && item.level !== undefined) {
+          return `${name} (${item.level})`
         }
         return name
       })
@@ -185,8 +208,8 @@ function buildNoscriptHtml(
       const meta = [resolve(exp.period)]
       if (exp.type) meta.push(resolve(exp.type))
       lines.push(`${indent}      <p style="margin: 0 0 0.25rem 0; color: #777; font-size: 0.9rem;">${escapeHtml(meta.join(' · '))}</p>`)
-      lines.push(`${indent}      <p style="margin: 0 0 0.25rem 0;">${escapeHtml(resolve(exp.description))}</p>`)
-      if (exp.techs.length > 0) {
+      lines.push(`${indent}      <p style="margin: 0 0 0.25rem 0;">${escapeHtml(resolveOr(exp.description, resolve))}</p>`)
+      if (exp.techs && exp.techs.length > 0) {
         lines.push(`${indent}      <p style="margin: 0; color: #555; font-size: 0.9rem;">${escapeHtml(exp.techs.join(', '))}</p>`)
       }
       if (exp.details?.tasks) {
@@ -232,8 +255,8 @@ function buildNoscriptHtml(
         ? `<a href="${escapeHtml(proj.url)}" style="color: #1e6091;">${escapeHtml(resolve(proj.title))}</a>`
         : escapeHtml(resolve(proj.title))
       lines.push(`${indent}      <p style="margin: 0; font-weight: 600;">${titleHtml}</p>`)
-      lines.push(`${indent}      <p style="margin: 0; color: #555;">${escapeHtml(resolve(proj.description))}</p>`)
-      if (proj.techs.length > 0) {
+      lines.push(`${indent}      <p style="margin: 0; color: #555;">${escapeHtml(resolveOr(proj.description, resolve))}</p>`)
+      if (proj.techs && proj.techs.length > 0) {
         lines.push(`${indent}      <p style="margin: 0; color: #777; font-size: 0.9rem;">${escapeHtml(proj.techs.join(', '))}</p>`)
       }
       lines.push(`${indent}    </div>`)
@@ -253,8 +276,8 @@ function buildNoscriptHtml(
   // PDF download link — priority: config > auto-detected
   const lang = config.languages.default
   let pdfPath: string | null = null
-  if (pdf) {
-    pdfPath = typeof pdf.path === 'string' ? pdf.path : (pdf.path[lang] ?? Object.values(pdf.path)[0] ?? null)
+  if (pdf?.path) {
+    pdfPath = pdf.path
   } else {
     // Auto-detect from public/cv/<lang>/
     const cvLangDir = path.resolve(process.cwd(), 'public', 'cv', lang)
