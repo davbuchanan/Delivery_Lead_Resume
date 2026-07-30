@@ -84,7 +84,7 @@ function ProfilePhoto({ photo, name, emoji }: { photo?: string; name: string; em
 }
 
 export function MainContent() {
-  const { resolve, resolveArray } = useTranslation()
+  const { language, resolve, resolveArray } = useTranslation()
   const { personal, contact, experiences, projects, education, skills, labels } = resumeConfig
   const [expandedExp, setExpandedExp] = useState<string | null>(null)
 
@@ -105,6 +105,23 @@ export function MainContent() {
   // so they never drift out of sync with the real data.
   const competencyCategories = skills.filter((cat) => cat.type === 'text')
   const toolkitCategories = skills.filter((cat) => cat.type === 'badges')
+
+  const sectionLabels = {
+    summary: { en: 'Professional Summary', fr: 'Résumé Professionnel' },
+    skillsHeading: { en: 'Professional Skills', fr: 'Compétences Professionnelles' },
+  }
+
+  const summaryParagraphs: Record<string, string[]> = {
+    en: [
+      'Release Train Engineer & Scrum Master with over 15 years of experience delivering complex projects. I focus on building delivery systems that actually work taking high-level strategy and turning it into predictable, reliable execution.',
+      'Throughout my career, I’ve moved from managing team-level delivery to architecting organization-wide Agile frameworks. My approach is simple: I standardize the mess, clear the blockers, and use data to show where we can improve. At Airbus alone I’ve led the delivery of over 11,000 user stories and 1,200 production deployments. I streamlined PI planning to cut event time by 66% while hitting an 86% objective completion rate. I’m at my best when I’m connecting leadership strategy with team reality, ensuring that teams have a clear path to deliver value without the usual corporate friction.',
+    ],
+    fr: [
+      'Release Train Engineer & Scrum Master avec plus de 15 ans d\'expérience dans la livraison de projets complexes. Je me concentre sur la mise en place de systèmes de delivery qui fonctionnent réellement, en transformant une stratégie de haut niveau en exécution prévisible et fiable.',
+      'Tout au long de ma carrière, je suis passé de la gestion de la livraison au niveau des équipes à l\'architecture de frameworks Agile à l\'échelle de l\'organisation. Mon approche est simple : je standardise le désordre, je lève les blocages, et j\'utilise la donnée pour identifier les axes d\'amélioration. Chez Airbus, j\'ai à moi seul piloté la livraison de plus de 11 000 user stories et 1 200 déploiements en production. J\'ai optimisé le PI Planning pour réduire sa durée de 66 % tout en atteignant un taux de complétion des objectifs de 86 %. Je suis le plus efficace lorsque je fais le lien entre la stratégie de la direction et la réalité des équipes, en garantissant aux équipes un chemin clair pour délivrer de la valeur sans la friction habituelle des grandes organisations.',
+    ],
+  }
+  const currentSummary = summaryParagraphs[language] ?? summaryParagraphs.en
 
   return (
     <div className="w-full">
@@ -137,19 +154,18 @@ export function MainContent() {
       <div className="p-8">
         <div className="mb-8">
           <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3">
-            Professional Summary
+            {resolve(sectionLabels.summary)}
           </h2>
-          <p className="text-sm text-resume-text-secondary leading-relaxed">
-            Release Train Engineer & Scrum Master with over 15 years of experience delivering complex projects. I focus on building delivery systems that actually work taking high-level strategy and turning it into predictable, reliable execution.
-          </p>
-          <p className="text-sm text-resume-text-secondary leading-relaxed mt-4">
-            Throughout my career, I’ve moved from managing team-level delivery to architecting organization-wide Agile frameworks. My approach is simple: I standardize the mess, clear the blockers, and use data to show where we can improve. At Airbus alone I’ve led the delivery of over 11,000 user stories and 1,200 production deployments. I streamlined PI planning to cut event time by 66% while hitting an 86% objective completion rate. I’m at my best when I’m connecting leadership strategy with team reality, ensuring that teams have a clear path to deliver value without the usual corporate friction.
-          </p>
+          {currentSummary.map((paragraph, i) => (
+            <p key={i} className={`text-sm text-resume-text-secondary leading-relaxed ${i > 0 ? 'mt-4' : ''}`}>
+              {paragraph}
+            </p>
+          ))}
         </div>
 
         <div>
           <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3">
-            Professional Skills
+            {resolve(sectionLabels.skillsHeading)}
           </h2>
           <div className="space-y-1 text-sm text-resume-text-secondary leading-relaxed">
             {competencyCategories.map((cat, i) => (
@@ -239,7 +255,7 @@ export function MainContent() {
       <div className="p-8 bg-gradient-to-b from-resume-sidebar-from to-resume-sidebar-to">
         <div className="mb-6">
           <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3">
-            Career History
+            {resolve({ en: 'Career History', fr: 'Historique de Carrière' })}
           </h2>
           <ul className="space-y-1 text-sm text-resume-text-secondary">
             {experiences.map((exp, idx) => (
@@ -254,7 +270,7 @@ export function MainContent() {
 
         <div className="mb-8">
           <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3">
-            Technical Toolkit
+            {resolve({ en: 'Technical Toolkit', fr: 'Boîte à Outils Technique' })}
           </h2>
           <ul className="space-y-1 text-sm text-resume-text-secondary">
             {toolkitCategories.map((cat, i) => (
