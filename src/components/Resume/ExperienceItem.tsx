@@ -6,19 +6,20 @@ import { Modal } from '@/components/ui/Modal'
 import { cn } from '@/lib/utils'
 
 interface ExperienceItemProps {
-  year: string
+  year?: string
   company: string
   type?: string
   role: string
+  period?: string
   description: string
-  techs: string[]
+  techs?: string[]
   expanded: boolean
   onToggle: () => void
   details?: {
-    context: string
+    context?: string
     tasks?: string[]
     training?: string[]
-    env: string
+    env?: string
   }
   subItem?: {
     title: string
@@ -37,6 +38,7 @@ interface ExperienceItemProps {
 export function ExperienceItem({
   company,
   role,
+  period,
   description,
   expanded,
   onToggle,
@@ -79,21 +81,34 @@ export function ExperienceItem({
             </motion.div>
           )}
 
+          {/* Role — largest, bold */}
           <h3 className="text-base font-semibold text-resume-text">
             {role}
           </h3>
 
+          {/* Company */}
           <p className="text-sm text-resume-text-secondary">
             {company}
           </p>
 
-          <p className="text-sm text-resume-text-secondary mt-1">
-            {description}
-          </p>
+          {/* Date / period */}
+          {period && (
+            <p className="text-xs text-resume-text-secondary/70 mt-0.5">
+              {period}
+            </p>
+          )}
+
+          {/* Focus line */}
+          {description && (
+            <p className="text-sm text-resume-text-secondary mt-1">
+              {description}
+            </p>
+          )}
 
         </div>
       </button>
 
+      {/* Desktop expand */}
       {details && isDesktop && (
         <AnimatePresence>
           {expanded && (
@@ -114,9 +129,7 @@ export function ExperienceItem({
                 {details.tasks && (
                   <ul className="list-disc ml-5 space-y-2 text-sm text-resume-text-secondary">
                     {details.tasks.map(task => (
-                      <li key={task}>
-                        {task}
-                      </li>
+                      <li key={task}>{task}</li>
                     ))}
                   </ul>
                 )}
@@ -127,19 +140,18 @@ export function ExperienceItem({
         </AnimatePresence>
       )}
 
+      {/* Mobile modal */}
       {details && (
         <Modal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           header={
             <>
-              <h2 className="font-semibold text-lg">
-                {role}
-              </h2>
-
-              <p className="text-sm text-resume-text-secondary">
-                {company}
-              </p>
+              <h2 className="font-semibold text-lg">{role}</h2>
+              <p className="text-sm text-resume-text-secondary">{company}</p>
+              {period && (
+                <p className="text-xs text-resume-text-secondary/70 mt-0.5">{period}</p>
+              )}
             </>
           }
         >
@@ -152,9 +164,7 @@ export function ExperienceItem({
           {details.tasks && (
             <ul className="list-disc ml-5 space-y-2 text-sm text-resume-text-secondary">
               {details.tasks.map(task => (
-                <li key={task}>
-                  {task}
-                </li>
+                <li key={task}>{task}</li>
               ))}
             </ul>
           )}
