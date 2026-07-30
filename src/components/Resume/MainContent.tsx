@@ -207,9 +207,9 @@ export function MainContent() {
                           context: resolve(exp.details.context as Parameters<typeof resolve>[0]),
                           tasks: exp.details.tasks ? resolveArray(exp.details.tasks as Parameters<typeof resolveArray>[0]) : undefined,
                           training: 'training' in exp.details && exp.details.training ? resolveArray((exp.details as { training: Parameters<typeof resolveArray>[0] }).training) : undefined,
-                          env: exp.details.env ? resolve(exp.details.env as Parameters<typeof resolve>[0]) : string,
+                          env: exp.details.env ? resolve(exp.details.env as Parameters<typeof resolve>[0]) : '',
                         }
-                      : string
+                      : undefined
                   }
                   subItem={
                     expSubItem
