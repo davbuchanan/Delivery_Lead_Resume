@@ -1,9 +1,19 @@
 export type ContactType = 'linkedin' | 'email' | 'phone' | 'location' | 'github' | 'website' | string
 export type PresetName = 'minimal' | 'modern' | 'creative' | string
 
+// The index signature lets LocalizedString be used anywhere a
+// Record<string, string> or a dynamic string-keyed lookup is expected
+// (e.g. resolving by the current language code).
 export interface LocalizedString {
   en: string
   fr: string
+  [key: string]: string
+}
+
+export interface LocalizedStringArray {
+  en: string[]
+  fr: string[]
+  [key: string]: string[]
 }
 
 export interface ThemeColors {
@@ -50,14 +60,8 @@ export interface Experience {
   isHighlighted?: boolean
   details?: {
     context?: LocalizedString
-    tasks?: {
-      en: string[]
-      fr: string[]
-    }
-    training?: {
-      en: string[]
-      fr: string[]
-    }
+    tasks?: LocalizedStringArray
+    training?: LocalizedStringArray
     env?: LocalizedString
   }
 }
@@ -76,6 +80,10 @@ export interface ProjectItem {
   url?: string
   github?: string
   techs?: string[]
+}
+export interface HobbyItem {
+  title: LocalizedString
+  details?: LocalizedString[]
 }
 export interface ResumeConfig {
   personal: {
@@ -100,6 +108,7 @@ export interface ResumeConfig {
   experiences: Experience[]
   education: EducationItem[]
   projects?: ProjectItem[]
+  hobbies?: HobbyItem[]
   pdf?: {
     filename?: string
     author?: string
@@ -108,6 +117,8 @@ export interface ResumeConfig {
   }
   theme: {
     preset: PresetName
+    colors?: Partial<ThemeColors>
+    defaultMode?: 'light' | 'dark' | 'auto'
   }
   labels: {
     sections: {
