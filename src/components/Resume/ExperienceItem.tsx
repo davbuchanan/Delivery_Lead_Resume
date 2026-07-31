@@ -11,6 +11,7 @@ interface ExperienceItemProps {
   type?: string
   role: string
   period?: string
+  location?: string
   description: string
   techs?: string[]
   expanded: boolean
@@ -39,23 +40,46 @@ export function ExperienceItem({
   company,
   role,
   period,
+  location,
   description,
   expanded,
   onToggle,
   details,
+  isHighlighted: _isHighlighted,
+  subItem: _subItem,
+  labels: _labels,
+  year: _year,
+  techs: _techs,
+  type: _type,
 }: ExperienceItemProps) {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const { isDesktop } = useBreakpoints()
 
   const handleClick = () => {
     if (!details) return
-
     if (isDesktop) {
       onToggle()
     } else {
       setIsModalOpen(true)
     }
   }
+
+  const expandedContent = (
+    <div className="mt-3 ml-3">
+      {details?.context && (
+        <p className="text-sm text-resume-text-secondary leading-relaxed mb-3">
+          {details.context}
+        </p>
+      )}
+      {details?.tasks && (
+        <ul className="list-disc ml-5 space-y-2 text-sm text-resume-text-secondary">
+          {details.tasks.map(task => (
+            <li key={task}>{task}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  )
 
   return (
     <motion.div
@@ -71,7 +95,6 @@ export function ExperienceItem({
         )}
       >
         <div className="relative">
-
           {details && (
             <motion.div
               animate={{ rotate: expanded ? 180 : 0 }}
@@ -81,34 +104,39 @@ export function ExperienceItem({
             </motion.div>
           )}
 
-          {/* Role — largest, bold */}
-          <h3 className="text-base font-semibold text-resume-text">
-            {role}
-          </h3>
+          <div className="flex gap-1 items-baseline">
+            <span className="text-sm font-semibold text-resume-text w-20 shrink-0">Role:</span>
+            <span className="text-sm text-resume-text">{role}</span>
+          </div>
 
-          {/* Company */}
-          <p className="text-sm text-resume-text-secondary">
-            {company}
-          </p>
+          <div className="flex gap-1 items-baseline mt-0.5">
+            <span className="text-sm font-semibold text-resume-text w-20 shrink-0">Company:</span>
+            <span className="text-sm text-resume-text-secondary">{company}</span>
+          </div>
 
-          {/* Date / period */}
           {period && (
-            <p className="text-xs text-resume-text-secondary/70 mt-0.5">
-              {period}
-            </p>
+            <div className="flex gap-1 items-baseline mt-0.5">
+              <span className="text-sm font-semibold text-resume-text w-20 shrink-0">Date:</span>
+              <span className="text-sm text-resume-text-secondary">{period}</span>
+            </div>
           )}
 
-          {/* Focus line */}
+          {location && (
+            <div className="flex gap-1 items-baseline mt-0.5">
+              <span className="text-sm font-semibold text-resume-text w-20 shrink-0">Location:</span>
+              <span className="text-sm text-resume-text-secondary">{location}</span>
+            </div>
+          )}
+
           {description && (
-            <p className="text-sm text-resume-text-secondary mt-1">
-              {description}
-            </p>
+            <div className="flex gap-1 items-baseline mt-0.5">
+              <span className="text-sm font-semibold text-resume-text w-20 shrink-0">Focus:</span>
+              <span className="text-sm text-resume-text-secondary">{description}</span>
+            </div>
           )}
-
         </div>
       </button>
 
-      {/* Desktop expand */}
       {details && isDesktop && (
         <AnimatePresence>
           {expanded && (
@@ -118,56 +146,42 @@ export function ExperienceItem({
               exit={{ opacity: 0, height: 0 }}
               className="overflow-hidden"
             >
-              <div className="mt-3 ml-3">
-
-                {details.context && (
-                  <p className="text-sm text-resume-text-secondary leading-relaxed mb-3">
-                    {details.context}
-                  </p>
-                )}
-
-                {details.tasks && (
-                  <ul className="list-disc ml-5 space-y-2 text-sm text-resume-text-secondary">
-                    {details.tasks.map(task => (
-                      <li key={task}>{task}</li>
-                    ))}
-                  </ul>
-                )}
-
-              </div>
+              {expandedContent}
             </motion.div>
           )}
         </AnimatePresence>
       )}
 
-      {/* Mobile modal */}
       {details && (
         <Modal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           header={
             <>
-              <h2 className="font-semibold text-lg">{role}</h2>
-              <p className="text-sm text-resume-text-secondary">{company}</p>
+              <div className="flex gap-1 items-baseline">
+                <span className="text-sm font-semibold text-resume-text w-20 shrink-0">Role:</span>
+                <span className="font-semibold text-lg text-resume-text">{role}</span>
+              </div>
+              <div className="flex gap-1 items-baseline mt-0.5">
+                <span className="text-sm font-semibold text-resume-text w-20 shrink-0">Company:</span>
+                <span className="text-sm text-resume-text-secondary">{company}</span>
+              </div>
               {period && (
-                <p className="text-xs text-resume-text-secondary/70 mt-0.5">{period}</p>
+                <div className="flex gap-1 items-baseline mt-0.5">
+                  <span className="text-sm font-semibold text-resume-text w-20 shrink-0">Date:</span>
+                  <span className="text-sm text-resume-text-secondary">{period}</span>
+                </div>
+              )}
+              {location && (
+                <div className="flex gap-1 items-baseline mt-0.5">
+                  <span className="text-sm font-semibold text-resume-text w-20 shrink-0">Location:</span>
+                  <span className="text-sm text-resume-text-secondary">{location}</span>
+                </div>
               )}
             </>
           }
         >
-          {details.context && (
-            <p className="text-sm text-resume-text-secondary mb-4 leading-relaxed">
-              {details.context}
-            </p>
-          )}
-
-          {details.tasks && (
-            <ul className="list-disc ml-5 space-y-2 text-sm text-resume-text-secondary">
-              {details.tasks.map(task => (
-                <li key={task}>{task}</li>
-              ))}
-            </ul>
-          )}
+          {expandedContent}
         </Modal>
       )}
     </motion.div>
