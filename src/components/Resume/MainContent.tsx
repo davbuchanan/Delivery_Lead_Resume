@@ -24,22 +24,29 @@ function ProfilePhoto({
   photo,
   name,
   emoji,
+  onPlayStateChange,
 }: {
   photo?: string
   name: string
   emoji?: string
+  onPlayStateChange: (playing: boolean) => void
 }) {
   const [hasError, setHasError] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
 
   const handleClick = () => {
-    if (isPlaying) {
+    const next = !isPlaying
+    setIsPlaying(next)
+    onPlayStateChange(next)
+    if (!next) {
       videoRef.current?.pause()
-      setIsPlaying(false)
-    } else {
-      setIsPlaying(true)
     }
+  }
+
+  const handleEnded = () => {
+    setIsPlaying(false)
+    onPlayStateChange(false)
   }
 
   if (isPlaying) {
@@ -53,7 +60,7 @@ function ProfilePhoto({
           autoPlay
           playsInline
           className="w-full h-full object-cover"
-          onEnded={() => setIsPlaying(false)}
+          onEnded={handleEnded}
         >
           <source src="./intro.mp4" type="video/mp4" />
         </video>
@@ -102,6 +109,7 @@ export function MainContent() {
   const { language, resolve, resolveArray } = useTranslation()
   const { personal, contact, experiences, projects, education, skills, labels } = resumeConfig
   const [expandedExp, setExpandedExp] = useState<string | null>(null)
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
 
   const toggleExp = (id: string) => {
     setExpandedExp(expandedExp === id ? null : id)
@@ -141,11 +149,19 @@ export function MainContent() {
       {/* ===== Header ===== */}
       <div className="p-8 bg-gradient-to-b from-resume-sidebar-from to-resume-sidebar-to">
         <div className="flex flex-col sm:flex-row items-center sm:items-start justify-start gap-6 text-center sm:text-left">
-          <ProfilePhoto
-            photo={(personal.photo || detectedAssets.photo) ? assetUrl(personal.photo || detectedAssets.photo!) : undefined}
-            name={personal.name}
-            emoji={personal.photoBackEmoji}
-          />
+          <div className="flex flex-col items-center gap-2">
+            <ProfilePhoto
+              photo={(personal.photo || detectedAssets.photo) ? assetUrl(personal.photo || detectedAssets.photo!) : undefined}
+              name={personal.name}
+              emoji={personal.photoBackEmoji}
+              onPlayStateChange={setIsVideoPlaying}
+            />
+            {!isVideoPlaying && (
+              <span className="text-xs text-resume-text-secondary italic">
+                👆 Click to watch my intro
+              </span>
+            )}
+          </div>
           <div className="flex flex-col items-center sm:items-start">
             <h1 className="font-bold text-resume-text" style={{ fontSize: '14pt' }}>{personal.name}</h1>
             <p className="font-semibold text-resume-primary mb-2" style={{ fontSize: '12pt' }}>{resolve(personal.title)}</p>
