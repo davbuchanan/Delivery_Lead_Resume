@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-
 @theme inline {
   --color-resume-bg: var(--resume-bg);
   --color-resume-bg-card: var(--resume-bg-card);
@@ -10,9 +9,7 @@
   --color-resume-sidebar-from: var(--resume-sidebar-from);
   --color-resume-sidebar-to: var(--resume-sidebar-to);
 }
-
 @variant dark (&:where(.dark, .dark *));
-
 :root {
   --resume-bg: #fafaf9;
   --resume-bg-card: #ffffff;
@@ -23,7 +20,6 @@
   --resume-sidebar-from: #f4f4f4;
   --resume-sidebar-to: #ebebeb;
 }
-
 .dark {
   --resume-bg: #0a0a0a;
   --resume-bg-card: #171717;
@@ -34,17 +30,16 @@
   --resume-sidebar-from: #0f0f0f;
   --resume-sidebar-to: #0a0a0a;
 }
-
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11pt;
   background-color: var(--resume-bg);
   color: var(--resume-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s, color 0.3s;
 }
-
 * {
   box-sizing: border-box;
 }
