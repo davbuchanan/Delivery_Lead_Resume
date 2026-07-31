@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
 import { useTranslation } from '@/lib/i18n'
 import { resumeConfig } from '@/data/resume-config'
 import { assetUrl } from '@/lib/utils'
@@ -9,8 +8,6 @@ import { ContactItem } from './ContactItem'
 import { ExperienceItem } from './ExperienceItem'
 import { ProjectItem } from './ProjectItem'
 import { VideoModal } from '@/components/ui/VideoModal'
-
-const PHOTO_ANIMATION_DURATION = 0.8
 
 function skillItemName(item: { name: unknown }, resolve: (v: LocalizedString) => string): string {
   const name = item.name
