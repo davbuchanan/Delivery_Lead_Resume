@@ -194,6 +194,38 @@ export const resumeConfig: ResumeConfig = {
       },
       techs: ['Excel'],
     },
+    {
+      id: 'jemstep-product-owner',
+      role: { en: 'Product Owner (Digital Wealth Management)', fr: 'Product Owner (Gestion de Patrimoine Digitale)' },
+      company: { en: 'Jemstep', fr: 'Jemstep' },
+      period: { en: 'June 2012 – December 2014', fr: 'Juin 2012 – Décembre 2014' },
+      description: {
+        en: 'Pivoting and scaling a B2B2C SaaS platform.',
+        fr: 'Pivotement et mise à l\'échelle d\'une plateforme SaaS B2B2C.',
+      },
+      details: {
+        context: {
+          en: '',
+          fr: '',
+        },
+        tasks: {
+          en: [
+            'Strategic Pivot: Led the transition of a wealth management platform from B2C to an enterprise B2B2C SaaS model for major US investment advisors.',
+            'Product Lifecycle & Design: Owned the end-to-end product value stream (Research → Design → Build → Test → Measure → Iterate), leveraging story mapping and detailed backlog grooming to translate user journeys into precise engineering specs.',
+            'Global Team Leadership: Directed product delivery across five distributed squads (US, South America, South Africa, India) using hybrid Agile/Waterfall frameworks.',
+            'Stakeholder & Quality Governance: Acted as the central product authority for prioritization and scope, enforcing strict quality gates via UAT and KPI tracking to drive continuous iteration.',
+            'Enablement: Drove organizational adoption through company-wide product training and client demonstrations.',
+          ],
+          fr: [
+            'Pivot Stratégique : Direction de la transition d\'une plateforme de gestion de patrimoine du B2C vers un modèle SaaS B2B2C d\'entreprise pour de grands conseillers en investissement américains.',
+            'Cycle de Vie & Conception Produit : Prise en charge du flux de valeur produit de bout en bout (Recherche → Conception → Construction → Test → Mesure → Itération), en s\'appuyant sur le story mapping et un raffinement détaillé du backlog pour traduire les parcours utilisateurs en spécifications techniques précises.',
+            'Leadership d\'Équipes Globales : Pilotage de la livraison produit à travers cinq équipes distribuées (États-Unis, Amérique du Sud, Afrique du Sud, Inde) en utilisant des frameworks hybrides Agile/Waterfall.',
+            'Gouvernance des Parties Prenantes & Qualité : Rôle d\'autorité produit centrale pour la priorisation et le périmètre, en appliquant des contrôles qualité stricts via les tests UAT et le suivi des KPI pour piloter l\'amélioration continue.',
+            'Enablement : Stimulation de l\'adoption organisationnelle à travers des formations produit à l\'échelle de l\'entreprise et des démonstrations clients.',
+          ],
+        },
+      },
+    },
   ],
   // ===== EDUCATION & CERTIFICATIONS =====
   education: [
