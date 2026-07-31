@@ -29,7 +29,6 @@ export const resumeConfig: ResumeConfig = {
   contact: [
     { type: 'linkedin', label: 'David Buchanan', href: 'https://www.linkedin.com/in/davidbuchanan-value-delivery/' },
     { type: 'email', label: 'davidbuchanaemail@gmail.com' },
-    { type: 'phone', label: '+33 6 95 00 11 71' },
     { type: 'location', label: 'Anglet, France 64600' },
   ],
   // ===== SKILLS =====
