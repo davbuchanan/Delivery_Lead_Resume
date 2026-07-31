@@ -35,21 +35,7 @@ function ProfilePhoto({
   emoji?: string
   onVideoOpen: () => void
 }) {
-  const [isSpinning, setIsSpinning] = useState(false)
   const [hasError, setHasError] = useState(false)
-
-  const handleFlip = () => {
-    if (isSpinning) return
-    setIsSpinning(true)
-    setTimeout(onVideoOpen, PHOTO_ANIMATION_DURATION * 1000)
-  }
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault()
-      handleFlip()
-    }
-  }
 
   if (!photo || hasError) {
     return (
@@ -63,38 +49,20 @@ function ProfilePhoto({
   }
 
   return (
-    <div style={{ perspective: '300px' }} className="shrink-0">
-      <motion.div
-        onClick={handleFlip}
-        onKeyDown={handleKeyDown}
-        onAnimationComplete={() => setIsSpinning(false)}
-        animate={{ rotateY: isSpinning ? 360 : 0 }}
-        transition={{ duration: PHOTO_ANIMATION_DURATION, ease: 'easeInOut' }}
-        className="relative w-36 h-36 cursor-pointer"
-        style={{ transformStyle: 'preserve-3d' }}
-        role="button"
-        tabIndex={0}
-        aria-label={`Photo of ${name} — click to watch intro video`}
-      >
-        <div
-          className="absolute inset-0 rounded-full overflow-hidden border-4 border-resume-bg/30 shadow-lg"
-          style={{ backfaceVisibility: 'hidden' }}
-        >
-          <img
-            src={photo}
-            alt={`Profile photo of ${name}`}
-            className="object-cover w-full h-full"
-            loading="lazy"
-            onError={() => setHasError(true)}
-          />
-        </div>
-        <div
-          className="absolute inset-0 rounded-full border-4 border-resume-bg/30 shadow-lg bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center"
-          style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
-        >
-          <span className="text-4xl">{emoji || '👨‍💻'}</span>
-        </div>
-      </motion.div>
+    <div className="shrink-0 relative cursor-pointer group" onClick={onVideoOpen}>
+      {/* Play button overlay on hover */}
+      <div className="absolute inset-0 rounded-full z-10 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-12 h-12 drop-shadow-lg">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </div>
+      <img
+        src={photo}
+        alt={`Profile photo of ${name} — click to watch intro video`}
+        className="w-36 h-36 rounded-full object-cover border-4 border-resume-bg/30 shadow-lg"
+        loading="lazy"
+        onError={() => setHasError(true)}
+      />
     </div>
   )
 }
