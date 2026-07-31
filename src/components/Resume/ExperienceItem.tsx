@@ -45,13 +45,9 @@ export function ExperienceItem({
   expanded,
   onToggle,
   details,
-  isHighlighted: _isHighlighted,
-  subItem: _subItem,
-  labels: _labels,
-  year: _year,
-  techs: _techs,
-  type: _type,
+  ...rest
 }: ExperienceItemProps) {
+  void rest
   const [isModalOpen, setIsModalOpen] = useState(false)
   const { isDesktop } = useBreakpoints()
 
