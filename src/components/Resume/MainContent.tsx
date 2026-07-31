@@ -8,6 +8,7 @@ import type { LocalizedString } from '@/data/types'
 import { ContactItem } from './ContactItem'
 import { ExperienceItem } from './ExperienceItem'
 import { ProjectItem } from './ProjectItem'
+import { VideoModal } from '@/components/ui/VideoModal'
 
 const PHOTO_ANIMATION_DURATION = 0.8
 
@@ -23,26 +24,44 @@ function skillItemName(item: { name: unknown }, resolve: (v: LocalizedString) =>
   return ''
 }
 
-function ProfilePhoto({ photo, name, emoji }: { photo?: string; name: string; emoji?: string }) {
+function ProfilePhoto({
+  photo,
+  name,
+  emoji,
+  onVideoOpen,
+}: {
+  photo?: string
+  name: string
+  emoji?: string
+  onVideoOpen: () => void
+}) {
   const [isSpinning, setIsSpinning] = useState(false)
   const [hasError, setHasError] = useState(false)
+
   const handleFlip = () => {
     if (isSpinning) return
     setIsSpinning(true)
+    setTimeout(onVideoOpen, PHOTO_ANIMATION_DURATION * 1000)
   }
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault()
       handleFlip()
     }
   }
+
   if (!photo || hasError) {
     return (
-      <div className="w-36 h-36 rounded-full bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center border-4 border-resume-bg/30 shadow-lg shrink-0">
+      <div
+        onClick={onVideoOpen}
+        className="w-36 h-36 rounded-full bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center border-4 border-resume-bg/30 shadow-lg shrink-0 cursor-pointer"
+      >
         <span className="text-4xl">{emoji || '👨‍💻'}</span>
       </div>
     )
   }
+
   return (
     <div style={{ perspective: '300px' }} className="shrink-0">
       <motion.div
@@ -55,7 +74,7 @@ function ProfilePhoto({ photo, name, emoji }: { photo?: string; name: string; em
         style={{ transformStyle: 'preserve-3d' }}
         role="button"
         tabIndex={0}
-        aria-label={`Photo of ${name} — click to flip`}
+        aria-label={`Photo of ${name} — click to watch intro video`}
       >
         <div
           className="absolute inset-0 rounded-full overflow-hidden border-4 border-resume-bg/30 shadow-lg"
@@ -85,13 +104,13 @@ const experienceLocations: Record<string, string> = {
   'msi-experts-rte': 'France',
   'amaris-scrum-master': 'France',
   'invesco-implementation-lead': 'South Africa',
-  // jemstep has no location to show
 }
 
 export function MainContent() {
   const { language, resolve, resolveArray } = useTranslation()
   const { personal, contact, experiences, projects, education, skills, labels } = resumeConfig
   const [expandedExp, setExpandedExp] = useState<string | null>(null)
+  const [isVideoOpen, setIsVideoOpen] = useState(false)
 
   const toggleExp = (id: string) => {
     setExpandedExp(expandedExp === id ? null : id)
@@ -126,7 +145,6 @@ export function MainContent() {
   const currentSummary = summaryParagraphs[language] ?? summaryParagraphs.en
 
   return (
-    // FIX 4: font-[Arial] sets Arial across the whole CV; all text inherits this
     <div className="w-full" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontSize: '11pt' }}>
 
       {/* ===== Header ===== */}
@@ -136,9 +154,9 @@ export function MainContent() {
             photo={(personal.photo || detectedAssets.photo) ? assetUrl(personal.photo || detectedAssets.photo!) : undefined}
             name={personal.name}
             emoji={personal.photoBackEmoji}
+            onVideoOpen={() => setIsVideoOpen(true)}
           />
           <div className="flex flex-col items-center sm:items-start">
-            {/* Heading: Arial 14pt bold */}
             <h1 className="font-bold text-resume-text" style={{ fontSize: '14pt' }}>{personal.name}</h1>
             <p className="font-semibold text-resume-primary mb-2" style={{ fontSize: '12pt' }}>{resolve(personal.title)}</p>
             {personal.subtitle && (
@@ -158,7 +176,6 @@ export function MainContent() {
       {/* ===== Professional Summary + Skills ===== */}
       <div className="p-8">
         <div className="mb-8">
-          {/* Section heading: Arial 12pt bold */}
           <h2 className="font-bold tracking-widest text-resume-text mb-3" style={{ fontSize: '12pt' }}>
             {resolve(sectionLabels.summary)}
           </h2>
@@ -259,7 +276,6 @@ export function MainContent() {
       {/* ===== Footer: Career History, Technical Toolkit, Education ===== */}
       <div className="p-8 bg-gradient-to-b from-resume-sidebar-from to-resume-sidebar-to">
 
-        {/* FIX 5: role title is bold */}
         <div className="mb-6">
           <h2 className="font-bold tracking-widest text-resume-text mb-3" style={{ fontSize: '12pt' }}>
             {resolve({ en: 'Career History', fr: 'Historique de Carrière' })}
@@ -297,7 +313,6 @@ export function MainContent() {
 
         <div className="border-b border-resume-primary/20 mb-6" />
 
-        {/* FIX 6: Education identical structure to Technical Toolkit — school: degree */}
         <div>
           <h2 className="font-bold tracking-widest text-resume-text mb-3" style={{ fontSize: '12pt' }}>
             {resolve(labels.sections.education)}
@@ -315,6 +330,10 @@ export function MainContent() {
         </div>
 
       </div>
+
+      {/* ===== Video Modal ===== */}
+      <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} />
+
     </div>
   )
 }
