@@ -158,7 +158,7 @@ export function MainContent() {
             />
             {!isVideoPlaying && (
               <span className="text-xs text-resume-text-secondary italic">
-                👆 Click to watch my intro
+                Tap to Play
               </span>
             )}
           </div>
