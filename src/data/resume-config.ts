@@ -136,8 +136,8 @@ export const resumeConfig: ResumeConfig = {
       company: { en: 'Amaris | Airbus Cybersecurity', fr: 'Amaris | Airbus Cybersecurity' },
       period: { en: 'September 2019 – June 2024', fr: 'Septembre 2019 – Juin 2024' },
       description: {
-        en: 'Focus: Keeping our delivery pipelines moving and helping four different teams hit their goals.',
-        fr: 'Focus : Maintien du dynamisme des pipelines de livraison et accompagnement de quatre équipes différentes dans l\'atteinte de leurs objectifs.',
+        en: 'Keeping our delivery pipelines moving and helping four different teams hit their goals.',
+        fr: 'Maintien du dynamisme des pipelines de livraison et accompagnement de quatre équipes différentes dans l\'atteinte de leurs objectifs.',
       },
       techs: ['Jira', 'Confluence', 'ZohoSprints', 'Slack'],
       details: {
@@ -167,8 +167,8 @@ export const resumeConfig: ResumeConfig = {
       company: { en: 'Invesco', fr: 'Invesco' },
       period: { en: '2015 – 2019', fr: '2015 – 2019' },
       description: {
-        en: 'Focus: Helping major financial institutions get the most out of our software and making sure our implementation projects actually crossed the finish line.',
-        fr: 'Focus : Accompagnement des principales institutions financières pour tirer le meilleur parti de notre logiciel et garantie de l\'aboutissement de nos projets de mise en œuvre.',
+        en: 'Helping major financial institutions get the most out of our software and making sure our implementation projects actually crossed the finish line.',
+        fr: 'Accompagnement des principales institutions financières pour tirer le meilleur parti de notre logiciel et garantie de l\'aboutissement de nos projets de mise en œuvre.',
       },
       details: {
         context: {
@@ -193,17 +193,6 @@ export const resumeConfig: ResumeConfig = {
         },
       },
       techs: ['Excel'],
-    },
-    {
-      id: 'jemstep-product-owner',
-      company: { en: 'Jemstep', fr: 'Jemstep' },
-      role: { en: 'Product Owner', fr: 'Product Owner' },
-      period: { en: '2008 - 2014', fr: '2008 - 2014' },
-      description: {
-        en: 'Product Owner role at Jemstep.',
-        fr: 'Poste de Product Owner chez Jemstep.',
-      },
-      techs: [],
     },
   ],
   // ===== EDUCATION & CERTIFICATIONS =====
