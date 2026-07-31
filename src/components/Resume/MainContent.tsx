@@ -103,6 +103,7 @@ const experienceLocations: Record<string, string> = {
   'msi-experts-rte': 'France',
   'amaris-scrum-master': 'France',
   'invesco-implementation-lead': 'South Africa',
+  'jemstep-product-owner': 'South Africa',
 }
 
 export function MainContent() {
@@ -133,12 +134,10 @@ export function MainContent() {
 
   const summaryParagraphs: Record<string, string[]> = {
     en: [
-      'Release Train Engineer & Scrum Master with over 15 years of experience delivering complex projects. I focus on building delivery systems that actually work taking high-level strategy and turning it into predictable, reliable execution.',
-      'Throughout my career, I\u2019ve moved from managing team-level delivery to architecting organization-wide Agile frameworks. My approach is simple: I standardize the mess, clear the blockers, and use data to show where we can improve. At Airbus alone I\u2019ve led the delivery of over 11,000 user stories and 1,200 production deployments. I streamlined PI planning to cut event time by 66% while hitting an 86% objective completion rate. I\u2019m at my best when I\u2019m connecting leadership strategy with team reality, ensuring that teams have a clear path to deliver value without the usual corporate friction.',
+      'Release Train Engineer & Scrum Master with over 15 years of experience delivering complex projects. I focus on building delivery systems that actually work taking high-level strategy and turning it into predictable, reliable execution. Throughout my career, I\u2019ve moved from managing team-level delivery to architecting organization-wide Agile frameworks. My approach is simple: I standardize the mess, clear the blockers, and use data to show where we can improve. At Airbus alone I\u2019ve led the delivery of over 11,000 user stories and 1,200 production deployments. I streamlined PI planning to cut event time by 66% while hitting an 86% objective completion rate. I\u2019m at my best when I\u2019m connecting leadership strategy with team reality, ensuring that teams have a clear path to deliver value without the usual corporate friction.',
     ],
     fr: [
-      'Release Train Engineer & Scrum Master avec plus de 15 ans d\'exp\u00e9rience dans la livraison de projets complexes. Je me concentre sur la mise en place de syst\u00e8mes de delivery qui fonctionnent r\u00e9ellement, en transformant une strat\u00e9gie de haut niveau en ex\u00e9cution pr\u00e9visible et fiable.',
-      'Tout au long de ma carri\u00e8re, je suis pass\u00e9 de la gestion de la livraison au niveau des \u00e9quipes \u00e0 l\'architecture de frameworks Agile \u00e0 l\'\u00e9chelle de l\'organisation. Mon approche est simple : je standardise le d\u00e9sordre, je l\u00e8ve les blocages, et j\'utilise la donn\u00e9e pour identifier les axes d\'am\u00e9lioration. Chez Airbus, j\'ai \u00e0 moi seul pilot\u00e9 la livraison de plus de 11 000 user stories et 1 200 d\u00e9ploiements en production. J\'ai optimis\u00e9 le PI Planning pour r\u00e9duire sa dur\u00e9e de 66 % tout en atteignant un taux de compl\u00e9tion des objectifs de 86 %. Je suis le plus efficace lorsque je fais le lien entre la strat\u00e9gie de la direction et la r\u00e9alit\u00e9 des \u00e9quipes, en garantissant aux \u00e9quipes un chemin clair pour d\u00e9livrer de la valeur sans la friction habituelle des grandes organisations.',
+      'Release Train Engineer & Scrum Master avec plus de 15 ans d\'exp\u00e9rience dans la livraison de projets complexes. Je me concentre sur la mise en place de syst\u00e8mes de delivery qui fonctionnent r\u00e9ellement, en transformant une strat\u00e9gie de haut niveau en ex\u00e9cution pr\u00e9visible et fiable. Tout au long de ma carri\u00e8re, je suis pass\u00e9 de la gestion de la livraison au niveau des \u00e9quipes \u00e0 l\'architecture de frameworks Agile \u00e0 l\'\u00e9chelle de l\'organisation. Mon approche est simple : je standardise le d\u00e9sordre, je l\u00e8ve les blocages, et j\'utilise la donn\u00e9e pour identifier les axes d\'am\u00e9lioration. Chez Airbus, j\'ai \u00e0 moi seul pilot\u00e9 la livraison de plus de 11 000 user stories et 1 200 d\u00e9ploiements en production. J\'ai optimis\u00e9 le PI Planning pour r\u00e9duire sa dur\u00e9e de 66 % tout en atteignant un taux de compl\u00e9tion des objectifs de 86 %. Je suis le plus efficace lorsque je fais le lien entre la strat\u00e9gie de la direction et la r\u00e9alit\u00e9 des \u00e9quipes, en garantissant aux \u00e9quipes un chemin clair pour d\u00e9livrer de la valeur sans la friction habituelle des grandes organisations.',
     ],
   }
   const currentSummary = summaryParagraphs[language] ?? summaryParagraphs.en
@@ -281,27 +280,6 @@ export function MainContent() {
 
       {/* ===== Footer: Career History, Technical Toolkit, Education ===== */}
       <div className="p-8 bg-gradient-to-b from-resume-sidebar-from to-resume-sidebar-to">
-
-        <div className="mb-6">
-          <h2 className="font-bold tracking-widest text-resume-text mb-3" style={{ fontSize: '12pt' }}>
-            {resolve({ en: 'Career History', fr: 'Historique de Carrière' })}
-          </h2>
-          <ul className="space-y-1 text-resume-text-secondary" style={{ fontSize: '11pt' }}>
-            {experiences.map((exp, idx) => (
-              <li key={exp.id || idx}>
-                <span className="font-bold text-resume-text">
-                  {resolve(exp.role as Parameters<typeof resolve>[0])}
-                </span>
-                {' | '}
-                {resolve(exp.company as Parameters<typeof resolve>[0])}
-                {' | '}
-                {resolve(exp.period as Parameters<typeof resolve>[0])}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="border-b border-resume-primary/20 mb-6" />
 
         <div className="mb-6">
           <h2 className="font-bold tracking-widest text-resume-text mb-3" style={{ fontSize: '12pt' }}>
