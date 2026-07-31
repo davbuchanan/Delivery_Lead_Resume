@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { useTranslation } from '@/lib/i18n'
 import { resumeConfig } from '@/data/resume-config'
 import { assetUrl } from '@/lib/utils'
@@ -7,7 +7,6 @@ import type { LocalizedString } from '@/data/types'
 import { ContactItem } from './ContactItem'
 import { ExperienceItem } from './ExperienceItem'
 import { ProjectItem } from './ProjectItem'
-import { VideoModal } from '@/components/ui/VideoModal'
 
 function skillItemName(item: { name: unknown }, resolve: (v: LocalizedString) => string): string {
   const name = item.name
@@ -25,19 +24,47 @@ function ProfilePhoto({
   photo,
   name,
   emoji,
-  onVideoOpen,
 }: {
   photo?: string
   name: string
   emoji?: string
-  onVideoOpen: () => void
 }) {
   const [hasError, setHasError] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  const handleClick = () => {
+    if (isPlaying) {
+      videoRef.current?.pause()
+      setIsPlaying(false)
+    } else {
+      setIsPlaying(true)
+    }
+  }
+
+  if (isPlaying) {
+    return (
+      <div
+        onClick={handleClick}
+        className="w-36 h-36 rounded-full overflow-hidden border-4 border-resume-bg/30 shadow-lg shrink-0 cursor-pointer relative"
+      >
+        <video
+          ref={videoRef}
+          autoPlay
+          playsInline
+          className="w-full h-full object-cover"
+          onEnded={() => setIsPlaying(false)}
+        >
+          <source src="./intro.mp4" type="video/mp4" />
+        </video>
+      </div>
+    )
+  }
 
   if (!photo || hasError) {
     return (
       <div
-        onClick={onVideoOpen}
+        onClick={handleClick}
         className="w-36 h-36 rounded-full bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center border-4 border-resume-bg/30 shadow-lg shrink-0 cursor-pointer"
       >
         <span className="text-4xl">{emoji || '👨‍💻'}</span>
@@ -46,7 +73,7 @@ function ProfilePhoto({
   }
 
   return (
-    <div className="shrink-0 relative cursor-pointer group" onClick={onVideoOpen}>
+    <div className="shrink-0 relative cursor-pointer group" onClick={handleClick}>
       {/* Play button overlay on hover */}
       <div className="absolute inset-0 rounded-full z-10 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-12 h-12 drop-shadow-lg">
@@ -75,7 +102,6 @@ export function MainContent() {
   const { language, resolve, resolveArray } = useTranslation()
   const { personal, contact, experiences, projects, education, skills, labels } = resumeConfig
   const [expandedExp, setExpandedExp] = useState<string | null>(null)
-  const [isVideoOpen, setIsVideoOpen] = useState(false)
 
   const toggleExp = (id: string) => {
     setExpandedExp(expandedExp === id ? null : id)
@@ -119,7 +145,6 @@ export function MainContent() {
             photo={(personal.photo || detectedAssets.photo) ? assetUrl(personal.photo || detectedAssets.photo!) : undefined}
             name={personal.name}
             emoji={personal.photoBackEmoji}
-            onVideoOpen={() => setIsVideoOpen(true)}
           />
           <div className="flex flex-col items-center sm:items-start">
             <h1 className="font-bold text-resume-text" style={{ fontSize: '14pt' }}>{personal.name}</h1>
@@ -295,9 +320,6 @@ export function MainContent() {
         </div>
 
       </div>
-
-      {/* ===== Video Modal ===== */}
-      <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} />
 
     </div>
   )
