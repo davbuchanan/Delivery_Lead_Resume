@@ -6,8 +6,8 @@ export const resumeConfig: ResumeConfig = {
     name: 'David Buchanan',
     photoBackEmoji: '🏆',
     title: {
-      en: 'Delivery Lead',
-      fr: 'Delivery Lead',
+      en: 'Delivery Lead, Agile Transformation',
+      fr: 'Delivery Lead, Transformation Agile',
     },
     location: 'Anglet, France 64600',
   },
