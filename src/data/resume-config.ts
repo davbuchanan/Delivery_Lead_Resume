@@ -257,23 +257,20 @@ export const resumeConfig: ResumeConfig = {
     },
   ],
   // ===== HOBBIES / VALUES =====
-  hobbies: {
-    title: { en: 'Values & Interests', fr: 'Valeurs et Intérêts Personnels' },
-    items: [
-      {
-        name: {
-          en: 'Values: Fairness & equality, transparency, empathy, encouragement, collaboration',
-          fr: 'Valeurs Clés : Équité et égalité, transparence, empathie, encouragement, collaboration',
-        },
+  hobbies: [
+    {
+      name: {
+        en: 'Values: Fairness & equality, transparency, empathy, encouragement, collaboration',
+        fr: 'Valeurs Clés : Équité et égalité, transparence, empathie, encouragement, collaboration',
       },
-      {
-        name: {
-          en: 'Interests: Health & fitness, food & coffee, cycling and rugby',
-          fr: 'Centres d’intérêt : Santé et bien-être, gastronomie et café, cyclisme et rugby',
-        },
+    },
+    {
+      name: {
+        en: 'Interests: Health & fitness, food & coffee, cycling and rugby',
+        fr: 'Centres d’intérêt : Santé et bien-être, gastronomie et café, cyclisme et rugby',
       },
-    ],
-  },
+    },
+  ],
   // ===== THEME =====
   theme: {
     preset: 'minimal',
