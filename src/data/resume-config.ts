@@ -7,7 +7,7 @@ export const resumeConfig: ResumeConfig = {
     photoBackEmoji: '🏆',
     title: {
       en: 'Agile Transformation Lead · Enterprise Delivery',
-      fr: 'Leader en Transformation Agile · Livraison d’Entreprise',
+      fr: 'Agile Transformation Lead · Enterprise Delivery',
     },
     location: 'Anglet, France 64600',
   },
@@ -28,30 +28,32 @@ export const resumeConfig: ResumeConfig = {
   // ===== CONTACT =====
   contact: [
     { type: 'linkedin', label: 'David Buchanan', href: 'https://www.linkedin.com/in/davidbuchanan-value-delivery/' },
+    { type: 'github', label: 'GitHub', href: 'https://github.com' },
     { type: 'email', label: 'davidbuchananemail@gmail.com' },
+    { type: 'phone', label: '+33695001171' },
     { type: 'location', label: 'Anglet, France 64600' },
   ],
   // ===== SKILLS =====
   skills: [
     {
-      title: { en: 'Agile & Framework Leadership', fr: 'Leadership Agile & Framework' },
+      title: { en: 'Agile & Framework Leadership', fr: 'Leadership Agile & Frameworks' },
       type: 'text',
       items: [
-        { name: { en: 'SAFe Framework & PI Optimization, Cross-Functional Team Leadership, SMART Objective Formulation, Data-Driven Process Optimization', fr: 'Framework SAFe & Optimisation PI, Leadership d’équipes transverses, Formulation d’objectifs SMART, Optimisation des processus par la donnée' } },
+        { name: { en: 'SAFe Framework & PI Optimization, Cross-Functional Team Leadership, SMART Objective Formulation, Data-Driven Process Optimization', fr: 'Framework SAFe & Optimisation PI · Management d’équipes pluridisciplinaires · Formulation d’objectifs SMART · Optimisation des processus axée sur les données' } },
       ],
     },
     {
-      title: { en: 'Release Governance & Execution', fr: 'Gouvernance & Exécution des Releases' },
+      title: { en: 'Release Governance & Execution', fr: 'Gouvernance & Exécution des Mises en Ligne' },
       type: 'text',
       items: [
-        { name: { en: 'End-to-End Release Scheduling, Production Change Management, Risk & Dependency Mitigation, Defect Lifecycle, Supplier Alignment', fr: 'Planification de release de bout en bout, Gestion des changements en production, Mitigation des risques et dépendances, Cycle de vie des défauts, Alignement fournisseurs' } },
+        { name: { en: 'End-to-End Release Scheduling, Production Change Management, Risk & Dependency Mitigation, Defect Lifecycle, Supplier Alignment', fr: 'Planification de releases de bout en bout · Gestion des changements en production · Atténuation des risques et des dépendances · Cycle de vie des anomalies · Alignement des fournisseurs' } },
       ],
     },
     {
-      title: { en: 'Stakeholder & Team Alignment', fr: 'Alignement Parties Prenantes & Équipes' },
+      title: { en: 'Stakeholder & Team Alignment', fr: 'Alignement des Parties Prenantes & des Équipes' },
       type: 'text',
       items: [
-        { name: { en: 'Executive Stakeholder Management, Cross-Departmental Communication', fr: 'Gestion des parties prenantes exécutives, Communication inter-départements' } },
+        { name: { en: 'Executive Stakeholder Management, Cross-Departmental Communication', fr: 'Gestion des parties prenantes exécutives · Communication interministérielle' } },
       ],
     },
     {
@@ -106,14 +108,14 @@ export const resumeConfig: ResumeConfig = {
       company: { en: 'Konectiv | Airbus Cybersecurity', fr: 'Konectiv | Airbus Cybersecurity' },
       period: { en: 'July 2024 – Present', fr: 'Juillet 2024 – Présent' },
       description: {
-        en: 'Setting up how the teams work together and keeping our strategy on track.',
-        fr: 'Structuration de la collaboration entre les équipes et suivi de la trajectoire stratégique.',
+        en: 'Focus: Setting up how the teams work together and keeping our strategy on track.',
+        fr: 'Focus : Structuration de la collaboration entre les équipes et suivi de la trajectoire stratégique.',
       },
       techs: ['Jira', 'Confluence', 'Klaxoon', 'SAFe'],
       details: {
         context: {
           en: 'Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.',
-          fr: 'Autorité Agile centrale pour quatre équipes de cybersécurité pluridisciplinaires réparties dans trois pays. Responsable de l’architecture de la gouvernance Agile de bout en bout et de l’excellence de la livraison.',
+          fr: 'Référent Agile central pour quatre équipes de cybersécurité pluridisciplinaires réparties sur trois pays. Responsable de l’architecture de la gouvernance Agile de bout en bout et de l’excellence opérationnelle.',
         },
         tasks: {
           en: [
@@ -122,9 +124,9 @@ export const resumeConfig: ResumeConfig = {
             'Governance & Scaling: Established a robust framework to decompose high-level strategy into 11,261 actionable user stories; normalized capacity planning and velocity across 89 iterations to instill high-predictability delivery across the ART.',
           ],
           fr: [
-            'Optimisation PI : Réarchitecture complète de la planification PI ; élimination des redondances, compression d’un événement de 3 jours à une seule journée à fort impact (gain d’efficacité de 66 %) tout en renforçant l’alignement des parties prenantes.',
-            'Alignement Stratégique : Partenariat avec la direction pour réaligner les Epics et les Capabilities, accélérant l’exécution de la feuille de route et atteignant un taux de réussite de 86 % (478 objectifs livrés sur 557).',
-            'Gouvernance & Passage à l’Échelle : Établissement d’un cadre robuste pour décomposer la stratégie de haut niveau en 11 261 user stories exploitables ; normalisation de la planification de la capacité et de la vélocité sur 89 itérations pour insuffler une livraison à haute prévisibilité au sein de l’ART.',
+            'Optimisation PI : Orchestration de la réarchitecture complète de la planification PI ; suppression des redondances pour condenser un événement de 3 jours en une seule journée à fort impact (gain d’efficacité de 66 %) tout en renforçant l’alignement des parties prenantes.',
+            'Alignement Stratégique : Partenariat avec la direction pour réaligner les Epics et les Capabilities, accélérant l’exécution de la roadmap et atteignant un taux de réussite de 86 % (478 objectifs livrés sur 557).',
+            'Gouvernance & Passage à l’Échelle : Mise en place d’un cadre robuste pour décomposer la stratégie de haut niveau en 11,261 user stories exploitables ; normalisation de la planification de la capacité et de la vélocité sur 89 itérations afin d’instaurer une livraison hautement prévisible au sein du Release Train (ART).',
           ],
         },
       },
@@ -135,14 +137,14 @@ export const resumeConfig: ResumeConfig = {
       company: { en: 'Mantu | Airbus Cybersecurity', fr: 'Mantu | Airbus Cybersecurity' },
       period: { en: 'September 2019 – June 2024', fr: 'Septembre 2019 – Juin 2024' },
       description: {
-        en: 'Keeping our delivery pipelines moving and helping the different teams hit their goals.',
-        fr: 'Maintien du dynamisme des pipelines de livraison et accompagnement des équipes dans l’atteinte de leurs objectifs.',
+        en: 'Focus: Keeping our delivery pipelines moving and helping the different teams hit their goals.',
+        fr: 'Focus : Fluidification des pipelines de livraison et soutien aux équipes pour l’atteinte de leurs objectifs.',
       },
       techs: ['Jira', 'Confluence', 'ZohoSprints', 'Slack'],
       details: {
         context: {
           en: 'Directed delivery pipelines for four high-impact functions: Software Maintenance, Detection Engineering, Operations/Run, and Organisational Data Compliance.',
-          fr: 'Direction des pipelines de livraison pour quatre fonctions à fort impact : Maintenance Logicielle, Ingénierie de Détection, Gestion des Opérations/Run, et Conformité des Données Organisationnelles.',
+          fr: 'Direction des pipelines de livraison pour quatre fonctions à fort impact : Maintenance logicielle, Ingénierie de détection, Gestion des opérations/RUN et Conformité des données organisationnelles.',
         },
         tasks: {
           en: [
@@ -152,22 +154,22 @@ export const resumeConfig: ResumeConfig = {
             'Operational Optimization: Standardised departmental workflows, authored critical operational communications, and managed cross-functional PI-cycle logistics to ensure continuity across diverse team functions.',
           ],
           fr: [
-            'Gouvernance Agile : Orchestration des cérémonies Agiles clés et gestion du cycle de vie des itérations de bout en bout pour quatre équipes, de la planification initiale des capacités et du raffinement des user stories jusqu’au suivi de la livraison, à l’atténuation des risques et au reporting de vélocité. Pilotage de plus de 2 000 réunions debout quotidiennes.',
-            'Gestion des Fournisseurs & des Parties Prenantes : Animation de synchronisations hebdomadaires avec les fournisseurs de cybersécurité pour résoudre les bugs et demandes de fonctionnalités. Présentation de bilans à l’échelle du département.',
-            'Gouvernance & Opérations de Livraison : Pilotage du pipeline du Comité Consultatif des Changements (CAB) ; supervision de 1 202 déploiements en production et résolution de 1 155 défauts techniques.',
-            'Optimisation Opérationnelle : Standardisation des flux de travail départementaux, rédaction de communications opérationnelles critiques et gestion de la logistique du cycle PI interfonctionnel.',
+            'Gouvernance Agile : Animation des cérémonies Agile clés et gestion du cycle de vie des itérations de bout en bout pour quatre équipes, de la planification initiale de la capacité et du raffinement des user stories au suivi de la livraison, à la mitigation des risques et au reporting de vélocité. Pilotage de plus de 2000 daily standups pour garantir l’alignement des équipes et la résolution rapide des points de blocage.',
+            'Gestion des Fournisseurs & des Parties Prenantes : Animation de synchronisations hebdomadaires avec les fournisseurs de cybersécurité pour résoudre les bugs et demandes d’évolution. Animation de démonstrations à l’échelle du département, assurant l’alignement de la direction sur la réduction des risques et la valeur commerciale.',
+            'Gouvernance des Mises en Ligne & Opérations : Pilotage du processus du comité de validation des changements (CAB) ; supervision de 1202 déploiements en production et résolution de 1155 anomalies techniques, maintenant la stabilité opérationnelle et une culture du déploiement zéro incident.',
+            'Optimisation Opérationnelle : Standardisation des flux de travail départementaux, rédaction de communications opérationnelles clés et gestion de la logistique des cycles PI interfonctionnels pour assurer la continuité entre diverses fonctions d’équipe.',
           ],
         },
       },
     },
     {
       id: 'invesco-implementation-lead',
-      role: { en: 'Project Manager - SaaS Implementations', fr: 'Chef de Projet - Implémentations SaaS' },
+      role: { en: 'Project Manager - SaaS Implementations', fr: 'Chef de Projet - Implémentation (SaaS)' },
       company: { en: 'Invesco', fr: 'Invesco' },
-      period: { en: 'Jan 2015 – June 2019', fr: 'Janvier 2015 – Juin 2019' },
+      period: { en: 'January 2015 – June 2019', fr: 'Janv. 2015 – Juin 2019' },
       description: {
-        en: 'Helping major financial institutions get the most out of our software and making sure our implementation projects actually crossed the finish line.',
-        fr: 'Accompagnement des principales institutions financières pour tirer le meilleur parti de notre logiciel et garantie de l’aboutissement de nos projets.',
+        en: 'Focus: Helping major financial institutions get the most out of our software and making sure our implementation projects actually crossed the finish line.',
+        fr: 'Focus : Accompagnement d’institutions financières majeures dans l’optimisation de l’utilisation de nos logiciels et garantie de l’aboutissement des projets d’implémentation.',
       },
       details: {
         context: {
@@ -183,11 +185,11 @@ export const resumeConfig: ResumeConfig = {
             'Product Growth & Advocacy: Served as the voice of the customer. I drove product adoption and identified new opportunities by listening to client feedback and using that data to help shape future product strategy.',
           ],
           fr: [
-            'Implémentation de Bout en Bout : Prise en charge du cycle de vie complet des projets pour des banques de premier plan, des sociétés d’investissement et des assureurs sur des projets de 6 à 12 mois.',
-            'Mise en Relation entre Métier et Technologie : Rôle d’intermédiaire entre clients et développeurs pour transformer les objectifs en exigences claires.',
-            'Gouvernance de Projet : Simplification des structures de projet grâce à la mise en place de cadres clairs pour les chartes de projet, les risques et les rôles internes.',
-            'Résolution de Problèmes Opérationnels : Gestion simultanée de plusieurs projets d’implémentation et identification précoce des goulets d’étranglement.',
-            'Croissance et Promotion du Produit : Rôle de porte-parole des clients pour stimuler l’adoption et façonner la future stratégie produit.',
+            'Implémentation de Bout en Bout : Prise en charge du cycle de vie complet des projets pour de grandes banques, sociétés d’investissement et assureurs. Gestion de projets de 6 à 12 mois par la traduction de besoins clients complexes en configurations techniques adaptées à leur activité.',
+            'Interface entre Métier et Technique : Rôle d’intermédiaire entre les clients et les développeurs. Traduction des objectifs stratégiques des clients en exigences claires, garantissant que l’équipe de développement construise ce dont le client avait réellement besoin, au-delà de la simple expression de besoin initiale.',
+            'Gouvernance de Projet : Simplification des structures de projet grâce à la mise en place de cadres clairs pour les notes de cadrage, la gestion des risques et les rôles internes, permettant aux équipes d’identifier précisément les livrables et les échéances.',
+            'Résolution de Problèmes Opérationnels : Gestion simultanée de plusieurs projets d’implémentation. Maintien de la dynamique de projet par l’identification précoce des goulots d’étranglement et la coordination entre les équipes de support internes et les parties prenantes clientes.',
+            'Croissance & Promotion du Produit : Porte-parole des clients en interne. Stimulation de l’adoption du produit et identification de nouvelles opportunités grâce à l’écoute des retours clients pour contribuer à la stratégie produit future.',
           ],
         },
       },
@@ -199,8 +201,8 @@ export const resumeConfig: ResumeConfig = {
       company: { en: 'Jemstep', fr: 'Jemstep' },
       period: { en: 'June 2012 – December 2014', fr: 'Juin 2012 – Décembre 2014' },
       description: {
-        en: 'Pivoting and scaling a B2B2C SaaS platform.',
-        fr: 'Pivotement et mise à l’échelle d’une plateforme SaaS B2B2C.',
+        en: 'Focus: Pivoting and scaling a B2B2C SaaS platform.',
+        fr: 'Focus : Réorientation stratégique et passage à l’échelle d’une plateforme SaaS B2B2C.',
       },
       details: {
         context: {
@@ -216,11 +218,11 @@ export const resumeConfig: ResumeConfig = {
             'Enablement: Drove organizational adoption through company-wide product training and client demonstrations.',
           ],
           fr: [
-            'Pivot Stratégique : Direction de la transition d’une plateforme de gestion de patrimoine du B2C vers un modèle SaaS B2B2C d’entreprise pour de grands conseillers en investissement américains.',
-            'Cycle de Vie & Conception Produit : Prise en charge du flux de valeur produit de bout en bout (Recherche → Conception → Construction → Test → Mesure → Itération).',
-            'Leadership d’Équipes Globales : Pilotage de la livraison produit à travers cinq équipes distribuées (États-Unis, Amérique du Sud, Afrique du Sud, Inde).',
-            'Gouvernance des Parties Prenantes & Qualité : Rôle d’autorité produit centrale pour la priorisation et le périmètre via les tests UAT et le suivi des KPI.',
-            'Enablement : Stimulation de l’adoption organisationnelle à travers des formations produit et des démonstrations clients.',
+            'Pivot Stratégique : Pilotage de la transition d’une plateforme de gestion de patrimoine d’un modèle B2C vers un modèle SaaS B2B2C d’entreprise destiné à de grands conseillers en investissement américains.',
+            'Cycle de Vie & Conception Produit : Maîtrise de la chaîne de valeur du produit de bout en bout (Recherche → Conception → Développement → Test → Mesure → Itération), en s’appuyant sur le story mapping et le raffinement détaillé du backlog pour traduire les parcours utilisateurs en spécifications techniques précises.',
+            'Leadership d’Équipes Globales : Direction de la livraison produit au sein de cinq squads distribuées (États-Unis, Amérique du Sud, Afrique du Sud, Inde) en utilisant des frameworks hybrides Agile/Waterfall.',
+            'Gouvernance de la Qualité & des Parties Prenantes : Référent produit central pour la priorisation et le périmètre, application de critères de qualité stricts via la recette utilisateur (UAT) et le suivi des KPI pour stimuler l’itération continue.',
+            'Accompagnement au Changement : Promotion de l’adoption organisationnelle par le biais de formations produits à l’échelle de l’entreprise et de démonstrations destinées aux clients.',
           ],
         },
       },
@@ -261,7 +263,7 @@ export const resumeConfig: ResumeConfig = {
       experience: { en: 'PROFESSIONAL EXPERIENCE', fr: 'EXPÉRIENCES PROFESSIONNELLES' },
       education: { en: 'EDUCATION & CERTIFICATIONS', fr: 'FORMATION & CERTIFICATIONS' },
       projects: { en: 'PROJECTS', fr: 'PROJETS' },
-      hobbies: { en: 'HOBBIES', fr: 'LOISIRS' },
+      hobbies: { en: 'HOBBIES', fr: 'VALEURS & CENTRES D’INTÉRÊT' },
     },
     experience: {
       mainTasks: { en: 'Main tasks:', fr: 'Tâches principales :' },
