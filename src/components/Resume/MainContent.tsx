@@ -100,8 +100,8 @@ function ProfilePhoto({
 
 // Location lookup per experience id — update values here as needed
 const experienceLocations: Record<string, string> = {
-  'msi-experts-rte': 'France',
-  'amaris-scrum-master': 'France',
+  'konectiv-airbus': 'France',
+  'mantu-airbus': 'France',
   'invesco-implementation-lead': 'South Africa',
   'jemstep-product-owner': 'South Africa',
 }
@@ -130,14 +130,15 @@ export function MainContent() {
   const sectionLabels = {
     summary: { en: 'Professional Summary', fr: 'Résumé Professionnel' },
     skillsHeading: { en: 'Professional Skills', fr: 'Compétences Professionnelles' },
+    valuesHeading: { en: 'Values & Personal Interests', fr: 'Valeurs et Intérêts Personnels' },
   }
 
   const summaryParagraphs: Record<string, string[]> = {
     en: [
-      `Release Train Engineer (RTE) & Scrum Master with over 15 years of experience delivering complex projects. I focus on building delivery systems that actually work, taking high-level strategy and turning it into predictable, reliable execution. Throughout my career, I've moved from managing team-level delivery to architecting organization-wide Agile frameworks. My approach is simple: I standardize the mess, clear the blockers, and use data to show where we can improve. In my current role, my teams have delivered over 11,000 user stories and 1,200 production deployments (with a focus on quality over quantity). I streamlined PI planning, cutting event time by 66% while hitting an 86% objective completion rate. I'm at my best when I'm connecting leadership strategy with team reality, ensuring that teams have a clear path to deliver value without the usual corporate friction.`,
+      `Scrum Master (Release Train Engineer) with over 15 years of experience delivering complex projects. I focus on building delivery systems that actually work, taking high-level strategy and turning it into predictable, reliable execution. Throughout my career, I've moved from managing team-level delivery to architecting organization-wide Agile frameworks. My approach is simple: I structure the mess, clear the blockers, and use data to show where we can improve. In my current role, my teams have delivered over 11,000 user stories and 1,200 production deployments (with a focus on quality over quantity). I streamlined PI planning, cutting event time by 66% while hitting an 86% objective completion rate. I'm at my best when I'm connecting leadership strategy with team reality, ensuring that teams have a clear path to deliver value without the usual corporate friction.`,
     ],
     fr: [
-      `Release Train Engineer (RTE) et Scrum Master fort(e) de plus de 15 ans d'expérience dans la livraison de projets complexes. Je m'attache à construire des systèmes de livraison réellement efficaces, en traduisant une stratégie de haut niveau en une exécution prévisible et fiable. Tout au long de mon parcours, je suis passé(e) de la gestion de la livraison au niveau des équipes à la conception de cadres Agile à l'échelle de l'organisation. Mon approche est simple : je structure le désordre, je lève les blocages et je m'appuie sur les données pour identifier les axes d'amélioration. Dans mon poste actuel, mes équipes ont livré plus de 11 000 user stories et 1 200 déploiements en production (avec un souci constant de la qualité plutôt que de la quantité). J'ai optimisé le processus de PI Planning, réduisant la durée de l'événement de 66 % tout en maintenant un taux de réalisation des objectifs de 86 %. Je suis le/la plus efficace lorsque je fais le lien entre la stratégie de la direction et la réalité opérationnelle des équipes, en veillant à ce qu'elles disposent d'un chemin clair pour créer de la valeur, sans les frictions habituelles liées à la bureaucratie d'entreprise.`,
+      `Scrum Master (Release Train Engineer) fort(e) de plus de 15 ans d'expérience dans la livraison de projets complexes. Je m'attache à construire des systèmes de livraison réellement efficaces, en traduisant une stratégie de haut niveau en une exécution prévisible et fiable. Tout au long de mon parcours, je suis passé(e) de la gestion de la livraison au niveau des équipes à la conception de cadres Agile à l'échelle de l'organisation. Mon approche est simple : je structure le désordre, je lève les blocages et je m'appuie sur les données pour identifier les axes d'amélioration. Dans mon poste actuel, mes équipes ont livré plus de 11 000 user stories et 1 200 déploiements en production (avec un souci constant de la qualité plutôt que de la quantité). J'ai optimisé le processus de PI Planning, réduisant la durée de l'événement de 66 % tout en maintenant un taux de réalisation des objectifs de 86 %. Je suis le/la plus efficace lorsque je fais le lien entre la stratégie de la direction et la réalité opérationnelle des équipes, en veillant à ce qu'elles disposent d'un chemin clair pour créer de la valeur, sans les frictions habituelles liées à la bureaucratie d'entreprise.`,
     ],
   }
   const currentSummary = summaryParagraphs[language] ?? summaryParagraphs.en
@@ -278,7 +279,7 @@ export function MainContent() {
 
       <div className="border-b border-resume-primary/20" />
 
-      {/* ===== Footer: Career History, Technical Toolkit, Education ===== */}
+      {/* ===== Footer: Career History, Technical Toolkit, Education, Values ===== */}
       <div className="p-8 bg-gradient-to-b from-resume-sidebar-from to-resume-sidebar-to">
 
         <div className="mb-6">
@@ -297,7 +298,7 @@ export function MainContent() {
 
         <div className="border-b border-resume-primary/20 mb-6" />
 
-        <div>
+        <div className="mb-6">
           <h2 className="font-bold tracking-widest text-resume-text mb-3" style={{ fontSize: '12pt' }}>
             {resolve(labels.sections.education)}
           </h2>
@@ -311,6 +312,24 @@ export function MainContent() {
               </li>
             ))}
           </ul>
+        </div>
+
+        <div className="border-b border-resume-primary/20 mb-6" />
+
+        <div>
+          <h2 className="font-bold tracking-widest text-resume-text mb-3" style={{ fontSize: '12pt' }}>
+            {resolve(sectionLabels.valuesHeading)}
+          </h2>
+          <div className="space-y-1 text-resume-text-secondary" style={{ fontSize: '11pt' }}>
+            <p>
+              <span className="font-semibold text-resume-text">{resolve({ en: 'Core Values', fr: 'Valeurs Clés' })}:</span>{' '}
+              Fairness & equality, transparency, empathy, encouragement, collaboration
+            </p>
+            <p>
+              <span className="font-semibold text-resume-text">{resolve({ en: 'Interests', fr: 'Centres d’intérêt' })}:</span>{' '}
+              Health & fitness, food & coffee, cycling and rugby
+            </p>
+          </div>
         </div>
 
       </div>
