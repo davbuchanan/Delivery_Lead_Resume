@@ -33,6 +33,11 @@ export const resumeConfig: ResumeConfig = {
     { type: 'phone', label: '+33695001171' },
     { type: 'location', label: 'Anglet, France 64600' },
   ],
+  // ===== SUMMARY / ABOUT =====
+  summary: {
+    en: 'Scrum Master (Release Train Engineer) with 15+ years of experience in complex project delivery...',
+    fr: "Scrum Master (Release Train Engineer) fort de plus de 15 ans d'expérience dans la livraison de projets complexes. Je m'attache à construire des systèmes de livraison réellement efficaces, en traduisant une stratégie de haut niveau en une exécution prévisible et fiable. Tout au long de mon parcours, je suis passé de la gestion de la livraison au niveau des équipes à la conception de cadres Agile à l'échelle de l'organisation. Mon approche est simple : je structure le désordre, je lève les blocages et je m'appuie sur les données pour identifier les axes d'amélioration. Dans mon poste actuel, mes équipes ont livré plus de 11 000 user stories et 1 200 déploiements en production (avec un souci constant de la qualité plutôt que de la quantité). J'ai optimisé le processus de PI Planning, réduisant la durée de l'événement de 66 % tout en maintenant un taux de réalisation des objectifs de 86 %. Je suis le plus efficace lorsque je fais le lien entre la stratégie de la direction et la réalité opérationnelle des équipes, en veillant à ce qu'elles disposent d'un chemin clair pour créer de la valeur, sans les frictions habituelles liées à la bureaucratie d'entreprise.",
+  },
   // ===== SKILLS =====
   skills: [
     {
@@ -251,6 +256,24 @@ export const resumeConfig: ResumeConfig = {
       period: '2003-2005',
     },
   ],
+  // ===== HOBBIES / VALUES =====
+  hobbies: {
+    title: { en: 'Values & Interests', fr: 'Valeurs et Intérêts Personnels' },
+    items: [
+      {
+        name: {
+          en: 'Values: Fairness & equality, transparency, empathy, encouragement, collaboration',
+          fr: 'Valeurs Clés : Équité et égalité, transparence, empathie, encouragement, collaboration',
+        },
+      },
+      {
+        name: {
+          en: 'Interests: Health & fitness, food & coffee, cycling and rugby',
+          fr: 'Centres d’intérêt : Santé et bien-être, gastronomie et café, cyclisme et rugby',
+        },
+      },
+    ],
+  },
   // ===== THEME =====
   theme: {
     preset: 'minimal',
