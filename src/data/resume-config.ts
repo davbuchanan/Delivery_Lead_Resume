@@ -44,7 +44,7 @@ export const resumeConfig: ResumeConfig = {
       title: { en: 'Agile & Framework Leadership', fr: 'Leadership Agile & Frameworks' },
       type: 'text',
       items: [
-        { name: { en: 'SAFe Framework & PI Optimization, Cross-Functional Team Leadership, SMART Objective Formulation, Data-Driven Process Optimization', fr: 'Framework SAFe & Optimisation PI · Management d’équipes pluridisciplinaires · Formulation d’objectifs SMART · Optimisation des processus axée sur les données' } },
+        { name: { en: 'SAFe Framework & PI Optimization, Cross-Functional Team Leadership, SMART Objective Formulation, Data-Driven Process Optimization', fr: "Framework SAFe & Optimisation PI · Management d'équipes pluridisciplinaires · Formulation d'objectifs SMART · Optimisation des processus axée sur les données" } },
       ],
     },
     {
@@ -120,7 +120,7 @@ export const resumeConfig: ResumeConfig = {
       details: {
         context: {
           en: 'Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.',
-          fr: 'Référent Agile central pour quatre équipes de cybersécurité pluridisciplinaires réparties sur trois pays. Responsable de l’architecture de la gouvernance Agile de bout en bout et de l’excellence opérationnelle.',
+          fr: "Référent Agile central pour quatre équipes de cybersécurité pluridisciplinaires réparties sur trois pays. Responsable de l'architecture de la gouvernance Agile de bout en bout et de l'excellence opérationnelle.",
         },
         tasks: {
           en: [
@@ -129,9 +129,9 @@ export const resumeConfig: ResumeConfig = {
             'Governance & Scaling: Established a robust framework to decompose high-level strategy into 11,261 actionable user stories; normalized capacity planning and velocity across 89 iterations to instill high-predictability delivery across the ART.',
           ],
           fr: [
-            'Optimisation PI : Orchestration de la réarchitecture complète de la planification PI ; suppression des redondances pour condenser un événement de 3 jours en une seule journée à fort impact (gain d’efficacité de 66 %) tout en renforçant l’alignement des parties prenantes.',
-            'Alignement Stratégique : Partenariat avec la direction pour réaligner les Epics et les Capabilities, accélérant l’exécution de la roadmap et atteignant un taux de réussite de 86 % (478 objectifs livrés sur 557).',
-            'Gouvernance & Passage à l’Échelle : Mise en place d’un cadre robuste pour décomposer la stratégie de haut niveau en 11,261 user stories exploitables ; normalisation de la planification de la capacité et de la vélocité sur 89 itérations afin d’instaurer une livraison hautement prévisible au sein du Release Train (ART).',
+            "Optimisation PI : Orchestration de la réarchitecture complète de la planification PI ; suppression des redondances pour condenser un événement de 3 jours en une seule journée à fort impact (gain d'efficacité de 66 %) tout en renforçant l'alignement des parties prenantes.",
+            "Alignement Stratégique : Partenariat avec la direction pour réaligner les Epics et les Capabilities, accélérant l'exécution de la roadmap et atteignant un taux de réussite de 86 % (478 objectifs livrés sur 557).",
+            "Gouvernance & Passage à l'Échelle : Mise en place d'un cadre robuste pour décomposer la stratégie de haut niveau en 11,261 user stories exploitables ; normalisation de la planification de la capacité et de la vélocité sur 89 itérations afin d'instaurer une livraison hautement prévisible au sein du Release Train (ART).",
           ],
         },
       },
@@ -143,7 +143,7 @@ export const resumeConfig: ResumeConfig = {
       period: { en: 'September 2019 – June 2024', fr: 'Septembre 2019 – Juin 2024' },
       description: {
         en: 'Focus: Keeping our delivery pipelines moving and helping the different teams hit their goals.',
-        fr: 'Focus : Fluidification des pipelines de livraison et soutien aux équipes pour l’atteinte de leurs objectifs.',
+        fr: "Focus : Fluidification des pipelines de livraison et soutien aux équipes pour l'atteinte de leurs objectifs.",
       },
       techs: ['Jira', 'Confluence', 'ZohoSprints', 'Slack'],
       details: {
@@ -159,10 +159,10 @@ export const resumeConfig: ResumeConfig = {
             'Operational Optimization: Standardised departmental workflows, authored critical operational communications, and managed cross-functional PI-cycle logistics to ensure continuity across diverse team functions.',
           ],
           fr: [
-            'Gouvernance Agile : Animation des cérémonies Agile clés et gestion du cycle de vie des itérations de bout en bout pour quatre équipes, de la planification initiale de la capacité et du raffinement des user stories au suivi de la livraison, à la mitigation des risques et au reporting de vélocité. Pilotage de plus de 2000 daily standups pour garantir l’alignement des équipes et la résolution rapide des points de blocage.',
-            'Gestion des Fournisseurs & des Parties Prenantes : Animation de synchronisations hebdomadaires avec les fournisseurs de cybersécurité pour résoudre les bugs et demandes d’évolution. Animation de démonstrations à l’échelle du département, assurant l’alignement de la direction sur la réduction des risques et la valeur commerciale.',
-            'Gouvernance des Mises en Ligne & Opérations : Pilotage du processus du comité de validation des changements (CAB) ; supervision de 1202 déploiements en production et résolution de 1155 anomalies techniques, maintenant la stabilité opérationnelle et une culture du déploiement zéro incident.',
-            'Optimisation Opérationnelle : Standardisation des flux de travail départementaux, rédaction de communications opérationnelles clés et gestion de la logistique des cycles PI interfonctionnels pour assurer la continuité entre diverses fonctions d’équipe.',
+            "Gouvernance Agile : Animation des cérémonies Agile clés et gestion du cycle de vie des itérations de bout en bout pour quatre équipes, de la planification initiale de la capacité et du raffinement des user stories au suivi de la livraison, à la mitigation des risques et au reporting de vélocité. Pilotage de plus de 2000 daily standups pour garantir l'alignement des équipes et la résolution rapide des points de blocage.",
+            "Gestion des Fournisseurs & des Parties Prenantes : Animation de synchronisations hebdomadaires avec les fournisseurs de cybersécurité pour résoudre les bugs et demandes d'évolution. Animation de démonstrations à l'échelle du département, assurant l'alignement de la direction sur la réduction des risques et la valeur commerciale.",
+            "Gouvernance des Mises en Ligne & Opérations : Pilotage du processus du comité de validation des changements (CAB) ; supervision de 1202 déploiements en production et résolution de 1155 anomalies techniques, maintenant la stabilité opérationnelle et une culture du déploiement zéro incident.",
+            "Optimisation Opérationnelle : Standardisation des flux de travail départementaux, rédaction de communications opérationnelles clés et gestion de la logistique des cycles PI interfonctionnels pour assurer la continuité entre diverses fonctions d'équipe.",
           ],
         },
       },
@@ -174,7 +174,7 @@ export const resumeConfig: ResumeConfig = {
       period: { en: 'January 2015 – June 2019', fr: 'Janv. 2015 – Juin 2019' },
       description: {
         en: 'Focus: Helping major financial institutions get the most out of our software and making sure our implementation projects actually crossed the finish line.',
-        fr: 'Focus : Accompagnement d’institutions financières majeures dans l’optimisation de l’utilisation de nos logiciels et garantie de l’aboutissement des projets d’implémentation.',
+        fr: "Focus : Accompagnement d'institutions financières majeures dans l'optimisation de l'utilisation de nos logiciels et garantie de l'aboutissement des projets d'implémentation.",
       },
       details: {
         context: {
@@ -190,8 +190,108 @@ export const resumeConfig: ResumeConfig = {
             'Product Growth & Advocacy: Served as the voice of the customer. I drove product adoption and identified new opportunities by listening to client feedback and using that data to help shape future product strategy.',
           ],
           fr: [
-            'Implémentation de Bout en Bout : Prise en charge du cycle de vie complet des projets pour de grandes banques, sociétés d’investissement et assureurs. Gestion de projets de 6 à 12 mois par la traduction de besoins clients complexes en configurations techniques adaptées à leur activité.',
-            'Interface entre Métier et Technique : Rôle d’intermédiaire entre les clients et les développeurs. Traduction des objectifs stratégiques des clients en exigences claires, garantissant que l’équipe de développement construise ce dont le client avait réellement besoin, au-delà de la simple expression de besoin initiale.',
-            'Gouvernance de Projet : Simplification des structures de projet grâce à la mise en place de cadres clairs pour les notes de cadrage, la gestion des risques et les rôles internes, permettant aux équipes d’identifier précisément les livrables et les échéances.',
-            'Résolution de Problèmes Opérationnels : Gestion simultanée de plusieurs projets d’implémentation. Maintien de la dynamique de projet par l’identification précoce des goulots d’étranglement et la coordination entre les équipes de support internes et les parties prenantes clientes.',
-            'Croissance & Promotion du Produit : Porte-parole des clients en interne. Stimulation de l’adoption du produit et identification de nouvelles
+            "Implémentation de Bout en Bout : Prise en charge du cycle de vie complet des projets pour de grandes banques, sociétés d'investissement et assureurs. Gestion de projets de 6 à 12 mois par la traduction de besoins clients complexes en configurations techniques adaptées à leur activité.",
+            "Interface entre Métier et Technique : Rôle d'intermédiaire entre les clients et les développeurs. Traduction des objectifs stratégiques des clients en exigences claires, garantissant que l'équipe de développement construise ce dont le client avait réellement besoin, au-delà de la simple expression de besoin initiale.",
+            "Gouvernance de Projet : Simplification des structures de projet grâce à la mise en place de cadres clairs pour les notes de cadrage, la gestion des risques et les rôles internes, permettant aux équipes d'identifier précisément les livrables et les échéances.",
+            "Résolution de Problèmes Opérationnels : Gestion simultanée de plusieurs projets d'implémentation. Maintien de la dynamique de projet par l'identification précoce des goulots d'étranglement et la coordination entre les équipes de support internes et les parties prenantes clientes.",
+            "Croissance & Promotion du Produit : Porte-parole des clients en interne. Stimulation de l'adoption du produit et identification de nouvelles opportunités grâce à l'écoute des retours clients pour contribuer à la stratégie produit future.",
+          ],
+        },
+      },
+      techs: ['Excel'],
+    },
+    {
+      id: 'jemstep-product-owner',
+      role: { en: 'Product Owner (Digital Wealth Management)', fr: 'Product Owner (Gestion de Patrimoine Digitale)' },
+      company: { en: 'Jemstep', fr: 'Jemstep' },
+      period: { en: 'June 2012 – December 2014', fr: 'Juin 2012 – Décembre 2014' },
+      description: {
+        en: 'Focus: Pivoting and scaling a B2B2C SaaS platform.',
+        fr: "Focus : Réorientation stratégique et passage à l'échelle d'une plateforme SaaS B2B2C.",
+      },
+      details: {
+        context: {
+          en: '',
+          fr: '',
+        },
+        tasks: {
+          en: [
+            'Strategic Pivot: Led the transition of a wealth management platform from B2C to an enterprise B2B2C SaaS model for major US investment advisors.',
+            'Product Lifecycle & Design: Owned the end-to-end product value stream (Research → Design → Build → Test → Measure → Iterate), leveraging story mapping and detailed backlog grooming to translate user journeys into precise engineering specs.',
+            'Global Team Leadership: Directed product delivery across five distributed squads (US, South America, South Africa, India) using hybrid Agile/Waterfall frameworks.',
+            'Stakeholder & Quality Governance: Acted as the central product authority for prioritization and scope, enforcing strict quality gates via UAT and KPI tracking to drive continuous iteration.',
+            'Enablement: Drove organizational adoption through company-wide product training and client demonstrations.',
+          ],
+          fr: [
+            "Pivot Stratégique : Pilotage de la transition d'une plateforme de gestion de patrimoine d'un modèle B2C vers un modèle SaaS B2B2C d'entreprise destiné à de grands conseillers en investissement américains.",
+            "Cycle de Vie & Conception Produit : Maîtrise de la chaîne de valeur du produit de bout en bout (Recherche → Conception → Développement → Test → Mesure → Itération), en s'appuyant sur le story mapping et le raffinement détaillé du backlog pour traduire les parcours utilisateurs en spécifications techniques précises.",
+            "Leadership d'Équipes Globales : Direction de la livraison produit au sein de cinq squads distribuées (États-Unis, Amérique du Sud, Afrique du Sud, Inde) en utilisant des frameworks hybrides Agile/Waterfall.",
+            "Gouvernance de la Qualité & des Parties Prenantes : Référent produit central pour la priorisation et le périmètre, application de critères de qualité stricts via la recette utilisateur (UAT) et le suivi des KPI pour stimuler l'itération continue.",
+            "Accompagnement au Changement : Promotion de l'adoption organisationnelle par le biais de formations produits à l'échelle de l'entreprise et de démonstrations destinées aux clients.",
+          ],
+        },
+      },
+    },
+  ],
+  // ===== EDUCATION & CERTIFICATIONS =====
+  education: [
+    {
+      school: { en: 'Scrum.org', fr: 'Scrum.org' },
+      degree: { en: 'Professional Scrum Master (PSM I)', fr: 'Professional Scrum Master (PSM I)' },
+      period: '2019',
+    },
+    {
+      school: { en: 'University of the Witwatersrand', fr: 'University of the Witwatersrand' },
+      degree: { en: 'Certificate in Project Management', fr: 'Certificat en Gestion de Projet' },
+      period: '2010',
+    },
+    {
+      school: { en: 'Wits Business School', fr: 'Wits Business School' },
+      degree: { en: 'Postgraduate Diploma in Management (PDM)', fr: 'Postgraduate Diploma in Management (PDM)' },
+      period: '2006',
+    },
+    {
+      school: { en: 'Damelin', fr: 'Damelin' },
+      degree: { en: 'Bachelor of Commerce (BCom) in Marketing & Business Management', fr: "Bachelor of Commerce (BCom) en Marketing & Gestion d'Entreprise" },
+      period: '2003-2005',
+    },
+  ],
+  // ===== HOBBIES / VALUES =====
+  hobbies: [
+    {
+      en: 'Core Values: Fairness and equality, transparency, empathy, encouragement, collaboration',
+      fr: "Valeurs fondamentales : Équité et égalité, transparence, empathie, encouragement et esprit de collaboration",
+    },
+    {
+      en: 'Interests: Health and wellness, food and coffee, cycling and rugby',
+      fr: "Centres d'intérêt : Santé et bien-être, gastronomie et café, cyclisme et rugby",
+    },
+  ],
+  // ===== THEME =====
+  theme: {
+    preset: 'minimal',
+  },
+  // ===== UI LABELS =====
+  labels: {
+    sections: {
+      contact: { en: 'CONTACT', fr: 'CONTACT' },
+      skills: { en: 'SKILLS', fr: 'COMPÉTENCES' },
+      experience: { en: 'PROFESSIONAL EXPERIENCE', fr: 'EXPÉRIENCES PROFESSIONNELLES' },
+      education: { en: 'EDUCATION & CERTIFICATIONS', fr: 'FORMATION & CERTIFICATIONS' },
+      projects: { en: 'PROJECTS', fr: 'PROJETS' },
+      hobbies: { en: 'HOBBIES', fr: "VALEURS & CENTRES D'INTÉRÊT" },
+    },
+    experience: {
+      mainTasks: { en: 'Main tasks:', fr: 'Tâches principales :' },
+      moreTasks: { en: 'more tasks...', fr: 'autres tâches...' },
+      training: { en: 'Training:', fr: 'Formations :' },
+      techEnv: { en: 'Tech environment:', fr: 'Env. technique :' },
+      technologies: { en: 'Technologies', fr: 'Technologies' },
+    },
+    actions: {
+      clickHint: { en: 'Click on experiences to see more details', fr: 'Cliquez sur les expériences pour voir plus de détails' },
+      switchTheme: { en: 'Toggle dark mode', fr: 'Changer le thème' },
+      downloadPdf: { en: 'Download PDF', fr: 'Télécharger le PDF' },
+    },
+  },
+}
