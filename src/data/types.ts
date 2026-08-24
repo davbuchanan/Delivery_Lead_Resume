@@ -1,6 +1,5 @@
 export type ContactType = 'linkedin' | 'email' | 'phone' | 'location' | 'github' | 'website' | string
 export type PresetName = 'minimal' | 'modern' | 'creative' | string
-
 // The index signature lets LocalizedString be used anywhere a
 // Record<string, string> or a dynamic string-keyed lookup is expected
 // (e.g. resolving by the current language code).
@@ -9,13 +8,11 @@ export interface LocalizedString {
   fr: string
   [key: string]: string
 }
-
 export interface LocalizedStringArray {
   en: string[]
   fr: string[]
   [key: string]: string[]
 }
-
 export interface ThemeColors {
   bg: string
   bgCard: string
@@ -34,7 +31,6 @@ export interface ThemeColors {
   sidebarDark: string
   sidebarDarkEnd: string
 }
-
 export interface ContactItemConfig {
   type: ContactType
   label: string
