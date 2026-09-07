@@ -6,15 +6,15 @@ export const resumeConfig: ResumeConfig = {
     name: 'David Buchanan',
     photoBackEmoji: '🏆',
     title: {
-      en: 'Agile Transformation Lead · Enterprise Delivery',
-      fr: 'Agile Transformation Lead · Enterprise Delivery',
+      en: 'Release Train Engineer',
+      fr: 'Release Train Engineer',
     },
     location: 'Anglet, France 64600',
   },
   // ===== SEO =====
   seo: {
-    title: 'David Buchanan — Agile Transformation Lead',
-    description: 'Interactive resume of David Buchanan, Agile Transformation Lead & Enterprise Delivery expert with 15+ years of experience.',
+    title: 'David Buchanan — Release Train Engineer',
+    description: 'Interactive resume of David Buchanan, Release Train Engineer with 11+ years of Agile/Scrum leadership, including 7 years leading a multi-country Airbus Cybersecurity Agile Release Train.',
   },
   // ===== LANGUAGES =====
   languages: {
@@ -35,30 +35,23 @@ export const resumeConfig: ResumeConfig = {
   ],
   // ===== SUMMARY / ABOUT =====
   summary: {
-    en: 'Scrum Master (Release Train Engineer) with 15+ years of experience in complex project delivery...',
-    fr: "Scrum Master (Release Train Engineer) fort de plus de 15 ans d'expérience dans la livraison de projets complexes. Je m'attache à construire des systèmes de livraison réellement efficaces, en traduisant une stratégie de haut niveau en une exécution prévisible et fiable. Tout au long de mon parcours, je suis passé de la gestion de la livraison au niveau des équipes à la conception de cadres Agile à l'échelle de l'organisation. Mon approche est simple : je structure le désordre, je lève les blocages et je m'appuie sur les données pour identifier les axes d'amélioration. Dans mon poste actuel, mes équipes ont livré plus de 11 000 user stories et 1 200 déploiements en production (avec un souci constant de la qualité plutôt que de la quantité). J'ai optimisé le processus de PI Planning, réduisant la durée de l'événement de 66 % tout en maintenant un taux de réalisation des objectifs de 86 %. Je suis le plus efficace lorsque je fais le lien entre la stratégie de la direction et la réalité opérationnelle des équipes, en veillant à ce qu'elles disposent d'un chemin clair pour créer de la valeur, sans les frictions habituelles liées à la bureaucratie d'entreprise.",
+    en: 'Release Train Engineer with 11+ years of Agile/Scrum leadership, including 7 years of continuous delivery leadership on a single large-scale, multi-country Data Loss Prevention (DLP) Cybersecurity Agile Release Train (Airbus), preceded by 4 years as a self-taught Scrum Master who introduced Agile practices to a fintech organization from scratch. Currently serve as both RTE and embedded Scrum Master across 4 teams (32 people total), running team-level ceremonies alongside ART-level PI Planning and governance. Re-architected PI Planning to cut event duration by 66% (3 days → 1 day) while achieving an 86% objective success rate (478/557). Delivered 11,261 completed user stories and governed 1,200+ production releases with zero-incident change management.',
+    fr: "Release Train Engineer avec plus de 11 ans d'expérience en leadership Agile/Scrum, dont 7 ans à la tête d'un Agile Release Train (ART) Cybersécurité/Data Loss Prevention (DLP) de grande envergure et multi-pays chez Airbus, précédés de 4 ans comme Scrum Master autodidacte, à l'origine de l'introduction des pratiques Agiles dans une organisation fintech partie de zéro. Assure aujourd'hui un double rôle de RTE et Scrum Master, entre animation des cérémonies au niveau équipe et pilotage de la planification et de la gouvernance au niveau ART. PI Planning repensé pour réduire la durée de l'événement de 66 % (3 jours → 1 jour) tout en maintenant un taux de réussite des objectifs de 86 % (478/557). Plus de 11 261 user stories livrées et plus de 1 200 mises en production gouvernées, sans incident de déploiement.",
   },
   // ===== SKILLS =====
   skills: [
     {
-      title: { en: 'Agile & Framework Leadership', fr: 'Leadership Agile & Frameworks' },
+      title: { en: 'ART Leadership & Planning', fr: 'Leadership ART & Planification' },
       type: 'text',
       items: [
-        { name: { en: 'SAFe Framework & PI Optimization, Cross-Functional Team Leadership, SMART Objective Formulation, Data-Driven Process Optimization', fr: "Framework SAFe & Optimisation PI · Management d'équipes pluridisciplinaires · Formulation d'objectifs SMART · Optimisation des processus axée sur les données" } },
+        { name: { en: 'Agile Release Train (ART) Leadership, PI Planning & Execution, Cross-Team Dependency & Risk Management, Delivery Predictability & Velocity Governance', fr: "Leadership d'Agile Release Train (ART) · Planification et Exécution des PI · Gestion des dépendances et risques inter-équipes · Prédictibilité de la livraison & Gouvernance de la vélocité" } },
       ],
     },
     {
-      title: { en: 'Release Governance & Execution', fr: 'Gouvernance & Exécution des Mises en Ligne' },
+      title: { en: 'Release Governance & Stakeholders', fr: 'Gouvernance des Mises en Ligne & Parties Prenantes' },
       type: 'text',
       items: [
-        { name: { en: 'End-to-End Release Scheduling, Production Change Management, Risk & Dependency Mitigation, Defect Lifecycle, Supplier Alignment', fr: 'Planification de releases de bout en bout · Gestion des changements en production · Atténuation des risques et des dépendances · Cycle de vie des anomalies · Alignement des fournisseurs' } },
-      ],
-    },
-    {
-      title: { en: 'Stakeholder & Team Alignment', fr: 'Alignement des Parties Prenantes & des Équipes' },
-      type: 'text',
-      items: [
-        { name: { en: 'Executive Stakeholder Management, Cross-Departmental Communication', fr: 'Gestion des parties prenantes exécutives · Communication interministérielle' } },
+        { name: { en: 'Release Governance & Defect Management (CAB), Distributed Team Leadership (Multi-Country), Executive & Cross-Departmental Stakeholder Management, Vendor Management', fr: 'Gouvernance des mises en production (CAB) & Gestion des anomalies · Leadership d\'équipes distribuées multi-pays · Gestion des parties prenantes exécutives et interservices · Gestion des fournisseurs' } },
       ],
     },
     {
@@ -83,7 +76,6 @@ export const resumeConfig: ResumeConfig = {
       type: 'badges',
       items: [
         { name: 'Google Apps Script (JavaScript)' },
-        { name: 'API Integrations' },
         { name: 'Advanced Excel/Sheets (Pivot Tables, Query)' },
       ],
     },
@@ -95,50 +87,47 @@ export const resumeConfig: ResumeConfig = {
         { name: 'GitHub' },
       ],
     },
-    {
-      title: { en: 'Collaboration', fr: 'Collaboration' },
-      type: 'badges',
-      items: [
-        { name: 'Google Workspace' },
-        { name: 'MS Teams' },
-        { name: 'Slack' },
-      ],
-    },
   ],
   // ===== PROFESSIONAL EXPERIENCES =====
   experiences: [
     {
       id: 'konectiv-airbus',
-      role: { en: 'Scrum Master / RTE', fr: 'Scrum Master / RTE' },
+      role: { en: 'Release Train Engineer', fr: 'Release Train Engineer' },
       company: { en: 'Konectiv | Airbus Cybersecurity', fr: 'Konectiv | Airbus Cybersecurity' },
       period: { en: 'July 2024 – Present', fr: 'Juillet 2024 – Présent' },
       description: {
-        en: 'Focus: Setting up how the teams work together and keeping our strategy on track.',
-        fr: 'Focus : Structuration de la collaboration entre les équipes et suivi de la trajectoire stratégique.',
+        en: 'Focus: Serving as both RTE and embedded Scrum Master across 4 teams (32 people total), running team-level ceremonies alongside ART-level PI Planning and governance.',
+        fr: "Focus : Double rôle de RTE et Scrum Master intégré pour 4 équipes (32 personnes au total), entre animation des cérémonies au niveau équipe et pilotage de la planification et de la gouvernance au niveau ART.",
       },
       techs: ['Jira', 'Confluence', 'Klaxoon', 'SAFe'],
       details: {
         context: {
-          en: 'Serving as the central Agile authority for four cross-functional Cybersecurity teams across three countries. Responsible for architecting end-to-end Agile governance and driving delivery excellence.',
-          fr: "Référent Agile central pour quatre équipes de cybersécurité pluridisciplinaires réparties sur trois pays. Responsable de l'architecture de la gouvernance Agile de bout en bout et de l'excellence opérationnelle.",
+          en: 'Agile leadership on the Airbus Cybersecurity DLP account since September 2019, across two consecutive service-provider engagements: Mantu (2019–2024) and Konectiv (2024–present).',
+          fr: "Leadership Agile sur le compte Airbus Cybersecurity DLP depuis septembre 2019, à travers deux prestataires successifs (Mantu 2019–2024, puis Konectiv depuis 2024).",
         },
         tasks: {
           en: [
-            'PI Optimisation: Orchestrated a total re-architecture of PI Planning; eliminated redundant overhead, compressing a 3-day event into a single high-impact day (66% efficiency gain) while increasing stakeholder alignment.',
-            'Strategic Alignment: Partnered with leadership to realign Epics and Capabilities, accelerating roadmap execution and achieving an 86% success rate (478 of 557 objectives delivered).',
-            'Governance & Scaling: Established a robust framework to decompose high-level strategy into 11,261 actionable user stories; normalized capacity planning and velocity across 89 iterations to instill high-predictability delivery across the ART.',
+            'Re-architected PI Planning end-to-end, cutting the event from 3 days to 1 day (66% reduction) across 4 teams in 3 countries.',
+            'Partnered with leadership to realign Epics and Capabilities with strategic priorities, improving planning clarity for downstream teams.',
+            'Governed delivery execution across the ART, achieving an 86% objective success rate (478 of 557 committed objectives).',
+            'Established the governance framework of capacity planning, velocity tracking, and iteration cadence that enabled the ART to complete 11,261 user stories across 89 iterations, sustaining high-predictability delivery.',
+            'Serve as both RTE and embedded Scrum Master across all 4 teams (32 people total), running team-level ceremonies alongside ART-level PI Planning and governance, with no intermediate Scrum Master layer.',
+            'Govern ART delivery accountability across internal teams, subcontractors, and vendor partners.',
           ],
           fr: [
-            "Optimisation PI : Orchestration de la réarchitecture complète de la planification PI ; suppression des redondances pour condenser un événement de 3 jours en une seule journée à fort impact (gain d'efficacité de 66 %) tout en renforçant l'alignement des parties prenantes.",
-            "Alignement Stratégique : Partenariat avec la direction pour réaligner les Epics et les Capabilities, accélérant l'exécution de la roadmap et atteignant un taux de réussite de 86 % (478 objectifs livrés sur 557).",
-            "Gouvernance & Passage à l'Échelle : Mise en place d'un cadre robuste pour décomposer la stratégie de haut niveau en 11,261 user stories exploitables ; normalisation de la planification de la capacité et de la vélocité sur 89 itérations afin d'instaurer une livraison hautement prévisible au sein du Release Train (ART).",
+            "Le PI Planning a été entièrement repensé pour des équipes réparties dans 3 pays, avec une durée réduite de 66 % (3 jours → 1 jour).",
+            "Travail avec les PMs pour réaligner Epics et Capabilities sur les priorités stratégiques, ce qui a clarifié la planification pour les équipes en aval.",
+            "Taux de réussite des objectifs de 86 % (478 sur 557) au niveau ART.",
+            "Mise en place de la gouvernance de capacité, de vélocité et de cadence des itérations, permettant la livraison de 11 261 user stories sur 89 itérations.",
+            "Rôles combinés de RTE et Scrum Master intégré pour plusieurs équipes, sans échelon intermédiaire de Scrum Master.",
+            "Responsabilité de la livraison à l'échelle de l'ART, incluant équipes internes, sous-traitants et partenaires fournisseurs.",
           ],
         },
       },
     },
     {
       id: 'mantu-airbus',
-      role: { en: 'Scrum Master', fr: 'Scrum Master' },
+      role: { en: 'Scrum Master (ART-Level Delivery Lead)', fr: 'Scrum Master (Responsable de livraison au niveau ART)' },
       company: { en: 'Mantu | Airbus Cybersecurity', fr: 'Mantu | Airbus Cybersecurity' },
       period: { en: 'September 2019 – June 2024', fr: 'Septembre 2019 – Juin 2024' },
       description: {
@@ -153,56 +142,54 @@ export const resumeConfig: ResumeConfig = {
         },
         tasks: {
           en: [
-            'Agile Governance: Orchestrated core Agile ceremonies and managed end-to-end iteration lifecycles for four teams from initial capacity planning and story refinement to tracking delivery, mitigating risks, and reporting on velocity. Directed over 2,000 daily standups to maintain team alignment and rapid resolution of impediments.',
-            'Vendor & Stakeholder Management: Led weekly synchronization with cybersecurity vendors to resolve bugs and feature requests. Chaired department-wide showcases, ensuring leadership alignment on risk reduction and business value.',
-            'Release Governance & Operations: Directed the Change Advisory Board (CAB) pipeline; oversaw 1,202 production deployments and resolved 1,155 technical defects, maintaining operational stability and a zero-incident deployment culture.',
-            'Operational Optimization: Standardised departmental workflows, authored critical operational communications, and managed cross-functional PI-cycle logistics to ensure continuity across diverse team functions.',
+            'Directed Agile ceremonies and iteration lifecycles across 4 teams (Software Maintenance, Detection Engineering, Operations/Run, Data Compliance) - capacity planning, refinement, delivery tracking, and velocity reporting; ran 2,000+ daily standups.',
+            'Owned the Change Advisory Board (CAB) pipeline, governing 1,202 production deployments and resolving 1,155 defects with zero-incident deployment outcomes.',
+            'Led weekly stakeholder synchronization with cybersecurity technology vendors on product bugs, feature requests, and roadmap alignment; chaired department-wide showcases for leadership visibility into risk and business value.',
+            'Standardized departmental workflows and managed cross-functional PI-cycle logistics across all 4 functions - effectively running ART-level cadence and governance ahead of formal RTE title.',
           ],
           fr: [
-            "Gouvernance Agile : Animation des cérémonies Agile clés et gestion du cycle de vie des itérations de bout en bout pour quatre équipes, de la planification initiale de la capacité et du raffinement des user stories au suivi de la livraison, à la mitigation des risques et au reporting de vélocité. Pilotage de plus de 2000 daily standups pour garantir l'alignement des équipes et la résolution rapide des points de blocage.",
-            "Gestion des Fournisseurs & des Parties Prenantes : Animation de synchronisations hebdomadaires avec les fournisseurs de cybersécurité pour résoudre les bugs et demandes d'évolution. Animation de démonstrations à l'échelle du département, assurant l'alignement de la direction sur la réduction des risques et la valeur commerciale.",
-            "Gouvernance des Mises en Ligne & Opérations : Pilotage du processus du comité de validation des changements (CAB) ; supervision de 1202 déploiements en production et résolution de 1155 anomalies techniques, maintenant la stabilité opérationnelle et une culture du déploiement zéro incident.",
-            "Optimisation Opérationnelle : Standardisation des flux de travail départementaux, rédaction de communications opérationnelles clés et gestion de la logistique des cycles PI interfonctionnels pour assurer la continuité entre diverses fonctions d'équipe.",
+            "Cérémonies Agiles et cycles d'itération pilotés pour 4 équipes (Maintenance logicielle, Ingénierie de détection, Opérations/Run, Conformité des données) ; plus de 2 000 daily standups animés.",
+            "Pipeline du Change Advisory Board (CAB) géré : 1 202 mises en production supervisées, 1 155 anomalies résolues, sans incident de déploiement majeur.",
+            "Synchronisation hebdomadaire avec les fournisseurs de cybersécurité sur anomalies, demandes de fonctionnalités et roadmap ; showcases départementaux animés pour la direction.",
+            "Processus départementaux standardisés et logistique inter-équipes des cycles de PI gérée pour les 4 fonctions — remplissant en pratique le rôle de RTE avant l'obtention formelle du titre.",
           ],
         },
       },
     },
     {
       id: 'invesco-implementation-lead',
-      role: { en: 'Project Manager - SaaS Implementations', fr: 'Chef de Projet - Implémentation (SaaS)' },
+      role: { en: 'Implementation Lead (SaaS)', fr: 'Implementation Lead (SaaS)' },
       company: { en: 'Invesco', fr: 'Invesco' },
-      period: { en: 'January 2015 – June 2019', fr: 'Janv. 2015 – Juin 2019' },
+      period: { en: 'January 2015 – June 2019', fr: 'Janvier 2015 – Juin 2019' },
       description: {
         en: 'Focus: Helping major financial institutions get the most out of our software and making sure our implementation projects actually crossed the finish line.',
         fr: "Focus : Accompagnement d'institutions financières majeures dans l'optimisation de l'utilisation de nos logiciels et garantie de l'aboutissement des projets d'implémentation.",
       },
+      techs: ['Excel'],
       details: {
         context: {
-          en: '',
-          fr: '',
+          en: 'Jemstep was acquired by Invesco in 2015, continued in an implementation and client-onboarding capacity building on existing product knowledge.',
+          fr: 'Jemstep racheté par Invesco en 2015 ; poursuite de la mission en tant que responsable d\'implémentation et d\'intégration client.',
         },
         tasks: {
           en: [
-            'End-to-End Implementation: Owned the full project lifecycle for major banks, investment firms, and insurers. Managed 6–12 month projects by translating complex client needs into technical configurations that actually worked for their business.',
-            'Bridging Business & Tech: Acted as the go-between for clients and developers. I took high-level client goals and turned them into clear requirements, ensuring the development team built what the client actually needed, not just what was requested.',
-            'Project Governance: Cut through project clutter by setting up simple, clear frameworks for project charters, risks, and internal roles, making it easy for teams to know exactly what needed to get done and when.',
-            'Operational Problem Solving: Managed multiple implementation projects at once. I kept things moving by identifying bottlenecks early and coordinating between internal support teams and client stakeholders to keep momentum high.',
-            'Product Growth & Advocacy: Served as the voice of the customer. I drove product adoption and identified new opportunities by listening to client feedback and using that data to help shape future product strategy.',
+            'Owned full project lifecycle for banking, investment, and insurance clients on 6–12 month SaaS implementation engagements, translating client requirements into working technical configurations.',
+            'Acted as the primary liaison between clients and developers, converting high-level business goals into requirements that matched actual client needs.',
+            'Built standardized project governance frameworks (charters, risk registers, role definitions) to keep multi-project delivery on schedule.',
+            'Fed client feedback into product strategy, functioning as an internal voice of the customer.',
           ],
           fr: [
-            "Implémentation de Bout en Bout : Prise en charge du cycle de vie complet des projets pour de grandes banques, sociétés d'investissement et assureurs. Gestion de projets de 6 à 12 mois par la traduction de besoins clients complexes en configurations techniques adaptées à leur activité.",
-            "Interface entre Métier et Technique : Rôle d'intermédiaire entre les clients et les développeurs. Traduction des objectifs stratégiques des clients en exigences claires, garantissant que l'équipe de développement construise ce dont le client avait réellement besoin, au-delà de la simple expression de besoin initiale.",
-            "Gouvernance de Projet : Simplification des structures de projet grâce à la mise en place de cadres clairs pour les notes de cadrage, la gestion des risques et les rôles internes, permettant aux équipes d'identifier précisément les livrables et les échéances.",
-            "Résolution de Problèmes Opérationnels : Gestion simultanée de plusieurs projets d'implémentation. Maintien de la dynamique de projet par l'identification précoce des goulots d'étranglement et la coordination entre les équipes de support internes et les parties prenantes clientes.",
-            "Croissance & Promotion du Produit : Porte-parole des clients en interne. Stimulation de l'adoption du produit et identification de nouvelles opportunités grâce à l'écoute des retours clients pour contribuer à la stratégie produit future.",
+            "Cycle de vie complet piloté pour des projets d'implémentation de 6 à 12 mois auprès de clients bancaires, financiers et assurantiels.",
+            "Interface assurée entre clients et développeurs, traduisant des objectifs business en exigences techniques claires.",
+            "Cadres de gouvernance de projet mis en place (chartes, registres de risques, définition des rôles) pour clarifier les livrables attendus.",
+            "Retours clients intégrés à la stratégie produit en interne.",
           ],
         },
       },
-      techs: ['Excel'],
     },
     {
       id: 'jemstep-product-owner',
-      role: { en: 'Product Owner (Digital Wealth Management)', fr: 'Product Owner (Gestion de Patrimoine Digitale)' },
+      role: { en: 'Product Owner, Digital Wealth Management', fr: 'Product Owner, Digital Wealth Management' },
       company: { en: 'Jemstep', fr: 'Jemstep' },
       period: { en: 'June 2012 – December 2014', fr: 'Juin 2012 – Décembre 2014' },
       description: {
@@ -216,18 +203,48 @@ export const resumeConfig: ResumeConfig = {
         },
         tasks: {
           en: [
-            'Strategic Pivot: Led the transition of a wealth management platform from B2C to an enterprise B2B2C SaaS model for major US investment advisors.',
-            'Product Lifecycle & Design: Owned the end-to-end product value stream (Research → Design → Build → Test → Measure → Iterate), leveraging story mapping and detailed backlog grooming to translate user journeys into precise engineering specs.',
-            'Global Team Leadership: Directed product delivery across five distributed squads (US, South America, South Africa, India) using hybrid Agile/Waterfall frameworks.',
-            'Stakeholder & Quality Governance: Acted as the central product authority for prioritization and scope, enforcing strict quality gates via UAT and KPI tracking to drive continuous iteration.',
-            'Enablement: Drove organizational adoption through company-wide product training and client demonstrations.',
+            'Led the platform\'s transition from B2C to enterprise B2B2C SaaS for major US investment advisors, including product design for the new offering.',
+            'Owned the end-to-end product lifecycle (research → design → build → test → measure → iterate) using story mapping and backlog grooming.',
+            'Directed product delivery across 5 distributed squads (US, South America, South Africa, India) under hybrid Agile/Waterfall.',
+            'Project-managed client onboarding ("whitelisting") of major American investment houses onto the new B2B platform, drawing on deep product knowledge from having designed it.',
+            'Enforced quality gates via UAT and KPI tracking; drove adoption through company-wide training and client demonstrations.',
           ],
           fr: [
-            "Pivot Stratégique : Pilotage de la transition d'une plateforme de gestion de patrimoine d'un modèle B2C vers un modèle SaaS B2B2C d'entreprise destiné à de grands conseillers en investissement américains.",
-            "Cycle de Vie & Conception Produit : Maîtrise de la chaîne de valeur du produit de bout en bout (Recherche → Conception → Développement → Test → Mesure → Itération), en s'appuyant sur le story mapping et le raffinement détaillé du backlog pour traduire les parcours utilisateurs en spécifications techniques précises.",
-            "Leadership d'Équipes Globales : Direction de la livraison produit au sein de cinq squads distribuées (États-Unis, Amérique du Sud, Afrique du Sud, Inde) en utilisant des frameworks hybrides Agile/Waterfall.",
-            "Gouvernance de la Qualité & des Parties Prenantes : Référent produit central pour la priorisation et le périmètre, application de critères de qualité stricts via la recette utilisateur (UAT) et le suivi des KPI pour stimuler l'itération continue.",
-            "Accompagnement au Changement : Promotion de l'adoption organisationnelle par le biais de formations produits à l'échelle de l'entreprise et de démonstrations destinées aux clients.",
+            "Transition de la plateforme pilotée d'un modèle B2C vers un modèle B2B2C d'entreprise pour les principaux conseillers en investissement américains, y compris la conception produit de la nouvelle offre.",
+            "Cycle de vie produit complet piloté (recherche → conception → développement → test → mesure → itération), via story mapping et raffinement du backlog.",
+            "Livraison dirigée à travers 5 équipes distribuées (États-Unis, Amérique du Sud, Afrique du Sud, Inde) en méthodologie hybride Agile/Waterfall.",
+            "Intégration de grandes maisons d'investissement américaines pilotée sur la nouvelle plateforme B2B, en s'appuyant sur une connaissance approfondie du produit.",
+            "Points de contrôle qualité mis en œuvre (UAT, suivi de KPI) ; adoption favorisée via formations internes et démonstrations client.",
+          ],
+        },
+      },
+    },
+    {
+      id: 'jemstep-scrum-master',
+      role: { en: 'Scrum Master (International FinTech Product)', fr: 'Scrum Master (Produit FinTech international)' },
+      company: { en: 'Jemstep', fr: 'Jemstep' },
+      period: { en: 'April 2008 – May 2012', fr: 'Avril 2008 – Mai 2012' },
+      description: {
+        en: 'Focus: Self-taught introduction of Agile/Scrum practices to a fintech organization, from scratch.',
+        fr: "Focus : Introduction autodidacte des pratiques Agile/Scrum dans une organisation fintech, en partant de zéro.",
+      },
+      details: {
+        context: {
+          en: 'Joined Jemstep at inception as a financial investment researcher, evaluating and classifying investments for a ranking engine, and became the primary liaison between the South Africa and US teams. Promoted to Project Manager, then self-taught Agile/Scrum from the ground up and became the company\'s first Scrum Master, introducing Agile practices to the organization with no prior internal framework to follow.',
+          fr: "Entré chez Jemstep dès sa création comme analyste en investissements financiers, avant de devenir l'interlocuteur principal entre les équipes d'Afrique du Sud et des États-Unis. Promu Project Manager, puis autodidacte en Agile/Scrum, devenu le premier Scrum Master de l'entreprise, sans cadre interne préexistant pour s'appuyer.",
+        },
+        tasks: {
+          en: [
+            'Introduced and guided Agile practices across the whole organization, as the company\'s first Agile implementation, self-taught and self-led.',
+            'Worked with Product Owners to keep the backlog prioritized, writing clear acceptance criteria and definitions of done for epics, stories, and bugs.',
+            'Ran all planning sessions, including effort estimation and confidence voting; tracked velocity, capacity, planned vs. accepted effort, and burn-down metrics to drive continuous improvement.',
+            'Set quality standards for test and defect tracking, shipping reliable code on a two-week cadence for a US subscription platform.',
+          ],
+          fr: [
+            "Pratiques Agiles introduites et pilotées au sein de l'organisation, en autodidacte et de sa propre initiative.",
+            "Collaboration avec les Product Owners sur un backlog priorisé, avec rédaction de critères d'acceptation et de définitions de « fini » pour epics, user stories et anomalies.",
+            "Sessions de planification animées (estimation, vote de confiance), suivi de la vélocité, de la capacité et des burn-down charts pour l'amélioration continue.",
+            "Standards qualité définis pour le suivi des tests et anomalies, permettant une livraison fiable en cadence bimensuelle pour une plateforme d'abonnement américaine.",
           ],
         },
       },
