@@ -9,6 +9,10 @@ export const resumeConfig: ResumeConfig = {
       en: 'Release Train Engineer',
       fr: 'Release Train Engineer',
     },
+    subtitle: {
+      en: 'Fixing the organizational, product and delivery constraints that prevent teams from achieving their goals.',
+      fr: 'Résoudre les blocages organisationnels, produit et de livraison qui empêchent les équipes d\'atteindre leurs objectifs.',
+    },
     location: 'Anglet, France 64600',
   },
   // ===== SEO =====
